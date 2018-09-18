@@ -1,3 +1,4 @@
+# https://github.com/aamnah/tldrdevnotes.com/blob/master/_workflow/setup-new-macos-machine-homebrew-cask.md
 
 installCLT() {
 	# Install Command Line Tools (CLT) for Xcode
