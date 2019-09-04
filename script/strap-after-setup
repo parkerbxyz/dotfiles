@@ -1,0 +1,44 @@
+#!/bin/sh
+
+echo ""
+echo -e "\033[34mConfiguring macOS...\033[0m"
+
+# Prevent settings from being overwritten
+osascript -e "tell application \"System Preferences\" to quit" 
+
+# Enable tap to click for this user and for the login screen
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+# Automatically quit printer app once the print jobs complete
+defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+
+# Keep folders on top when sorting by name
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
+
+# Do not write .DS_Store files on networks or USB drives
+defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+# Enable snap-to-grid for icons on the desktop and in other icon views
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+
+# Use list view in all Finder windows by default
+# Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
+# Change qlcolorcode theme
+defaults write org.n8gray.QLColorCode hlTheme solarized-dark
+
+TERM_PROFILE=setup;
+CURRENT_PROFILE="$(defaults read com.apple.terminal 'Default Window Settings')"; # check for current profile
+if [ "${CURRENT_PROFILE}" != "${TERM_PROFILE}" ]; then
+  open "${HOME}/${TERM_PROFILE}.terminal"; # open new windows with setup profile
+  sleep 1;
+	# Set as default profile
+  defaults write com.apple.terminal "Default Window Settings" -string "${TERM_PROFILE}";
+  defaults write com.apple.terminal "Startup Window Settings" -string "${TERM_PROFILE}";
+fi;
