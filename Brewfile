@@ -29,7 +29,7 @@ brew "vitorgalvao/tiny-scripts/cask-repair" # Quickly repair outdated/broken Cas
 cask "aerial"                   # Apple TV Aerial Screensaver for Mac
 cask "alfred"                   # Application launcher and productivity application
 cask "appcleaner"               # Thoroughly uninstall unwanted apps
-cast "atom"                     # The hackable text editor
+cask "atom"                     # The hackable text editor
 cask "brave-browser"            # Secure, fast & private web browser with adblocker
 cask "cryptomator"              # Client-side encryption of your files in the cloud
 cask "discord"                  # Voice and text chat app
