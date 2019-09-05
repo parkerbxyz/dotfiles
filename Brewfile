@@ -1,6 +1,7 @@
 # Taps
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-drivers"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
@@ -59,6 +60,7 @@ cask "zoomus"                   # Video conferencing software
 # Mac App Store
 mas "1Password 7", id: 1333542190           # Password manager
 mas "Bear", id: 1091189122                  # Note-taking app
+mas "Gifski", id: 1351639930                # Convert videos to high-quality GIFs
 mas "LG Screen Manager", id: 1142051783     # LG monitor software updates
 mas "Magnet", id: 441258766                 # Window management tool
 mas "Microsoft Excel", id: 462058435        # Spreadsheets
