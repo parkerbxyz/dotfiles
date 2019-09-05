@@ -50,7 +50,6 @@ cask "qlcolorcode"              # Preview source code files with syntax highligh
 cask "qlimagesize"              # Displays image dimensions, size and DPI to the title bar
 cask "qlmarkdown"               # Preview Markdown files
 cask "qlstephen"                # Preview plain text files without a file extension
-cask "quicklook-json"           # Preview JSON files
 cask "signal"                   # Cross-platform encrypted messaging service
 cask "teamviewer"               # Remote desktop software
 cask "vlc"                      # Free and open source cross-platform multimedia player
