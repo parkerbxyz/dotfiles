@@ -1,24 +1,18 @@
 # Taps
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-drivers"
-tap "homebrew/cask-versions"
-tap "homebrew/core"
-tap "homebrew/services"
 tap "vitorgalvao/tiny-scripts"
 
 # Formulae
 brew "archey"           # Graphical system information display for macOS
 brew "bash"             # Bourne-Again SHell, a UNIX command interpreter
 brew "bats"             # TAP-compliant test framework for Bash scripts
-brew "python"           # Interpreted, interactive, object-oriented programming language
 brew "cowsay"           # Configurable talking characters in ASCII art
 brew "exercism"         # Command-line tool to interact with exercism.io
 brew "gibo"             # Access GitHub's .gitignore boilerplates
 brew "mackup"           # Keep your Mac's application settings in sync
 brew "mas"              # Mac App Store command-line interface
+brew "pipenv"           # Python development workflow for humans
+brew "pyenv"            # Simple Python version management
 brew "rbenv"            # Ruby version manager
-brew "ruby"             # Powerful, clean, object-oriented scripting language
 brew "speedtest-cli"    # Command-line interface for https://speedtest.net bandwidth tests
 brew "thefuck"          # Programatically correct mistyped console commands
 brew "tldr"             # Simplified and community-driven man pages
@@ -46,7 +40,6 @@ cask "openrct2"                 # An open source re-implementation of RollerCoas
 cask "osxfuse"                  # Extends macOS by adding support for user space file systems
 cask "pdf-expert"               # PDF editor and reader for Mac
 cask "plex"                     # Magically organizes your media libraries and streams them to any device
-cask "qlcolorcode"              # Preview source code files with syntax highlighting
 cask "qlimagesize"              # Displays image dimensions, size and DPI to the title bar
 cask "qlmarkdown"               # Preview Markdown files
 cask "qlstephen"                # Preview plain text files without a file extension
@@ -62,9 +55,6 @@ mas "Bear", id: 1091189122                  # Note-taking app
 mas "Gifski", id: 1351639930                # Convert videos to high-quality GIFs
 mas "LG Screen Manager", id: 1142051783     # LG monitor software updates
 mas "Magnet", id: 441258766                 # Window management tool
-mas "Microsoft Excel", id: 462058435        # Spreadsheets
-mas "Microsoft PowerPoint", id: 462062816   # Presentations
-mas "Microsoft Word", id: 462054704         # Word processing
 mas "Newton", id: 1059655371                # Email client
 mas "Redacted", id: 984968384               # Quickly and easily redact parts of an image
 mas "Speedtest", id: 1153157709             # One-click connection testing
