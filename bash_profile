@@ -1,6 +1,7 @@
-# Aliases
-eval $(thefuck --alias)
-eval $(thefuck --alias wtf)
+if command -v thefuck 1>/dev/null 2>&1; then # if thefuck is installed
+  eval $(thefuck --alias)
+  eval $(thefuck --alias wtf)
+fi
 
 # pyenv (https://github.com/pyenv/pyenv)
 if command -v pyenv 1>/dev/null 2>&1; then # if pyenv is installed
