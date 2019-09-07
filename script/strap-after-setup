@@ -4,7 +4,7 @@ echo ""
 echo -e "\033[34mConfiguring macOS...\033[0m"
 
 # Prevent settings from being overwritten
-osascript -e "tell application \"System Preferences\" to quit" 
+osascript -e "tell application \"System Preferences\" to quit"
 
 # Enable tap to click for this user and for the login screen
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
@@ -13,6 +13,9 @@ defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # Enable three finger drag
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -int 1
+
+# Show battery percentage in menu bar
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
