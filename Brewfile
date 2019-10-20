@@ -3,12 +3,9 @@ tap "vitorgalvao/tiny-scripts"
 
 # Formulae
 brew "archey"           # Graphical system information display for macOS
-brew "bash"             # Bourne-Again SHell, a UNIX command interpreter
-brew "bats"             # TAP-compliant test framework for Bash scripts
 brew "cowsay"           # Configurable talking characters in ASCII art
 brew "exercism"         # Command-line tool to interact with exercism.io
 brew "gibo"             # Access GitHub's .gitignore boilerplates
-brew "mackup"           # Keep your Mac's application settings in sync
 brew "mas"              # Mac App Store command-line interface
 brew "pipenv"           # Python development workflow for humans
 brew "pyenv"            # Simple Python version management
@@ -36,13 +33,9 @@ cask "latest"                   # Open source macOS software update checker
 cask "malwarebytes"             # Anti-malware software
 cask "marshallofsound-google-play-music-player" # Cross-platform Desktop Player for Google Play Music
 cask "nteract"                  # Interactive computing suite
-cask "openrct2"                 # An open source re-implementation of RollerCoaster Tycoon 2 🎢
 cask "osxfuse"                  # Extends macOS by adding support for user space file systems
 cask "pdf-expert"               # PDF editor and reader for Mac
 cask "plex"                     # Magically organizes your media libraries and streams them to any device
-cask "qlimagesize"              # Displays image dimensions, size and DPI to the title bar
-cask "qlmarkdown"               # Preview Markdown files
-cask "qlstephen"                # Preview plain text files without a file extension
 cask "signal"                   # Cross-platform encrypted messaging service
 cask "teamviewer"               # Remote desktop software
 cask "vlc"                      # Free and open source cross-platform multimedia player
