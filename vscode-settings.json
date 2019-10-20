@@ -1,0 +1,25 @@
+{
+  "workbench.colorTheme": "Atomize",
+    "editor.scrollBeyondLastLine": false,
+    "todohighlight.keywords": [
+        {
+          "text": "TODO:",
+          "color": "#C678DD",
+          "backgroundColor": "transparent"
+        },
+        {
+          "text": "NOTE:",
+          "color": "#C678DD",
+          "backgroundColor": "transparent"
+        },
+        {
+          "text": "FIXME:",
+          "color": "#C678DD",
+          "backgroundColor": "transparent"
+        }
+      ],
+      "editor.fontSize": 14,
+      "files.insertFinalNewline": true,
+      "files.trimFinalNewlines": true,
+      "files.trimTrailingWhitespace": true
+}
