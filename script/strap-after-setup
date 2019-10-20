@@ -1,44 +1,12 @@
 #!/bin/sh
+# Run by Strap after installing Brewfile dependencies
 
-echo ""
-echo -e "\033[34mConfiguring macOS...\033[0m"
+cd $(dirname $0)/..
 
-# Prevent settings from being overwritten
-osascript -e "tell application \"System Preferences\" to quit"
+script/macos
+script/install-vscode-extensions
 
-# Enable tap to click for this user and for the login screen
-defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-
-# Enable three finger drag
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -int 1
-
-# Show battery percentage in menu bar
-defaults write com.apple.menuextra.battery ShowPercent -string "YES"
-
-# Automatically quit printer app once the print jobs complete
-defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
-
-# Keep folders on top when sorting by name
-defaults write com.apple.finder _FXSortFoldersFirst -bool true
-
-# Do not write .DS_Store files on networks or USB drives
-defaults write com.apple.desktopservices DSDontWriteNetworkStores true
-defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
-
-# Enable snap-to-grid for icons on the desktop and in other icon views
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-
-
-TERM_PROFILE=setup;
-CURRENT_PROFILE="$(defaults read com.apple.terminal 'Default Window Settings')"; # check for current profile
-if [ "${CURRENT_PROFILE}" != "${TERM_PROFILE}" ]; then
-  open "${HOME}/.${TERM_PROFILE}.terminal"; # open new windows with setup profile
-  sleep 1;
-	# Set as default profile
-  defaults write com.apple.terminal "Default Window Settings" -string "${TERM_PROFILE}";
-  defaults write com.apple.terminal "Startup Window Settings" -string "${TERM_PROFILE}";
-fi;
+if [ "$SHELL" != "/bin/zsh" ]
+then
+  chsh -s /bin/zsh
+fi
