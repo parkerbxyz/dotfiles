@@ -5,12 +5,17 @@ DOTFILESDIRREL=$(dirname $0)
 cd $DOTFILESDIRREL/..
 DOTFILESDIR=$(pwd -P)
 
+VSCODIUM="$HOME/Library/Application Support/VSCodium/User"
+
 for DOTFILE in *; do
   HOMEFILE="$HOME/.$DOTFILE"
   [ -d $DOTFILE ] && DOTFILE="$DOTFILE/"
   DIRFILE="$DOTFILESDIR/$DOTFILE"
 
-  echo $DOTFILE | egrep -q '(^script/$|\.txt$|\.md$)'
+  echo $DOTFILE | egrep -q '(^script/$|\.txt$|\.md$)' && continue
+  echo $DOTFILE | grep -q 'vscode-settings' &&
+       HOMEFILE="$VSCODIUM/settings.json" &&
+       mkdir -p "$VSCODIUM"
 
   echo $DOTFILE | grep -q '\.sh' &&
        HOMEFILE="$HOME/.$(echo $DOTFILE | sed -e 's/\.sh//')"
