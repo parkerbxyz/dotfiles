@@ -17,6 +17,7 @@ brew "youtube-dl"       # Download YouTube videos from the command-line
 brew "vitorgalvao/tiny-scripts/cask-repair" # Quickly repair outdated/broken Casks from homebrew-cask
 
 # Casks
+cask "1password"                # Password manager
 cask "aerial"                   # Apple TV Aerial Screensaver for Mac
 cask "alfred"                   # Application launcher and productivity application
 cask "appcleaner"               # Thoroughly uninstall unwanted apps
@@ -43,7 +44,6 @@ cask "vscodium"                 # Binary releases of VS Code without MS branding
 cask "zoomus"                   # Video conferencing software
 
 # Mac App Store
-mas "1Password 7", id: 1333542190           # Password manager
 mas "Bear", id: 1091189122                  # Note-taking app
 mas "Gifski", id: 1351639930                # Convert videos to high-quality GIFs
 mas "LG Screen Manager", id: 1142051783     # LG monitor software updates
@@ -52,4 +52,3 @@ mas "Newton", id: 1059655371                # Email client
 mas "Redacted", id: 984968384               # Quickly and easily redact parts of an image
 mas "Speedtest", id: 1153157709             # One-click connection testing
 mas "Things", id: 904280696                 # Task manager
-mas "Xcode", id: 497799835                  # Integrated development environment (IDE)
