@@ -4,6 +4,7 @@
 cd $(dirname $0)/..
 
 script/macos
+script/terminal
 script/install-vscode-extensions
 
 if [ "$SHELL" != "/bin/zsh" ]
