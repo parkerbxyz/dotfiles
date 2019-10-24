@@ -1,4 +1,11 @@
-export fpath=(~/.zsh/functions $fpath)
+#
+# Executes commands at the start of an interactive session.
+#
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
 
 # thefuck (https://github.com/nvbn/thefuck)
 eval $(thefuck --alias oops)
@@ -24,3 +31,6 @@ if command -v pipenv 1>/dev/null 2>&1; then
   # enable shell completion
   eval "$(pipenv --completion)"
 fi
+
+# added by github/training-manual class setup
+test -f "~/.trainingmanualrc" && source "~/.trainingmanualrc"
