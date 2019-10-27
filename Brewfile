@@ -1,4 +1,6 @@
 # Taps
+tap "homebrew/cask-drivers"
+tap "homebrew/cask-versions"
 tap "vitorgalvao/tiny-scripts"
 
 # Formulae
@@ -6,6 +8,7 @@ brew "archey"           # Graphical system information display for macOS
 brew "cowsay"           # Configurable talking characters in ASCII art
 brew "exercism"         # Command-line tool to interact with exercism.io
 brew "gibo"             # Access GitHub's .gitignore boilerplates
+brew "jq"               # Lightweight and flexible command-line JSON processor
 brew "mas"              # Mac App Store command-line interface
 brew "pipenv"           # Python development workflow for humans
 brew "pyenv"            # Simple Python version management
