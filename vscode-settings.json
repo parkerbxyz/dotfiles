@@ -26,5 +26,6 @@
       "files.insertFinalNewline": true,
       "files.trimFinalNewlines": true,
       "files.trimTrailingWhitespace": true,
-      "workbench.startupEditor": "newUntitledFile"
+      "workbench.startupEditor": "newUntitledFile",
+      "markdown-table-formatter.enableSort": false
 }
