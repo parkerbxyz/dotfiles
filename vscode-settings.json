@@ -18,6 +18,10 @@
           "backgroundColor": "transparent"
         }
       ],
+    "markdownlint.config": {
+      "MD026": { "punctuation": ".,;:!" },
+      "MD041": false
+    },
       "editor.fontSize": 14,
       "files.insertFinalNewline": true,
       "files.trimFinalNewlines": true,
