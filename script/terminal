@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Setup Terminal profile
-TERM_PROFILE=citrusui;
+TERM_PROFILE=xyz;
 CURRENT_PROFILE="$(defaults read com.apple.terminal 'Default Window Settings')"; # check for current profile
 if [ "${CURRENT_PROFILE}" != "${TERM_PROFILE}" ]; then
   open "${HOME}/.${TERM_PROFILE}.terminal"; # open new windows with citrusui profile
