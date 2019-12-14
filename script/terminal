@@ -1,14 +1,5 @@
 #!/bin/sh
 
-# Clone the Prezto repository
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-
-# Copy the Prezto Zsh configuration files
-setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-done
-
 # Setup Terminal profile
 TERM_PROFILE=citrusui;
 CURRENT_PROFILE="$(defaults read com.apple.terminal 'Default Window Settings')"; # check for current profile
