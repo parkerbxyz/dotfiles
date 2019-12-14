@@ -2,6 +2,8 @@
 # Executes commands at the start of an interactive session.
 #
 
+# enable the default zsh completions
+autoload -Uz compinit && compinit
 
 # thefuck (https://github.com/nvbn/thefuck)
 eval $(thefuck --alias oops)
