@@ -2,10 +2,6 @@
 # Executes commands at the start of an interactive session.
 #
 
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
 
 # thefuck (https://github.com/nvbn/thefuck)
 eval $(thefuck --alias oops)
@@ -34,3 +30,6 @@ fi
 
 # added by github/training-manual class setup
 test -f "~/.trainingmanualrc" && source "~/.trainingmanualrc"
+
+# starship (https://github.com/starship/starship)
+eval "$(starship init zsh)"
