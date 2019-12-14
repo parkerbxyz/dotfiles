@@ -5,6 +5,9 @@
 # enable the default zsh completions
 autoload -Uz compinit && compinit
 
+# zsh-syntax-highlighting (https://github.com/zsh-users/zsh-syntax-highlighting)
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # thefuck (https://github.com/nvbn/thefuck)
 eval $(thefuck --alias oops)
 
