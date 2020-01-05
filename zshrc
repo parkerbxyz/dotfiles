@@ -9,7 +9,7 @@ autoload -Uz compinit && compinit
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # zsh-autosuggestions (https://github.com/zsh-users/zsh-autosuggestions)
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # thefuck (https://github.com/nvbn/thefuck)
 eval $(thefuck --alias oops)
