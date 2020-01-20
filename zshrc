@@ -31,6 +31,12 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+# nodenv (https://github.com/nodenv/nodenv)
+if command -v nodenv 1>/dev/null 2>&1; then
+  # load nodenv automatically
+  eval "$(nodenv init -)"
+fi
+
 # Pipenv (https://github.com/pypa/pipenv)
 if command -v pipenv 1>/dev/null 2>&1; then
   # respect pyenv’s global and local Python versions
