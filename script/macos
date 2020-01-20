@@ -62,7 +62,6 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 ###############################################################################
 
 for app in \
-    "Dock" \
 	"Finder" \
 	"Safari" \
 	"SystemUIServer" \
