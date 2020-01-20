@@ -43,6 +43,8 @@ if command -v pipenv 1>/dev/null 2>&1; then
   export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
   # enable shell completion
   eval "$(pipenv --completion)"
+  # silence pyenv brew doctor warnings
+  alias brew="PATH=${PATH//$(pyenv root)\/shims:/} brew"
 fi
 
 # added by github/training-manual class setup
