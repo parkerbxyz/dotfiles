@@ -8,6 +8,7 @@ script/symlinks
 script/terminal
 script/install-vscode-extensions
 
+# use zsh as the default shell
 if [ "$SHELL" != "/bin/zsh" ]
 then
   chsh -s /bin/zsh
