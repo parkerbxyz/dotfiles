@@ -4,6 +4,7 @@
 cd $(dirname $0)/..
 
 script/macos
+script/symlinks
 script/terminal
 script/install-vscode-extensions
 
