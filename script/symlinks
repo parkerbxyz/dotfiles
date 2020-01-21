@@ -1,0 +1,7 @@
+#!/bin/sh
+# Configure symbolic links
+
+GITHUB_USERNAME=$(git config github.user)
+
+ln -s Documents/GitHub GitHub && \
+ln -s GitHub/$GITHUB_USERNAME/exercism Exercism
