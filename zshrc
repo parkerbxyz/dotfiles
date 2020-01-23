@@ -2,6 +2,10 @@
 # Executes commands at the start of an interactive session.
 #
 
+# zsh options
+setopt correct # try to correct the spelling of commands
+zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' # smartcase tab completion
+
 # enable the default zsh completions
 autoload -Uz compinit && compinit
 
