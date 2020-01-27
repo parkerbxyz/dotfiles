@@ -21,6 +21,9 @@ alias ls="ls -G"
 # default editor
 export EDITOR="code --wait"
 
+# starship (https://github.com/starship/starship)
+export STARSHIP_CONFIG=~/.starship
+
 # thefuck (https://github.com/nvbn/thefuck)
 eval $(thefuck --alias oops)
 
