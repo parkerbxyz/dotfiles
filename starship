@@ -1,3 +1,5 @@
+# https://starship.rs/presets/
+
 [aws]
 symbol = " "
 
@@ -11,6 +13,9 @@ symbol = " "
 
 [git_branch]
 symbol = " "
+
+[git_status]
+disabled = false
 
 [golang]
 symbol = " "
