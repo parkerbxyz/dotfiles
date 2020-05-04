@@ -34,7 +34,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
   # enable shims and autocompletion
   eval "$(pyenv init -)"
   # silence pyenv brew doctor warnings
-  source ~/.pyenv/brew.sh
+  source $HOME/.pyenv/brew.sh
 fi
 
 # nodenv (https://github.com/nodenv/nodenv)
@@ -52,8 +52,8 @@ if command -v pipenv 1>/dev/null 2>&1; then
 fi
 
 # added by github/training-manual class setup
-test -f "~/.trainingmanualrc" && source "~/.trainingmanualrc"
+test -f "$HOME/.trainingmanualrc" && source "$HOME/.trainingmanualrc"
 
 # starship (https://github.com/starship/starship)
-export STARSHIP_CONFIG=~/.starship
+export STARSHIP_CONFIG=$HOME/.starship
 eval "$(starship init zsh)"
