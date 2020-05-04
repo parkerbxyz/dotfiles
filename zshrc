@@ -19,7 +19,7 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 alias ls="ls -G"
 
 # thefuck (https://github.com/nvbn/thefuck)
-eval $(thefuck --alias oops)
+eval "$(thefuck --alias oops)"
 
 # rbenv (https://github.com/rbenv/rbenv)
 if command -v rbenv 1>/dev/null 2>&1; then
@@ -34,7 +34,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
   # enable shims and autocompletion
   eval "$(pyenv init -)"
   # silence pyenv brew doctor warnings
-  source $HOME/.pyenv/brew.sh
+  source "$HOME/.pyenv/brew.sh"
 fi
 
 # nodenv (https://github.com/nodenv/nodenv)
