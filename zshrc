@@ -18,9 +18,6 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Enable colorized output for `ls` command
 alias ls="ls -G"
 
-# default editor
-export EDITOR="code --wait"
-
 # thefuck (https://github.com/nvbn/thefuck)
 eval $(thefuck --alias oops)
 
