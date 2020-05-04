@@ -36,6 +36,8 @@ if command -v pyenv 1>/dev/null 2>&1; then
   export PYENV_ROOT="$HOME/.pyenv"
   # enable shims and autocompletion
   eval "$(pyenv init -)"
+  # silence pyenv brew doctor warnings
+  source ~/.pyenv/brew.sh
 fi
 
 # nodenv (https://github.com/nodenv/nodenv)
@@ -50,8 +52,6 @@ if command -v pipenv 1>/dev/null 2>&1; then
   export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
   # enable shell completion
   eval "$(pipenv --completion)"
-  # silence pyenv brew doctor warnings
-  alias brew="PATH=${PATH//$(pyenv root)\/shims:/} brew"
 fi
 
 # added by github/training-manual class setup
