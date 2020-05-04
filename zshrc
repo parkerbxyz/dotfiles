@@ -21,9 +21,6 @@ alias ls="ls -G"
 # default editor
 export EDITOR="code --wait"
 
-# starship (https://github.com/starship/starship)
-export STARSHIP_CONFIG=~/.starship
-
 # thefuck (https://github.com/nvbn/thefuck)
 eval $(thefuck --alias oops)
 
@@ -61,4 +58,5 @@ fi
 test -f "~/.trainingmanualrc" && source "~/.trainingmanualrc"
 
 # starship (https://github.com/starship/starship)
+export STARSHIP_CONFIG=~/.starship
 eval "$(starship init zsh)"
