@@ -1,6 +1,11 @@
 {
   "workbench.colorTheme": "GitHub Dark",
+  "workbench.startupEditor": "newUntitledFile",
   "editor.scrollBeyondLastLine": false,
+  "editor.fontSize": 14,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
   "markdownlint.config": {
     "MD001": true,
     "MD024": false,
@@ -9,11 +14,6 @@
     "MD036": true,
     "MD041": false
   },
-  "editor.fontSize": 14,
-  "files.insertFinalNewline": true,
-  "files.trimFinalNewlines": true,
-  "files.trimTrailingWhitespace": true,
-  "workbench.startupEditor": "newUntitledFile",
   "markdown.extension.toc.githubCompatibility": true,
   "markdown.extension.toc.updateOnSave": false,
   "markdown-table-formatter.enableSort": false,
