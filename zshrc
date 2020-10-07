@@ -51,6 +51,12 @@ if command -v pipenv 1>/dev/null 2>&1; then
   eval "$(pipenv --completion)"
 fi
 
+# octo-cli (https://github.com/octo-cli/octo-cli)
+if command -v octo 1>/dev/null 2>&1; then
+  # enable shell completion
+  eval "$(octo --install-completions)"
+fi
+
 # added by github/training-manual class setup
 test -f "$HOME/.trainingmanualrc" && source "$HOME/.trainingmanualrc"
 
