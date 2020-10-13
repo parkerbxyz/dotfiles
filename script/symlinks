@@ -3,6 +3,6 @@
 
 GITHUB_USERNAME=$(git config github.user)
 
-ln -s Documents/GitHub GitHub && /
-ln -s GitHub/"$GITHUB_USERNAME"/exercism Exercism
-ln -s ~/.dotfiles GitHub/"$GITHUB_USERNAME"/dotfiles
+ln -s Documents/github.com github.com && /
+ln -s github.com/"$GITHUB_USERNAME"/exercism Exercism
+ln -s ~/.dotfiles github.com/"$GITHUB_USERNAME"/dotfiles
