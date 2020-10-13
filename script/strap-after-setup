@@ -1,7 +1,7 @@
 #!/bin/sh
 # Run by Strap after installing Brewfile dependencies
 
-cd $(dirname $0)/..
+cd "$(dirname "$0")"/.. || exit
 
 script/macos
 script/symlinks
