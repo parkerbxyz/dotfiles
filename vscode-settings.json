@@ -19,6 +19,16 @@
   "markdown.extension.toc.levels": "2..2",
   "markdown.extension.orderedList.marker": "one",
   "markdown-table-formatter.enableSort": false,
+  "cSpell.userWords": [
+    "CPUs",
+    "Jira",
+    "chmod",
+    "octicons",
+    "parkerbxyz",
+    "reflog",
+    "repos",
+    "unencrypted"
+  ],
   "shellcheck.customArgs": [
     "-x"
   ]
