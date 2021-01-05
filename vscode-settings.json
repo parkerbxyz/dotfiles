@@ -35,5 +35,6 @@
   ],
   "shellcheck.customArgs": [
     "-x"
-  ]
+  ],
+  "git.enableCommitSigning": true
 }
