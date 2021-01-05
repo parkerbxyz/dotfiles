@@ -1,0 +1,27 @@
+[user]
+	name = Parker Brown
+	email = 17183625+parkerbxyz@users.noreply.github.com
+	signingkey = F2A7F03DA542BD52
+[gpg]
+	program = gpg
+[commit]
+	gpgsign = true
+[push]
+	default = simple
+[pull]
+	rebase = false
+[init]
+	defaultbranch = main
+[protocol]
+	version = 2
+[github]
+	user = parkerbxyz
+[core]
+	autocrlf = input
+	excludesfile = /Users/parkerbxyz/.gitignore_global
+	editor = code --wait
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
