@@ -3,6 +3,9 @@
   "workbench.startupEditor": "newUntitledFile",
   "editor.scrollBeyondLastLine": false,
   "editor.fontSize": 14,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.markdownlint": true
+  },
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
