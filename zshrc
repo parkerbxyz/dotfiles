@@ -28,6 +28,9 @@ ZSH_AUTOSUGGEST_HISTORY_IGNORE="git *|cd *"
 # Enable colorized output for `ls` command
 alias ls="ls -G"
 
+# Set default editor
+export EDITOR="code --wait"
+
 # thefuck (https://github.com/nvbn/thefuck)
 eval "$(thefuck --alias oops)"
 
