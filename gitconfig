@@ -25,3 +25,6 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[alias]
+	# Retrieve the default branch (helper alias)
+	default =  !git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
