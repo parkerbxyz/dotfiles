@@ -27,6 +27,7 @@
     "-x"
   ],
   "git.enableCommitSigning": true
+  "shellcheck.enableQuickFix": true,
   "[shellscript]": {
     "editor.rulers": [80]
   },
