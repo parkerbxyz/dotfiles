@@ -23,20 +23,6 @@
   "markdown.extension.toc.levels": "2..3",
   "markdown.extension.orderedList.marker": "one",
   "markdown-table-formatter.enableSort": false,
-  "cSpell.userWords": [
-    "CPUs",
-    "Jira",
-    "Radford",
-    "chmod",
-    "enablement",
-    "kanban",
-    "octicons",
-    "parkerbxyz",
-    "reflog",
-    "repos",
-    "repurpose",
-    "unencrypted"
-  ],
   "shellcheck.customArgs": [
     "-x"
   ],
