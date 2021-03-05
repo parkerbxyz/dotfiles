@@ -41,5 +41,8 @@
     "-x"
   ],
   "git.enableCommitSigning": true
+  "[shellscript]": {
+    "editor.rulers": [80]
+  },
   "editor.minimap.renderCharacters": false,
 }
