@@ -1,4 +1,5 @@
 {
+  "telemetry.enableTelemetry": false,
   "workbench.colorTheme": "GitHub Dark",
   "workbench.startupEditor": "newUntitledFile",
   "editor.scrollBeyondLastLine": false,
