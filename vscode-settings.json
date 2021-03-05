@@ -20,7 +20,7 @@
   },
   "markdown.extension.toc.githubCompatibility": true,
   "markdown.extension.toc.updateOnSave": false,
-  "markdown.extension.toc.levels": "2..2",
+  "markdown.extension.toc.levels": "2..3",
   "markdown.extension.orderedList.marker": "one",
   "markdown-table-formatter.enableSort": false,
   "cSpell.userWords": [
