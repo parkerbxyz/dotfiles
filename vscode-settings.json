@@ -26,9 +26,9 @@
   "shellcheck.customArgs": [
     "-x"
   ],
-  "git.enableCommitSigning": true
   "shellcheck.executablePath": "shellcheck",
   "shellcheck.enableQuickFix": true,
+  "git.enableCommitSigning": true,
   "[shellscript]": {
     "editor.rulers": [80]
   },
