@@ -23,6 +23,7 @@
   "markdown.extension.toc.levels": "2..3",
   "markdown.extension.orderedList.marker": "one",
   "markdown-table-formatter.enableSort": false,
+  "diffEditor.renderSideBySide": false,
   "shellcheck.customArgs": [
     "-x"
   ],
