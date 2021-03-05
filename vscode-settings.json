@@ -32,5 +32,6 @@
   "[shellscript]": {
     "editor.rulers": [80]
   },
+  "explorer.confirmDelete": false,
   "editor.minimap.renderCharacters": false,
 }
