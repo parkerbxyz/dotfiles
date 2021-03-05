@@ -41,4 +41,5 @@
     "-x"
   ],
   "git.enableCommitSigning": true
+  "editor.minimap.renderCharacters": false,
 }
