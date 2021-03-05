@@ -23,6 +23,10 @@
   "markdown.extension.toc.levels": "2..3",
   "markdown.extension.orderedList.marker": "one",
   "markdown-table-formatter.enableSort": false,
+  "python.linting.pylintEnabled": true,
+  "python.linting.mypyEnabled": true,
+  "python.linting.enabled": true,
+  "python.linting.flake8Enabled": true,
   "diffEditor.renderSideBySide": false,
   "shellcheck.customArgs": [
     "-x"
