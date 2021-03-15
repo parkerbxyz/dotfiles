@@ -8,6 +8,9 @@ setopt correct
 # smartcase tab completion
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 
+# Homebrew formulae with executables in /usr/local/sbin
+export PATH="/usr/local/sbin:$PATH"
+
 # Homebrew completions (https://docs.brew.sh/Shell-Completion)
 if type brew &>/dev/null; then
   # get the Homebrew-managed zsh site-functions on FPATH
