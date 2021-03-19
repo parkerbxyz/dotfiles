@@ -51,8 +51,6 @@ fi
 
 # pyenv (https://github.com/pyenv/pyenv)
 if command -v pyenv 1>/dev/null 2>&1; then
-  # define environment variable
-  export PYENV_ROOT="$HOME/.pyenv"
   # enable shims and autocompletion
   eval "$(pyenv init -)"
   # silence pyenv brew doctor warnings
