@@ -37,6 +37,12 @@ export EDITOR="code --wait"
 # thefuck (https://github.com/nvbn/thefuck)
 eval "$(thefuck --alias oops)"
 
+# octo-cli (https://github.com/octo-cli/octo-cli)
+if command -v octo 1>/dev/null 2>&1; then
+  # enable shell completion
+  eval "$(octo --install-completions)"
+fi
+
 # rbenv (https://github.com/rbenv/rbenv)
 if command -v rbenv 1>/dev/null 2>&1; then
   # load rbenv automatically
@@ -65,12 +71,6 @@ if command -v pipenv 1>/dev/null 2>&1; then
   export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
   # enable shell completion
   eval "$(pipenv --completion)"
-fi
-
-# octo-cli (https://github.com/octo-cli/octo-cli)
-if command -v octo 1>/dev/null 2>&1; then
-  # enable shell completion
-  eval "$(octo --install-completions)"
 fi
 
 # added by github/training-manual class setup
