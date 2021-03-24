@@ -18,7 +18,7 @@
 	user = parkerbxyz
 [core]
 	autocrlf = input
-	excludesfile = /Users/parkerbxyz/.gitignore_global
+	excludesfile = $HOME/.gitignore_global
 	editor = code --wait
 [filter "lfs"]
 	clean = git-lfs clean -- %f
