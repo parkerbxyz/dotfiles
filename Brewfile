@@ -6,21 +6,36 @@ tap "vitorgalvao/tiny-scripts"
 
 # Formulae
 brew "archey"                   # Graphical system information display for macOS
+brew "bats"                     # TAP-compliant test framework for Bash scripts
+brew "cowsay"                   # Configurable talking characters in ASCII art
 brew "exercism"                 # Command-line tool to interact with exercism.io
+brew "gh"                       # GitHub command-line tool
 brew "gibo"                     # Access GitHub's .gitignore boilerplates
+brew "git"                      # Free and open source distributed version control system
+brew "git-filter-repo"          # Quickly rewrite git repository history
+brew "git-lfs"                  # Git extension for versioning large files
+brew "git-sizer"                # Compute various size metrics for a Git repository
+brew "httpie"                   # User-friendly cURL replacement (command-line HTTP client)
 brew "jq"                       # Lightweight and flexible command-line JSON processor
 brew "mas"                      # Mac App Store command-line interface
+brew "node"                     # Platform built on V8 to build network applications
+brew "nodenv"                   # Manage multiple NodeJS versions
 brew "pipenv"                   # Python development workflow for humans
 brew "pyenv"                    # Simple Python version management
 brew "rbenv"                    # Ruby version manager
+brew "shellcheck"               # Static analysis and lint tool, for (ba)sh scripts
+brew "shfmt"                    # Autoformat shell script source code
 brew "speedtest-cli"            # Command-line interface for https://speedtest.net bandwidth tests
 brew "starship"                 # The cross-shell prompt for astronauts
 brew "thefuck"                  # Programatically correct mistyped console commands
 brew "tldr"                     # Simplified and community-driven man pages
+brew "tree"                     # List contents of directories in a tree-like format
+brew "yarn"                     # JavaScript package manager (NPM alternative)
 brew "youtube-dl"               # Download YouTube videos from the command-line
+brew "yq"                       # Lightweight and portable command-line YAML processor
 brew "zsh-autosuggestions"      # Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-syntax-highlighting"  # Fish shell like syntax highlighting for zsh
-brew "vitorgalvao/\tiny-scripts/cask-repair"    # Quickly repair outdated/broken Casks from homebrew-cask
+brew "octo-cli/octo/octo"       # Shell client for GitHub's REST API
 
 # Casks
 cask "1password"                # Password manager
