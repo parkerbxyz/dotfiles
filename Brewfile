@@ -30,32 +30,36 @@ cask "appcleaner"               # Thoroughly uninstall unwanted apps
 cask "atom"                     # The hackable text editor
 cask "brave-browser"            # Secure, fast & private web browser with adblocker
 cask "cryptomator"              # Client-side encryption of your files in the cloud
-cask "discord"                  # Voice and text chat app
-cask "encryptme"                # VPN service
+cask "deckset"                  # Creates great-looking slides from simple Markdown files
+cask "discord"                  # Voice and text chat software
+cask "encryptme"                # VPN and encryption software
 cask "firefox"                  # Fast and secure open source web browser
-cask "font-fira-code"           # Monospaced font with programming ligatures
+cask "font-fira-code-nerd-font" # Monospaced font with programming ligatures
 cask "fujitsu-scansnap-home"    # One stop for all ScanSnap productivity
 cask "github"                   # Simple collaboration from your desktop
-cask "google-backup-and-sync"   # Backs up files and photos safely in Google Drive and Google Photos
-cask "hazeover"                 # Turn distractions down and focus on your current task.
+cask "google-drive"             # Access and sync your content from any device
+cask "hazeover"                 # Turn distractions down and focus on your current task
+cask "imageoptim"               # Tool to optimize images to a smaller size
 cask "insomnia"                 # Cross-platform GraphQL and REST client
 cask "latest"                   # Open source macOS software update checker
+cask "krisp"                    # Removes background noise and echo from meetings
+cask "latest"                   # Utility that shows the latest app updates
 cask "logitech-camera-settings" # Adjust Logitech Camera Settings
 cask "logitech-options"         # Customize Logitech device settings
 cask "malwarebytes"             # Anti-malware software
 cask "mark-text"                # Simple and Elegant Markdown Editor
-cask "marshallofsound-google-play-music-player" # Cross-platform Desktop Player for Google Play Music
+cask "messenger"                # Native desktop app for Messenger (formerly Facebook Messenger)
+cask "microsoft-teams"          # Microsoft Teams
 cask "mousepose"                # The mouse pointer highlighting tool
 cask "nteract"                  # Interactive computing suite
 cask "numi"                     # Beautiful calculator app for macOS
 cask "osxfuse"                  # Extends macOS by adding support for user space file systems
 cask "pdf-expert"               # PDF editor and reader for Mac
-cask "plex"                     # Magically organizes your media libraries and streams them to any device
 cask "signal"                   # Cross-platform encrypted messaging service
-cask "teamviewer"               # Remote desktop software
+cask "timemachineeditor"        # Utility to change the default backup interval of Time Machine
 cask "vlc"                      # Free and open source cross-platform multimedia player
 cask "vscodium"                 # Binary releases of VS Code without MS branding/telemetry/licensing
-cask "zoomus"                   # Video conferencing software
+cask "zoom"                     # Video conferencing software
 
 # Mac App Store
 mas "Bear", id: 1091189122                  # Note-taking app
