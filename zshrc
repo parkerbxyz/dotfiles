@@ -38,19 +38,19 @@ fi
 eval "$(thefuck --alias oops)"
 
 # octo-cli (https://github.com/octo-cli/octo-cli)
-if command -v octo 1>/dev/null 2>&1; then
+if command -v octo &>/dev/null; then
   # enable shell completion
   eval "$(octo --install-completions)"
 fi
 
 # rbenv (https://github.com/rbenv/rbenv)
-if command -v rbenv 1>/dev/null 2>&1; then
+if command -v rbenv &>/dev/null; then
   # load rbenv automatically
   eval "$(rbenv init -)"
 fi
 
 # pyenv (https://github.com/pyenv/pyenv)
-if command -v pyenv 1>/dev/null 2>&1; then
+if command -v pyenv &>/dev/null; then
   # enable shims and autocompletion
   eval "$(pyenv init -)"
   # silence pyenv brew doctor warnings
@@ -58,13 +58,13 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 # nodenv (https://github.com/nodenv/nodenv)
-if command -v nodenv 1>/dev/null 2>&1; then
+if command -v nodenv &>/dev/null; then
   # load nodenv automatically
   eval "$(nodenv init -)"
 fi
 
 # Pipenv (https://github.com/pypa/pipenv)
-if command -v pipenv 1>/dev/null 2>&1; then
+if command -v pipenv &>/dev/null; then
   # respect pyenv’s global and local Python versions
   export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
   # enable shell completion
