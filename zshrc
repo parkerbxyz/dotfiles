@@ -8,18 +8,6 @@ setopt correct
 # smartcase tab completion
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 
-# Homebrew formulae with executables in /usr/local/sbin
-export PATH="/usr/local/sbin:$PATH"
-
-# Homebrew completions (https://docs.brew.sh/Shell-Completion)
-if type brew &>/dev/null; then
-  # get the Homebrew-managed zsh site-functions on FPATH
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-  # enable the default zsh completions
-  autoload -Uz compinit
-  compinit
-fi
-
 # zsh-syntax-highlighting (https://github.com/zsh-users/zsh-syntax-highlighting)
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -33,6 +21,18 @@ alias ls="ls -G"
 
 # Set default editor
 export EDITOR="code --wait"
+
+# Homebrew formulae with executables in /usr/local/sbin
+export PATH="/usr/local/sbin:$PATH"
+
+# Homebrew completions (https://docs.brew.sh/Shell-Completion)
+if type brew &>/dev/null; then
+  # get the Homebrew-managed zsh site-functions on FPATH
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+  # enable the default zsh completions
+  autoload -Uz compinit
+  compinit
+fi
 
 # thefuck (https://github.com/nvbn/thefuck)
 eval "$(thefuck --alias oops)"
