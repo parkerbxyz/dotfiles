@@ -1,20 +1,26 @@
-#!/bin/sh
-set -e
+#!/bin/bash
+#
+# Install VS Code extensions
 
-if ! command -v code >/dev/null
-then
+if ! command -v code >/dev/null; then
   echo "Install VS Code first!" >&2
   exit 1
 fi
 
-EXTENSIONS="$(code --list-extensions)"
+# Set vscode-extensions path
+extensions="${BASH_SOURCE%/*}/../vscode-extensions"
 
-for EXTENSION in $(cat $(dirname $0)/../vscode-extensions)
-do
-  if echo "$EXTENSIONS" | grep -q "$EXTENSION"
-  then
-    echo "Extension '$EXTENSION' is already installed."
+# Get list of installed VS Code extensions
+installed_extensions="$(code --list-extensions)"
+
+# Iterate through each line of vscode-extensions
+while IFS= read -r extension; do
+  # Check if extension is already installed
+  if [[ "$installed_extensions" == *"$extension"* ]]; then
+    echo "Extension '$extension' is already installed."
   else
-    code --install-extension "$EXTENSION"
+    # Install the extension
+    #code --install-extension "$extension"
+    echo "Extension '$extension' is not installed."
   fi
-done
+done <"$extensions"
