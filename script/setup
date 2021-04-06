@@ -8,11 +8,9 @@ cd "${BASH_SOURCE%/*}/.." || exit
 # Set $DOTFILESDIR to the absolute path of the working directory
 DOTFILESDIR=$(pwd -P)
 
-# Set starship.toml location
+# Set paths for dotfiles outside of $HOME
+ZOOM="/Library/Managed Preferences/"
 STARSHIP="$HOME/.config/"
-
-# Set VS Code settings.json location
-# https://code.visualstudio.com/docs/getstarted/settings#_settings-file-locations
 case "$OSTYPE" in
 "darwin"*) VSCODE="$HOME/Library/Application Support/Code/User/" ;; # macOS
 "linux"*) VSCODE="$HOME/.config/Code/User/" ;;                      # Linux
@@ -35,6 +33,7 @@ for DOTFILE in *; do
 
   # Configure dotfile-specific paths
   case "$DOTFILE" in
+  *zoom*) HOMEFILE="/Library/Managed Preferences/$DOTFILE" && mkdir -p "$ZOOM" ;;
   *starship*) HOMEFILE="$STARSHIP/$DOTFILE" && mkdir -p "$STARSHIP" ;;
   *vscode-settings*) HOMEFILE="$VSCODE/settings.json" && mkdir -p "$VSCODE" ;;
   esac
