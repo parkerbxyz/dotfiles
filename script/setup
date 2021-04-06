@@ -1,31 +1,48 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Install all dotfiles into the home directory
 
-DOTFILESDIRREL=$(dirname "$0")
-cd "$DOTFILESDIRREL"/.. || exit
+# Go up to the parent of the script directory
+cd "${BASH_SOURCE%/*}/.." || exit
+
+# Set $DOTFILESDIR to the absolute path of the working directory
 DOTFILESDIR=$(pwd -P)
 
-VSCODE="$HOME/Library/Application Support/Code/User"
+# Set VS Code settings.json location
+# https://code.visualstudio.com/docs/getstarted/settings#_settings-file-locations
+case "$OSTYPE" in
+"darwin"*) VSCODE="$HOME/Library/Application Support/Code/User" ;; # macOS
+"linux"*) VSCODE="$HOME/.config/Code/User/" ;;                     # Linux
+esac
 
+# Include filenames beginning with a ‘.’ in the results of filename expansion
+shopt -s dotglob
+
+# Iterate over dotfiles
 for DOTFILE in *; do
-  HOMEFILE="$HOME/.$DOTFILE"
-  [ -d "$DOTFILE" ] && DOTFILE="$DOTFILE/"
+  HOMEFILE="$HOME/$DOTFILE"
+  # Append ‘/’ to the name of directories
+  [[ -d "$DOTFILE" ]] && DOTFILE+="/"
   DIRFILE="$DOTFILESDIR/$DOTFILE"
 
-  echo "$DOTFILE" | grep -E -q '(^script/$|\.txt$|\.md$)' && continue
+  # Skip the script/ directory, LICENSE, and any .txt or .md files
+  echo "$DOTFILE" | grep -E -q '(^script\/$|^LICENSE$|\.txt$|\.md$)' && continue
+
+  # Configure VSCODE dotfiles
   echo "$DOTFILE" | grep -q 'vscode-settings' &&
-       HOMEFILE="$VSCODE/settings.json" &&
-       mkdir -p "$VSCODE"
+    # Set VS Code settings path
+    HOMEFILE="$VSCODE/settings.json" &&
+    # Create VS Code settings directory
+    mkdir -p "$VSCODE"
 
-  echo "$DOTFILE" | grep -q '\.sh' &&
-       HOMEFILE="$HOME/.$(echo "$DOTFILE" | sed -e 's/\.sh//')"
-
-  if [ -L "$HOMEFILE" ] && ! [ -d "$DOTFILE" ]
-  then
+  # If $HOMEFILE is a symbolic link and $DOTFILE is not a directory
+  if [[ -L "$HOMEFILE" ]] && ! [[ -d "$DOTFILE" ]]; then
+    # Create symbolic link to file
     ln -sfv "$DIRFILE" "$HOMEFILE"
   else
+    # Remove $HOMEFILE
     rm -rv "$HOMEFILE" 2>/dev/null
+    # Create symbolic link to directory
     ln -sv "$DIRFILE" "$HOMEFILE"
   fi
 done
