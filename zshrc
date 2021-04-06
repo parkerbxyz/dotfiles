@@ -75,5 +75,5 @@ fi
 test -f "$HOME/.trainingmanualrc" && source "$HOME/.trainingmanualrc"
 
 # starship (https://github.com/starship/starship)
-export STARSHIP_CONFIG=$HOME/.starship
+export STARSHIP_CONFIG=$HOME/.starship.toml
 eval "$(starship init zsh)"
