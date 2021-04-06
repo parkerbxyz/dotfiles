@@ -11,7 +11,7 @@ DOTFILESDIR=$(pwd -P)
 # Set VS Code settings.json location
 # https://code.visualstudio.com/docs/getstarted/settings#_settings-file-locations
 case "$OSTYPE" in
-"darwin"*) VSCODE="$HOME/Library/Application Support/Code/User" ;; # macOS
+"darwin"*) VSCODE="$HOME/Library/Application Support/Code/User/" ;; # macOS
 "linux"*) VSCODE="$HOME/.config/Code/User/" ;;                     # Linux
 esac
 
