@@ -10,14 +10,10 @@ DOTFILESDIR=$(pwd -P)
 
 # Set paths for dotfiles outside of $HOME
 STARSHIP="$HOME/.config/"
+ZOOM="/Library/Managed Preferences/"
 case "$OSTYPE" in
-"darwin"*) # macOS
-  VSCODE="$HOME/Library/Application Support/Code/User/"
-  ZOOM="/Library/Managed Preferences/"
-  ;;
-"linux"*) # Linux
-  VSCODE="$HOME/.config/Code/User/"
-  ;;
+"darwin"*) VSCODE="$HOME/Library/Application Support/Code/User/" ;; # macOS
+"linux"*) VSCODE="$HOME/.config/Code/User/" ;;                      # Linux
 esac
 
 # Include filenames beginning with a ‘.’ in the results of filename expansion
@@ -37,9 +33,14 @@ for DOTFILE in *; do
 
   # Configure dotfile-specific paths
   case "$DOTFILE" in
-  *zoom*) HOMEFILE="/Library/Managed Preferences/$DOTFILE" && mkdir -p "$ZOOM" ;;
   *starship*) HOMEFILE="$STARSHIP/$DOTFILE" && mkdir -p "$STARSHIP" ;;
   *vscode-settings*) HOMEFILE="$VSCODE/settings.json" && mkdir -p "$VSCODE" ;;
+  *zoom*)
+    # Skip if not running on macOS
+    [[ "$OSTYPE" != darwin* ]] && continue
+    HOMEFILE="/Library/Managed Preferences/$DOTFILE"
+    mkdir -p "$ZOOM"
+    ;;
   esac
 
   # If $HOMEFILE is a symbolic link and $DOTFILE is not a directory
