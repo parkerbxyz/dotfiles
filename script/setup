@@ -8,6 +8,9 @@ cd "${BASH_SOURCE%/*}/.." || exit
 # Set $DOTFILESDIR to the absolute path of the working directory
 DOTFILESDIR=$(pwd -P)
 
+# Set starship.toml location
+STARSHIP="$HOME/.config/"
+
 # Set VS Code settings.json location
 # https://code.visualstudio.com/docs/getstarted/settings#_settings-file-locations
 case "$OSTYPE" in
@@ -26,14 +29,13 @@ for DOTFILE in *; do
   DIRFILE="$DOTFILESDIR/$DOTFILE"
 
   # Skip the script/ directory, LICENSE, and any .txt or .md files
-  echo "$DOTFILE" | grep -E -q '(^script\/$|^LICENSE$|\.txt$|\.md$)' && continue
+  [[ $DOTFILE =~ (^script\/$|^LICENSE$|\.txt$|\.md$) ]] && continue
 
-  # Configure VSCODE dotfiles
-  echo "$DOTFILE" | grep -q 'vscode-settings' &&
-    # Set VS Code settings path
-    HOMEFILE="$VSCODE/settings.json" &&
-    # Create VS Code settings directory
-    mkdir -p "$VSCODE"
+  # Configure dotfile-specific paths
+  case "$DOTFILE" in
+  *starship*) HOMEFILE="$STARSHIP/$DOTFILE" && mkdir -p "$STARSHIP" ;;
+  *vscode-settings*) HOMEFILE="$VSCODE/settings.json" && mkdir -p "$VSCODE" ;;
+  esac
 
   # If $HOMEFILE is a symbolic link and $DOTFILE is not a directory
   if [[ -L "$HOMEFILE" ]] && ! [[ -d "$DOTFILE" ]]; then
