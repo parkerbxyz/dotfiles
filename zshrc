@@ -71,7 +71,7 @@ if command -v pipenv &>/dev/null; then
   eval "$(pipenv --completion)"
 fi
 
-# added by github/training-manual class setup
+# Added by github/training-manual class setup
 test -f "$HOME/.trainingmanualrc" && source "$HOME/.trainingmanualrc"
 
 # starship (https://github.com/starship/starship)
