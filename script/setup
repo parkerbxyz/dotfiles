@@ -9,11 +9,15 @@ cd "${BASH_SOURCE%/*}/.." || exit
 DOTFILESDIR=$(pwd -P)
 
 # Set paths for dotfiles outside of $HOME
-ZOOM="/Library/Managed Preferences/"
 STARSHIP="$HOME/.config/"
 case "$OSTYPE" in
-"darwin"*) VSCODE="$HOME/Library/Application Support/Code/User/" ;; # macOS
-"linux"*) VSCODE="$HOME/.config/Code/User/" ;;                      # Linux
+"darwin"*) # macOS
+  VSCODE="$HOME/Library/Application Support/Code/User/"
+  ZOOM="/Library/Managed Preferences/"
+  ;;
+"linux"*) # Linux
+  VSCODE="$HOME/.config/Code/User/"
+  ;;
 esac
 
 # Include filenames beginning with a ‘.’ in the results of filename expansion
