@@ -3,7 +3,7 @@
 # Install all dotfiles into the home directory
 
 # Go up to the parent of the script directory
-cd "${BASH_SOURCE%/*}/.." || exit
+cd "$(dirname "$0")/.." || exit
 
 # Set $DOTFILESDIR to the absolute path of the working directory
 DOTFILESDIR=$(pwd -P)
