@@ -4,13 +4,16 @@
 
 cd "$(dirname "$0")"/.. || exit
 
-script/macos
+# Only run on macOS
+[[ "$OSTYPE" == darwin* ]] && {
+  script/macos
+  script/terminal
+}
+
 script/symlinks
-script/terminal
 script/install-vscode-extensions
 
 # use zsh as the default shell
-if [ "$SHELL" != "/bin/zsh" ]
-then
+if [ "$SHELL" != "/bin/zsh" ]; then
   chsh -s /bin/zsh
 fi
