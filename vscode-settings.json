@@ -37,7 +37,7 @@
   "shellcheck.enableQuickFix": true,
   "git.enableCommitSigning": true,
   "[shellscript]": {
-    "editor.rulers": [80]
+    "editor.rulers": [100]
   },
   "explorer.confirmDelete": false,
   "editor.minimap.renderCharacters": false
