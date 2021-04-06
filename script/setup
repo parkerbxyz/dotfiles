@@ -15,7 +15,7 @@ STARSHIP="$HOME/.config/"
 # https://code.visualstudio.com/docs/getstarted/settings#_settings-file-locations
 case "$OSTYPE" in
 "darwin"*) VSCODE="$HOME/Library/Application Support/Code/User/" ;; # macOS
-"linux"*) VSCODE="$HOME/.config/Code/User/" ;;                     # Linux
+"linux"*) VSCODE="$HOME/.config/Code/User/" ;;                      # Linux
 esac
 
 # Include filenames beginning with a ‘.’ in the results of filename expansion
@@ -23,9 +23,11 @@ shopt -s dotglob
 
 # Iterate over dotfiles
 for DOTFILE in *; do
+  # Set linked dotfile path
   HOMEFILE="$HOME/$DOTFILE"
   # Append ‘/’ to the name of directories
   [[ -d "$DOTFILE" ]] && DOTFILE+="/"
+  # Set absolute dotfile path
   DIRFILE="$DOTFILESDIR/$DOTFILE"
 
   # Skip the script/ directory, LICENSE, and any .txt or .md files
