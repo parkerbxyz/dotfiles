@@ -34,9 +34,6 @@ if type brew &>/dev/null; then
   compinit
 fi
 
-# thefuck (https://github.com/nvbn/thefuck)
-eval "$(thefuck --alias oops)"
-
 # octo-cli (https://github.com/octo-cli/octo-cli)
 if command -v octo &>/dev/null; then
   # enable shell completion
