@@ -8,18 +8,25 @@ cd "$(dirname "$0")/.." || exit
 # Set $DOTFILESDIR to the "physical" path of the working directory
 DOTFILESDIR=$(pwd -P)
 
-# Set paths for dotfiles outside of $HOME
-STARSHIP="$HOME/.config/"
-ZOOM="/Library/Managed Preferences/"
+# Determine operating system
 case "$OSTYPE" in
-"darwin"*) VSCODE="$HOME/Library/Application Support/Code/User/" ;; # macOS
-"linux"*) VSCODE="$HOME/.config/Code/User/" ;;                      # Linux
+"darwin"*) : "macOS" ;;
+"linux"*) : "Linux" ;;
 esac
+OPERATING_SYSTEM="$_" # Set variable from case statement
+
+# Set paths for dotfiles outside of $HOME
+if [[ $OPERATING_SYSTEM == macOS ]]; then
+  VSCODE="$HOME/Library/Application Support/Code/User/"
+  ZOOM="/Library/Preferences/"
+elif [[ $OPERATING_SYSTEM == Linux ]]; then
+  VSCODE="$HOME/.config/Code/User/"
+fi
 
 # Include filenames beginning with a ‘.’ in the results of filename expansion
 shopt -s dotglob
 
-# Iterate over dotfiles
+# Iterate over dotfiles in the root directory
 for DOTFILE in *; do
   # Set linked dotfile path
   HOMEFILE="$HOME/$DOTFILE"
@@ -28,17 +35,16 @@ for DOTFILE in *; do
   # Set absolute dotfile path
   DIRFILE="$DOTFILESDIR/$DOTFILE"
 
-  # Skip the script/ directory, LICENSE, and any .txt or .md files
-  [[ $DOTFILE =~ (^script\/$|^LICENSE$|\.txt$|\.md$) ]] && continue
+  # Skip script/, terminal/, anything that starts with .git, LICENSE, and any .txt or .md files
+  [[ $DOTFILE =~ (^script\/$|^terminal\/$|^\.git|^LICENSE$|\.txt$|\.md$) ]] && continue
 
   # Configure dotfile-specific paths
   case "$DOTFILE" in
-  *starship*) HOMEFILE="$STARSHIP/$DOTFILE" && mkdir -p "$STARSHIP" ;;
   *vscode-settings*) HOMEFILE="$VSCODE/settings.json" && mkdir -p "$VSCODE" ;;
   *zoom*)
-    # Skip if not running on macOS
-    [[ "$OSTYPE" != darwin* ]] && continue
-    HOMEFILE="/Library/Managed Preferences/$DOTFILE"
+    # Skip if not $ZOOM is empty or unset
+    [[ -z "${ZOOM+x}" ]] && continue
+    HOMEFILE="$ZOOM/$DOTFILE"
     mkdir -p "$ZOOM"
     ;;
   esac
