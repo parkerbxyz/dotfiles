@@ -8,20 +8,20 @@ cd "$(dirname "$0")/.." || exit
 # Set $DOTFILESDIR to the "physical" path of the working directory
 DOTFILESDIR=$(pwd -P)
 
-# Determine operating system
+# Set paths for dotfiles outside of $HOME based on operating system
 case "$OSTYPE" in
-"darwin"*) : "macOS" ;;
-"linux"*) : "Linux" ;;
-esac
-OPERATING_SYSTEM="$_" # Set variable from case statement
-
-# Set paths for dotfiles outside of $HOME
-if [[ $OPERATING_SYSTEM == macOS ]]; then
+"darwin"*) # macOS
   VSCODE="$HOME/Library/Application Support/Code/User"
   ZOOM="/Library/Preferences"
-elif [[ $OPERATING_SYSTEM == Linux ]]; then
+  ;;
+"linux"*) # Linux
   VSCODE="$HOME/.config/Code/User"
-fi
+  ;;
+*) # Anything else
+  printf '%s\n' "Unsupported OS detected, aborting..." >&2
+  exit 1
+  ;;
+esac
 
 # Include filenames beginning with a ‘.’ in the results of filename expansion
 shopt -s dotglob
