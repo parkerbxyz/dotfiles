@@ -1,0 +1,6 @@
+# Files with secrets
+.config/gh/hosts.yml
+.config/exercism/user.json
+
+# Non-configuration files
+.config/gh/state.yml
