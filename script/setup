@@ -35,8 +35,9 @@ for DOTFILE in *; do
   # Set absolute dotfile path
   DIRFILE="$DOTFILESDIR/$DOTFILE"
 
-  # Skip script/, terminal/, anything that starts with .git, LICENSE, and any .txt or .md files
-  [[ $DOTFILE =~ (^script\/$|^terminal\/$|^\.git|^LICENSE$|\.txt$|\.md$) ]] && continue
+  # Skip script/, terminal/, .git/, .gitignore, LICENSE, and any .txt or .md files
+  [[ $DOTFILE =~ (^script\/$|^terminal\/$|^\.git\/$|^.gitignore$|^LICENSE$|\.txt$|\.md$) ]] &&
+    continue
 
   # Configure dotfile-specific paths
   case "$DOTFILE" in
