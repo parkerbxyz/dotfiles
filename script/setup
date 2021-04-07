@@ -42,11 +42,9 @@ for DOTFILE in *; do
   # Configure dotfile-specific paths
   case "$DOTFILE" in
   *vscode-settings*) HOMEFILE="$VSCODE/settings.json" && mkdir -p "$VSCODE" ;;
-  *zoom*)
-    # Skip if not $ZOOM is empty or unset
+  *zoom*) # Skip if $ZOOM is empty or unset
     [[ -z "${ZOOM+x}" ]] && continue
-    HOMEFILE="$ZOOM/$DOTFILE"
-    mkdir -p "$ZOOM"
+    HOMEFILE="$ZOOM/$DOTFILE" && mkdir -p "$ZOOM"
     ;;
   esac
 
