@@ -19,7 +19,6 @@
 [core]
 	autocrlf = input
 	editor = code --wait
-	excludesFile = $HOME/.gitignore_global
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
