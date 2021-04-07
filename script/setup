@@ -17,10 +17,10 @@ OPERATING_SYSTEM="$_" # Set variable from case statement
 
 # Set paths for dotfiles outside of $HOME
 if [[ $OPERATING_SYSTEM == macOS ]]; then
-  VSCODE="$HOME/Library/Application Support/Code/User/"
-  ZOOM="/Library/Preferences/"
+  VSCODE="$HOME/Library/Application Support/Code/User"
+  ZOOM="/Library/Preferences"
 elif [[ $OPERATING_SYSTEM == Linux ]]; then
-  VSCODE="$HOME/.config/Code/User/"
+  VSCODE="$HOME/.config/Code/User"
 fi
 
 # Include filenames beginning with a ‘.’ in the results of filename expansion
