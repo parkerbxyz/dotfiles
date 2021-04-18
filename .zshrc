@@ -29,10 +29,10 @@ export PATH="/usr/local/sbin:$PATH"
 if type brew &>/dev/null; then
   # get the Homebrew-managed zsh site-functions on FPATH
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-  # enable the default zsh completions
-  autoload -Uz compinit
-  compinit
 fi
+
+# Enable the default zsh completions
+autoload -Uz compinit && compinit
 
 # octo-cli (https://github.com/octo-cli/octo-cli)
 if command -v octo &>/dev/null; then
