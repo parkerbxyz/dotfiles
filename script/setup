@@ -2,8 +2,15 @@
 #
 # Install all dotfiles into the home directory
 
+# If $0 exists and is a symbolic link
+if [ -L "$0" ]; then
+  SCRIPT_SETUP="$(readlink "$0")"
+else
+  SCRIPT_SETUP="$0"
+fi
+
 # Go up to the parent of the script directory
-cd "$(dirname "$0")/.." || exit
+cd "$(dirname "$SCRIPT_SETUP")/.." || exit
 
 # Set $DOTFILESDIR to the "physical" path of the working directory
 DOTFILESDIR=$(pwd -P)
@@ -59,3 +66,15 @@ for DOTFILE in *; do
     ln -sv "$DIRFILE" "$HOMEFILE"
   fi
 done
+
+# Setup ~/.dotfiles symlink if missing
+HOMEDOTFILES="$HOME/.dotfiles"
+if [ "$DOTFILESDIR" != "$HOMEDOTFILES" ]
+then
+  ln -sf "$DOTFILESDIR" "$HOMEDOTFILES"
+fi
+
+# Fix up permissions for Codespaces
+if [ -n "$CODESPACES" ]; then
+  chmod 700 /workspaces
+fi

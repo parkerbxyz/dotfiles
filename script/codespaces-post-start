@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# Run by github/github codespaces after starting
+
+# Always use ZSH as default shell
+if ! grep -q "root.*/bin/zsh" /etc/passwd
+then
+  chsh -s /bin/zsh root
+fi
