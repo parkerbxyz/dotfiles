@@ -1,9 +1,16 @@
-#!/bin/sh
+#!/usr/bin/env bash
 #
 # Run by github/github codespaces after starting
 
 # Always use ZSH as default shell
-if ! grep -q "root.*/bin/zsh" /etc/passwd
-then
+if ! grep -q "root.*/bin/zsh" /etc/passwd; then
   chsh -s /bin/zsh root
 fi
+
+# Install ZSH tools
+apt install -y \
+  zsh-autosuggestions \
+  zsh-syntax-highlighting
+
+# Install Starship
+curl -fsSL https://starship.rs/install.sh | bash
