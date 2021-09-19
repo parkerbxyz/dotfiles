@@ -43,8 +43,6 @@
   "editor.minimap.renderCharacters": false,
   "terminal.integrated.profiles.osx": { "zsh": { "path": "zsh" } },
   "terminal.integrated.profiles.linux": { "zsh": { "path": "zsh" } },
-  "terminal.integrated.shell.osx": "zsh",
-  "terminal.integrated.shell.linux": "zsh",
   "github.copilot.enable": {
     "*": true,
     "plaintext": false,
