@@ -14,4 +14,4 @@ apt install -y \
   zsh-syntax-highlighting
 
 # Install Starship
-curl -fsSL https://starship.rs/install.sh | bash
+sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
