@@ -6,3 +6,5 @@ GITHUB_USERNAME=$(git config github.user)
 
 ln -s ~/github.com/"$GITHUB_USERNAME"/exercism ~/Exercism
 ln -s ~/.dotfiles ~/github.com/"$GITHUB_USERNAME"/dotfiles
+ln -s "$(brew --prefix)/share/zsh-autosuggestions" ~/.zsh/zsh-autosuggestions
+ln -s "$(brew --prefix)/share/zsh-syntax-highlighting" ~/.zsh/zsh-syntax-highlighting

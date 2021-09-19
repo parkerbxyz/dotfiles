@@ -9,15 +9,15 @@ setopt correct
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 
 # zsh-syntax-highlighting (https://github.com/zsh-users/zsh-syntax-highlighting)
-ZSH_SYNTAX_HIGHLIGHTING="$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-if test -f "$ZSH_SYNTAX_HIGHLIGHTING"; then
-  source "$ZSH_SYNTAX_HIGHLIGHTING"
+ZSH_SYNTAX_HIGHLIGHTING_PATH="$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+if test -f "$ZSH_SYNTAX_HIGHLIGHTING_PATH"; then
+  source "$ZSH_SYNTAX_HIGHLIGHTING_PATH"
 fi
 
 # zsh-autosuggestions (https://github.com/zsh-users/zsh-autosuggestions)
-ZSH_AUTOSUGGESTIONS="$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-if test -f "$ZSH_AUTOSUGGESTIONS"; then
-  source "$ZSH_AUTOSUGGESTIONS"
+ZSH_AUTOSUGGESTIONS_PATH="$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
+if test -f "$ZSH_AUTOSUGGESTIONS_PATH"; then
+  source "$ZSH_AUTOSUGGESTIONS_PATH"
   ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
   ZSH_AUTOSUGGEST_HISTORY_IGNORE="git *|cd *"
 fi
