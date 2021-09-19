@@ -4,7 +4,7 @@
   "workbench.startupEditor": "newUntitledFile",
   "editor.scrollBeyondLastLine": false,
   "editor.fontSize": 14,
-  "editor.fontFamily": "'FiraCode Nerd Font', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "'FiraCode Nerd Font Mono Retina', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.markdownlint": true
