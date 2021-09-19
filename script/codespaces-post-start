@@ -9,6 +9,7 @@ fi
 
 # Install ZSH tools
 apt install -y \
+  fonts-firacode \
   zsh-autosuggestions \
   zsh-syntax-highlighting
 
