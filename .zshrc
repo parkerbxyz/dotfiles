@@ -9,12 +9,18 @@ setopt correct
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 
 # zsh-syntax-highlighting (https://github.com/zsh-users/zsh-syntax-highlighting)
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_SYNTAX_HIGHLIGHTING="$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+if test -f "$ZSH_SYNTAX_HIGHLIGHTING"; then
+  source "$ZSH_SYNTAX_HIGHLIGHTING"
+fi
 
 # zsh-autosuggestions (https://github.com/zsh-users/zsh-autosuggestions)
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
-ZSH_AUTOSUGGEST_HISTORY_IGNORE="git *|cd *"
+ZSH_AUTOSUGGESTIONS="$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+if test -f "$ZSH_AUTOSUGGESTIONS"; then
+  source "$ZSH_AUTOSUGGESTIONS"
+  ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+  ZSH_AUTOSUGGEST_HISTORY_IGNORE="git *|cd *"
+fi
 
 # Enable colorized output for `ls` command
 alias ls="ls -G"
