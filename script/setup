@@ -74,7 +74,16 @@ then
   ln -sf "$DOTFILESDIR" "$HOMEDOTFILES"
 fi
 
-# Fix up permissions for Codespaces
+# Codespaces configuration
 if [ -n "$CODESPACES" ]; then
+  # Fix up permissions for Codespaces
   chmod 700 /workspaces
+
+  # Install ZSH tools
+  apt install -y \
+    zsh-autosuggestions \
+    zsh-syntax-highlighting
+
+  # Install Starship
+  sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
 fi
