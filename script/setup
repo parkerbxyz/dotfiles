@@ -79,13 +79,23 @@ if [ -n "$CODESPACES" ]; then
   # Fix up permissions for Codespaces
   chmod 700 /workspaces
 
-  # Install ZSH tools
-  echo "Installing ZSH tools..."
-  sudo apt install -y \
-    zsh-autosuggestions \
-    zsh-syntax-highlighting
+  Install ZSH tools
+  # echo "Installing ZSH tools..."
+  # sudo apt install -y \
+    # zsh-autosuggestions \
+    # zsh-syntax-highlighting
 
-  # Install Starship
-  echo "Installing Starship..."
-  sudo sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
+  Install Starship
+  # echo "Installing Starship..."
+  # sudo sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
 fi
+
+# Install ZSH tools
+echo "Installing ZSH tools..."
+sudo apt install -y \
+  zsh-autosuggestions \
+  zsh-syntax-highlighting
+
+# Install Starship
+echo "Installing Starship..."
+sudo sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
