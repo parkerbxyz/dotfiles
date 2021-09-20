@@ -40,7 +40,6 @@
   "explorer.confirmDelete": false,
   "editor.minimap.renderCharacters": false,
   "terminal.integrated.defaultProfile.osx": "zsh",
-  "terminal.integrated.defaultProfile.linux": "zsh",
   "github.copilot.enable": {
     "*": true,
     "plaintext": false,
