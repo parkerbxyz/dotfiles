@@ -80,10 +80,10 @@ if [ -n "$CODESPACES" ]; then
   chmod 700 /workspaces
 
   # Install ZSH tools
-  apt install -y \
+  sudo apt install -y \
     zsh-autosuggestions \
     zsh-syntax-highlighting
 
   # Install Starship
-  sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
+  sudo sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
 fi
