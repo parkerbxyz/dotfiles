@@ -90,4 +90,6 @@ fi
 test -f "$HOME/.trainingmanualrc" && source "$HOME/.trainingmanualrc"
 
 # starship (https://github.com/starship/starship)
-eval "$(starship init zsh)"
+if command -v starship &>/dev/null; then
+  eval "$(starship init zsh)"
+fi
