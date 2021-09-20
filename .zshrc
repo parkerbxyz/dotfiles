@@ -39,7 +39,9 @@ alias ls="ls -G"
 export EDITOR="code --wait"
 
 # Homebrew formulae with executables in /usr/local/sbin
-export PATH="/usr/local/sbin:$PATH"
+if type brew &>/dev/null; then
+  export PATH="/usr/local/sbin:$PATH"
+fi
 
 # Homebrew completions (https://docs.brew.sh/Shell-Completion)
 if type brew &>/dev/null; then
