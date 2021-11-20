@@ -14,7 +14,7 @@
     "MD001": true,
     "MD024": false,
     "MD026": { "punctuation": ".,;:!" },
-    "MD033": { "allowed_elements": ["kbd", "details", "summary", "sup", "iframe"] },
+    "MD033": { "allowed_elements": ["kbd", "details", "summary", "sup", "iframe", "br"] },
     "MD036": true,
     "MD041": false
   },
