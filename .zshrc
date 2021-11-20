@@ -82,7 +82,7 @@ if command -v pipenv &>/dev/null; then
   # respect pyenv’s global and local Python versions
   export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
   # enable shell completion
-  eval "$(pipenv --completion)"
+  eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
 fi
 
 # Added by github/training-manual class setup
