@@ -42,7 +42,8 @@
   "terminal.integrated.defaultProfile.osx": "zsh",
   "github.copilot.enable": {
     "*": true,
-    "plaintext": false,
+    "yaml": true,
+    "plaintext": true,
     "markdown": false
   }
 }
