@@ -9,7 +9,7 @@
 [push]
 	default = simple
 [pull]
-	ff = only
+	rebase = true
 [fetch]
 	prune = true
 [init]
