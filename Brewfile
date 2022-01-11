@@ -6,7 +6,7 @@ tap "vitorgalvao/tiny-scripts"
 
 # Formulae
 brew "archey"                   # Graphical system information display for macOS
-brew "bats"                     # TAP-compliant test framework for Bash scripts
+brew "bats-core"                # TAP-compliant test framework for Bash scripts (Bash Automated Testing System)
 brew "cowsay"                   # Configurable talking characters in ASCII art
 brew "exercism"                 # Command-line tool to interact with exercism.io
 brew "gh"                       # GitHub command-line tool
