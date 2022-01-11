@@ -47,6 +47,9 @@ cask "brave-browser"            # Secure, fast & private web browser with adbloc
 cask "cryptomator"              # Client-side encryption of your files in the cloud
 cask "deckset"                  # Creates great-looking slides from simple Markdown files
 cask "discord"                  # Voice and text chat software
+cask "elgato-camera-hub"        # Elgato Facecam configuration tool
+cask "elgato-control-center"    # Control your Elgato Key Lights
+cask "elgato-wave-link"         # Audio mixing software for Elgato Wave microphones
 cask "encryptme"                # VPN and encryption software
 cask "firefox"                  # Fast and secure open source web browser
 cask "font-fira-code-nerd-font" # Monospaced font with programming ligatures
