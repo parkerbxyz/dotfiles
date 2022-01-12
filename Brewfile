@@ -46,10 +46,10 @@ brew "zsh-syntax-highlighting"  # Fish shell like syntax highlighting for zsh
 
 # Casks
 cask "1password"                # Password manager
+cask "1password-cli"            # 1Password command-line tool
 cask "aerial"                   # Apple TV Aerial Screensaver for Mac
 cask "alfred"                   # Application launcher and productivity application
 cask "appcleaner"               # Thoroughly uninstall unwanted apps
-cask "atom"                     # The hackable text editor
 cask "brave-browser"            # Secure, fast & private web browser with adblocker
 cask "cryptomator"              # Client-side encryption of your files in the cloud
 cask "deckset"                  # Creates great-looking slides from simple Markdown files
@@ -58,32 +58,34 @@ cask "elgato-camera-hub"        # Elgato Facecam configuration tool
 cask "elgato-control-center"    # Control your Elgato Key Lights
 cask "elgato-wave-link"         # Audio mixing software for Elgato Wave microphones
 cask "encryptme"                # VPN and encryption software
-cask "firefox"                  # Fast and secure open source web browser
 cask "font-fira-code-nerd-font" # Monospaced font with programming ligatures
 cask "fujitsu-scansnap-home"    # One stop for all ScanSnap productivity
 cask "github"                   # Simple collaboration from your desktop
 cask "google-drive"             # Access and sync your content from any device
-cask "hazeover"                 # Turn distractions down and focus on your current task
+cask "gpg-suite"                # Tools to protect your emails and files
 cask "imageoptim"               # Tool to optimize images to a smaller size
 cask "insomnia"                 # Cross-platform GraphQL and REST client
-cask "latest"                   # Open source macOS software update checker
+cask "kindle"                   # Interface for reading and syncing eBooks
 cask "krisp"                    # Removes background noise and echo from meetings
-cask "latest"                   # Utility that shows the latest app updates
-cask "logitech-camera-settings" # Adjust Logitech Camera Settings
+cask "latest"                   # Open source macOS software update checker
 cask "logitech-options"         # Customize Logitech device settings
-cask "malwarebytes"             # Anti-malware software
 cask "mark-text"                # Simple and Elegant Markdown Editor
 cask "messenger"                # Native desktop app for Messenger (formerly Facebook Messenger)
 cask "microsoft-teams"          # Microsoft Teams
-cask "mousepose"                # The mouse pointer highlighting tool
 cask "nteract"                  # Interactive computing suite
 cask "numi"                     # Beautiful calculator app for macOS
+cask "obs"                      # Open-source software for live streaming and screen recording (Open Broadcaster Software)
+cask "octoscreen"               # A screensaver with Octicons
 cask "osxfuse"                  # Extends macOS by adding support for user space file systems
 cask "pdf-expert"               # PDF editor and reader for Mac
+cask "rectangle"                # Move and resize windows using keyboard shortcuts or snap areas
+cask "rocket"                   # Emoji picker
 cask "signal"                   # Cross-platform encrypted messaging service
+cask "soundsource"              # Sound and audio controller
 cask "timemachineeditor"        # Utility to change the default backup interval of Time Machine
+cask "vanilla"                  # Tool to hide menu bar icons
+cask "visual-studio-code"       # Open-source code editor
 cask "vlc"                      # Free and open source cross-platform multimedia player
-cask "vscodium"                 # Binary releases of VS Code without MS branding/telemetry/licensing
 cask "zoom"                     # Video conferencing software
 
 # Mac App Store
