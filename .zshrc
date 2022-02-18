@@ -5,7 +5,7 @@
 # operating system-specific variables
 case "$OSTYPE" in
 "darwin"*) : $(brew --prefix) ;; # macOS
-"linux"*) : "/usr" ;;             # Linux
+"linux"*) : "/usr" ;;            # Linux
 *) : exit 1 ;;
 esac
 # set the variable from the case statement
@@ -51,12 +51,6 @@ fi
 # Enable the default zsh completions
 autoload -Uz compinit && compinit
 
-# octo-cli (https://github.com/octo-cli/octo-cli)
-if command -v octo &>/dev/null; then
-  # enable shell completion
-  eval "$(octo --install-completions)"
-fi
-
 # rbenv (https://github.com/rbenv/rbenv)
 if command -v rbenv &>/dev/null; then
   # load rbenv automatically
@@ -84,9 +78,6 @@ if command -v pipenv &>/dev/null; then
   # enable shell completion
   eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
 fi
-
-# Added by github/training-manual class setup
-test -f "$HOME/.trainingmanualrc" && source "$HOME/.trainingmanualrc"
 
 # starship (https://github.com/starship/starship)
 if command -v starship &>/dev/null; then
