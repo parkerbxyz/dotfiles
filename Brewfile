@@ -1,7 +1,15 @@
 # Taps
+tap "github/bootstrap"
+tap "github/gh"
+tap "homebrew/bundle"
+tap "homebrew/cask"
 tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "homebrew/services"
+tap "microsoft/git"
+tap "octo-cli/octo"
 tap "vitorgalvao/tiny-scripts"
 
 # Formulae
@@ -89,11 +97,11 @@ cask "vlc"                      # Free and open source cross-platform multimedia
 cask "zoom"                     # Video conferencing software
 
 # Mac App Store
-mas "Bear", id: 1091189122                  # Note-taking app
-mas "Gifski", id: 1351639930                # Convert videos to high-quality GIFs
+mas "Bear", id: 1091189122                  # Markdown note-taking app
+mas "Hush", id: 1544743900                  # Block cookie and tracking nags
+mas "Keystroke Pro", id: 1572206224         # Visualize your key presses
 mas "LG Screen Manager", id: 1142051783     # LG monitor software updates
-mas "Magnet", id: 441258766                 # Window management tool
-mas "Newton", id: 1059655371                # Email client
+mas "Meeter", id: 1510445899                # Join meetings faster
 mas "Redacted", id: 984968384               # Quickly and easily redact parts of an image
 mas "Speedtest", id: 1153157709             # One-click connection testing
 mas "Things", id: 904280696                 # Task manager
