@@ -53,55 +53,57 @@ brew "zsh-autosuggestions"      # Fish-like fast/unobtrusive autosuggestions for
 brew "zsh-syntax-highlighting"  # Fish shell like syntax highlighting for zsh
 
 # Casks
-cask "1password"                # Password manager
-cask "1password-cli"            # 1Password command-line tool
-cask "aerial"                   # Apple TV Aerial Screensaver for Mac
-cask "alfred"                   # Application launcher and productivity application
-cask "appcleaner"               # Thoroughly uninstall unwanted apps
-cask "brave-browser"            # Secure, fast & private web browser with adblocker
-cask "cryptomator"              # Client-side encryption of your files in the cloud
-cask "deckset"                  # Creates great-looking slides from simple Markdown files
-cask "discord"                  # Voice and text chat software
-cask "elgato-camera-hub"        # Elgato Facecam configuration tool
-cask "elgato-control-center"    # Control your Elgato Key Lights
-cask "elgato-wave-link"         # Audio mixing software for Elgato Wave microphones
-cask "encryptme"                # VPN and encryption software
-cask "font-fira-code-nerd-font" # Monospaced font with programming ligatures
-cask "fujitsu-scansnap-home"    # One stop for all ScanSnap productivity
-cask "github"                   # Simple collaboration from your desktop
-cask "google-drive"             # Access and sync your content from any device
-cask "gpg-suite"                # Tools to protect your emails and files
-cask "imageoptim"               # Tool to optimize images to a smaller size
-cask "insomnia"                 # Cross-platform GraphQL and REST client
-cask "kindle"                   # Interface for reading and syncing eBooks
-cask "krisp"                    # Removes background noise and echo from meetings
-cask "latest"                   # Open source macOS software update checker
-cask "logitech-options"         # Customize Logitech device settings
-cask "mark-text"                # Simple and Elegant Markdown Editor
-cask "messenger"                # Native desktop app for Messenger (formerly Facebook Messenger)
-cask "microsoft-teams"          # Microsoft Teams
-cask "nteract"                  # Interactive computing suite
-cask "numi"                     # Beautiful calculator app for macOS
-cask "obs"                      # Open-source software for live streaming and screen recording (Open Broadcaster Software)
-cask "octoscreen"               # A screensaver with Octicons
-cask "osxfuse"                  # Extends macOS by adding support for user space file systems
-cask "pdf-expert"               # PDF editor and reader for Mac
-cask "rectangle"                # Move and resize windows using keyboard shortcuts or snap areas
-cask "rocket"                   # Emoji picker
-cask "signal"                   # Cross-platform encrypted messaging service
-cask "soundsource"              # Sound and audio controller
-cask "timemachineeditor"        # Utility to change the default backup interval of Time Machine
-cask "vanilla"                  # Tool to hide menu bar icons
-cask "visual-studio-code"       # Open-source code editor
-cask "vlc"                      # Free and open source cross-platform multimedia player
-cask "zoom"                     # Video conferencing software
+cask "1password"                  # Password manager
+cask "1password-cli"              # 1Password command-line tool
+cask "aerial"                     # Apple TV Aerial Screensaver for Mac
+cask "alfred"                     # Application launcher and productivity application
+cask "appcleaner"                 # Thoroughly uninstall unwanted apps
+cask "brave-browser"              # Secure, fast & private web browser with adblocker
+cask "cryptomator"                # Client-side encryption of your files in the cloud
+cask "deckset"                    # Creates great-looking slides from simple Markdown files
+cask "discord"                    # Voice and text chat software
+cask "elgato-camera-hub"          # Elgato Facecam configuration tool
+cask "elgato-control-center"      # Control your Elgato Key Lights
+cask "elgato-wave-link"           # Audio mixing software for Elgato Wave microphones
+cask "encryptme"                  # VPN and encryption software
+cask "font-fira-code-nerd-font"   # Monospaced font with programming ligatures
+cask "fujitsu-scansnap-home"      # One stop for all ScanSnap productivity
+cask "github"                     # Simple collaboration from your desktop
+cask "google-drive"               # Access and sync your content from any device
+cask "gpg-suite"                  # Tools to protect your emails and files
+cask "imageoptim"                 # Tool to optimize images to a smaller size
+cask "insomnia"                   # Cross-platform GraphQL and REST client
+cask "kindle"                     # Interface for reading and syncing eBooks
+cask "krisp"                      # Removes background noise and echo from meetings
+cask "latest"                     # Open source macOS software update checker
+cask "logitech-options"           # Customize Logitech device settings
+cask "mark-text"                  # Simple and Elegant Markdown Editor
+cask "messenger"                  # Native desktop app for Messenger (formerly Facebook Messenger)
+cask "microsoft-teams"            # Microsoft Teams
+cask "nteract"                    # Interactive computing suite
+cask "numi"                       # Beautiful calculator app for macOS
+cask "obs"                        # Open-source software for live streaming and screen recording (Open Broadcaster Software)
+cask "octoscreen"                 # A screensaver with Octicons
+cask "osxfuse"                    # Extends macOS by adding support for user space file systems
+cask "pdf-expert"                 # PDF editor and reader for Mac
+cask "rectangle"                  # Move and resize windows using keyboard shortcuts or snap areas
+cask "rocket"                     # Emoji picker
+cask "signal"                     # Cross-platform encrypted messaging service
+cask "soundsource"                # Sound and audio controller
+cask "temurin8"                   # JDK from Adoptium (required to run ubiquiti-unifi-controller)
+cask "timemachineeditor"          # Utility to change the default backup interval of Time Machine
+cask "ubiquiti-unifi-controller"  # Ubiquiti UniFi Network Controller
+cask "vanilla"                    # Tool to hide menu bar icons
+cask "visual-studio-code"         # Open-source code editor
+cask "vlc"                        # Free and open source cross-platform multimedia player
+cask "zoom"                       # Video conferencing software
 
 # Mac App Store
-mas "Bear", id: 1091189122                  # Markdown note-taking app
-mas "Hush", id: 1544743900                  # Block cookie and tracking nags
-mas "Keystroke Pro", id: 1572206224         # Visualize your key presses
-mas "LG Screen Manager", id: 1142051783     # LG monitor software updates
-mas "Meeter", id: 1510445899                # Join meetings faster
-mas "Redacted", id: 984968384               # Quickly and easily redact parts of an image
-mas "Speedtest", id: 1153157709             # One-click connection testing
-mas "Things", id: 904280696                 # Task manager
+mas "Bear", id: 1091189122              # Markdown note-taking app
+mas "Hush", id: 1544743900              # Block cookie and tracking nags
+mas "Keystroke Pro", id: 1572206224     # Visualize your key presses
+mas "LG Screen Manager", id: 1142051783 # LG monitor software updates
+mas "Meeter", id: 1510445899            # Join meetings faster
+mas "Redacted", id: 984968384           # Quickly and easily redact parts of an image
+mas "Speedtest", id: 1153157709         # One-click connection testing
+mas "Things", id: 904280696             # Task manager
