@@ -4,3 +4,4 @@
 
 # Non-configuration files
 .config/gh/state.yml
+.config/raycast/
