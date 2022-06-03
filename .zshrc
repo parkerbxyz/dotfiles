@@ -4,19 +4,19 @@
 # Executes commands at the start of an interactive session.
 #
 
-# operating system-specific variables
+# Operating system-specific variables
 case "$OSTYPE" in
 "darwin"*) : $(brew --prefix) ;; # macOS
 "linux"*) : "/usr" ;;            # Linux
 *) : exit 1 ;;
 esac
-# set the variable from the case statement
+# Set the variable from the case statement
 PREFIX="$_"
 
-# try to correct the spelling of commands
+# Try to correct the spelling of commands
 setopt correct
 
-# smartcase tab completion
+# Smartcase tab completion
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 
 # zsh-syntax-highlighting (https://github.com/zsh-users/zsh-syntax-highlighting)
@@ -81,7 +81,7 @@ if command -v pipenv &>/dev/null; then
   eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
 fi
 
-# starship (https://github.com/starship/starship)
+# Starship (https://github.com/starship/starship)
 if command -v starship &>/dev/null; then
   eval "$(starship init zsh)"
 fi
