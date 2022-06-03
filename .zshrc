@@ -1,8 +1,9 @@
-# Fig pre block. Keep at the top of this file.
-. "$HOME/.fig/shell/zshrc.pre.zsh"
 #
 # Executes commands at the start of an interactive session.
 #
+
+# Fig pre block. Keep at the top of this file.
+. "$HOME/.fig/shell/zshrc.pre.zsh"
 
 # Operating system-specific variables
 case "$OSTYPE" in
