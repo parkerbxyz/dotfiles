@@ -3,7 +3,9 @@
 #
 
 # Fig pre block. Keep at the top of this file.
-. "$HOME/.fig/shell/zshrc.pre.zsh"
+if [[ -z "$CODESPACES" ]]; then
+  . "$HOME/.fig/shell/zshrc.pre.zsh"
+fi
 
 # Operating system-specific variables
 case "$OSTYPE" in
@@ -88,4 +90,6 @@ if command -v starship &>/dev/null; then
 fi
 
 # Fig post block. Keep at the bottom of this file.
-. "$HOME/.fig/shell/zshrc.post.zsh"
+if [[ -z "$CODESPACES" ]]; then
+  . "$HOME/.fig/shell/zshrc.post.zsh"
+fi

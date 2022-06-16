@@ -1,5 +1,7 @@
 # Fig pre block. Keep at the top of this file.
-. "$HOME/.fig/shell/zprofile.pre.zsh"
+if [[ -z "$CODESPACES" ]]; then
+  . "$HOME/.fig/shell/zprofile.pre.zsh"
+fi
 
 # pyenv (https://github.com/pyenv/pyenv)
 if command -v pyenv &>/dev/null; then
@@ -8,4 +10,6 @@ if command -v pyenv &>/dev/null; then
 fi
 
 # Fig post block. Keep at the bottom of this file.
-. "$HOME/.fig/shell/zprofile.post.zsh"
+if [[ -z "$CODESPACES" ]]; then
+  . "$HOME/.fig/shell/zprofile.post.zsh"
+fi
