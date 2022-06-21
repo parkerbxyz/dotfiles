@@ -1,5 +1,5 @@
 {
-  "telemetry.enableTelemetry": false,
+  "telemetry.telemetryLevel": "off",
   "workbench.colorTheme": "GitHub Dark",
   "workbench.startupEditor": "newUntitledFile",
   "editor.codeActionsOnSave": { "source.fixAll.markdownlint": true},
