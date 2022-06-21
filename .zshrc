@@ -89,6 +89,12 @@ if command -v starship &>/dev/null; then
   eval "$(starship init zsh)"
 fi
 
+# 1Password CLI (https://developer.1password.com/docs/cli)
+if command -v op &>/dev/null; then
+  # enable shell completion
+  eval "$(op completion zsh)"; compdef _op op
+fi
+
 # Fig post block. Keep at the bottom of this file.
 if [[ -z "$CODESPACES" ]]; then
   . "$HOME/.fig/shell/zshrc.post.zsh"
