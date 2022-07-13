@@ -2,11 +2,6 @@
 # Executes commands at the start of an interactive session.
 #
 
-# Fig pre block. Keep at the top of this file.
-if [[ -z "$CODESPACES" ]]; then
-  . "$HOME/.fig/shell/zshrc.pre.zsh"
-fi
-
 # Operating system-specific variables
 case "$OSTYPE" in
 "darwin"*) : $(brew --prefix) ;; # macOS
@@ -93,9 +88,4 @@ fi
 if command -v op &>/dev/null; then
   # enable shell completion
   eval "$(op completion zsh)"; compdef _op op
-fi
-
-# Fig post block. Keep at the bottom of this file.
-if [[ -z "$CODESPACES" ]]; then
-  . "$HOME/.fig/shell/zshrc.post.zsh"
 fi
