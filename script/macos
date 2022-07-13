@@ -33,6 +33,10 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 # Enable three finger drag
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -int 1
 
+# Enable full keyboard access for all controls
+# (i.e. enable Tab in modal dialogs)
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
