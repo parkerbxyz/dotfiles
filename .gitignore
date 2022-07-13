@@ -5,3 +5,4 @@
 # Non-configuration files
 .config/gh/state.yml
 .config/raycast/
+.config/configstore/update-notifier-npm-check-updates.json
