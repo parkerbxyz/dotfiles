@@ -39,7 +39,8 @@
   },
   "explorer.confirmDelete": false,
   "editor.minimap.renderCharacters": false,
-  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.defaultProfile.osx": "fish",
+  "terminal.integrated.defaultProfile.linux": "fish",
   "github.copilot.enable": {
     "*": true,
     "yaml": true,
