@@ -1,6 +1,21 @@
-#!/usr/bin/env bash
+#!/bin/sh
 #
-# Run by github/github Codespaces after starting
+# Run by Codespaces after starting
+
+# Install font-fira-code-nerd-font (Starship dependency)
+brew install font-fira-code-nerd-font
 
 # Install Starship
 curl -sS https://starship.rs/install.sh | sh -s -- -y
+
+# Disable Starship container configuration in
+echo "
+[container]
+disabled = true" >> ~/.config/starship.toml
+
+# Use default commit signing configuration
+git config --global --unset user.signingkey
+git config --global --unset gpg.program
+
+# Install VSCode extensions
+# script/install-vscode-extensions

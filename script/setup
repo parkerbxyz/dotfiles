@@ -69,12 +69,15 @@ done
 
 # Setup ~/.dotfiles symlink if missing
 HOMEDOTFILES="$HOME/.dotfiles"
-if [ "$DOTFILESDIR" != "$HOMEDOTFILES" ]
-then
+if [ "$DOTFILESDIR" != "$HOMEDOTFILES" ]; then
   ln -sf "$DOTFILESDIR" "$HOMEDOTFILES"
 fi
 
-# Fix up permissions for Codespaces
+# If running in Codespaces
 if [ -n "$CODESPACES" ]; then
-  chmod 700 /workspaces
+  # If the codespaces-post-start script isn't already configured to be run
+  if ! grep -q "script/codespaces-post-start" /workspaces/**/.devcontainer/post-attach-command.sh; then
+    # Run the codespaces-post-start script now
+    script/codespaces-post-start
+  fi
 fi
