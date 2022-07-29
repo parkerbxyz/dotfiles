@@ -2,10 +2,5 @@
 #
 # Run by github/github Codespaces after starting
 
-# Install ZSH tools
-apt install -y \
-  zsh-autosuggestions \
-  zsh-syntax-highlighting
-
 # Install Starship
 curl -sS https://starship.rs/install.sh | sh -s -- -y
