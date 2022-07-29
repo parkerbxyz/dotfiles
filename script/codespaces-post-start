@@ -8,4 +8,4 @@ apt install -y \
   zsh-syntax-highlighting
 
 # Install Starship
-sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
+curl -sS https://starship.rs/install.sh | sh -s -- -y
