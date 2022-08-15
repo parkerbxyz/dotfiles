@@ -49,4 +49,5 @@
     "markdown": false,
     "javascript": true
   }
+  "editor.experimental.stickyScroll.enabled": true,
 }
