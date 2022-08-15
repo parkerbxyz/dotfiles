@@ -49,5 +49,6 @@
     "markdown": false,
     "javascript": true
   }
+  "redhat.telemetry.enabled": false,
   "editor.experimental.stickyScroll.enabled": true,
 }
