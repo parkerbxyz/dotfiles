@@ -55,4 +55,5 @@
   "editor.experimental.stickyScroll.enabled": true,
   "merge-conflict.autoNavigateNextConflict.enabled": true,
   "diffEditor.ignoreTrimWhitespace": false,
+  "git.confirmSync": false
 }
