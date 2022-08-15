@@ -50,5 +50,6 @@
     "javascript": true
   }
   "redhat.telemetry.enabled": false,
+  "git.enableSmartCommit": true,
   "editor.experimental.stickyScroll.enabled": true,
 }
