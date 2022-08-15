@@ -44,12 +44,8 @@
   "terminal.integrated.defaultProfile.osx": "fish",
   "terminal.integrated.defaultProfile.linux": "fish",
   "github.copilot.enable": {
-    "*": true,
-    "yaml": true,
-    "plaintext": true,
-    "markdown": false,
-    "javascript": true
-  }
+    "*": true
+  },
   "redhat.telemetry.enabled": false,
   "git.enableSmartCommit": true,
   "editor.experimental.stickyScroll.enabled": true,
