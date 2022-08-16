@@ -1,6 +1,5 @@
 {
   "telemetry.telemetryLevel": "off",
-  "workbench.colorTheme": "GitHub Dark",
   "workbench.startupEditor": "newUntitledFile",
   "editor.codeActionsOnSave": { "source.fixAll.markdownlint": true},
   "editor.fontSize": 14,
@@ -51,5 +50,6 @@
   "editor.experimental.stickyScroll.enabled": true,
   "merge-conflict.autoNavigateNextConflict.enabled": true,
   "diffEditor.ignoreTrimWhitespace": false,
-  "git.confirmSync": false
+  "git.confirmSync": false,
+  "workbench.colorTheme": "GitHub Dark Default"
 }
