@@ -24,3 +24,9 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Node
+node_modules/
+
+# MegaLinter
+megalinter-reports/
