@@ -1,6 +1,6 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
     starship init fish | source
-    source (rbenv init - | psub)
-    source (pyenv init - | psub)
+    command -q rbenv && rbenv init - | source
+    command -q pyenv && pyenv init - | source
 end
