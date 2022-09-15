@@ -47,9 +47,9 @@
   },
   "redhat.telemetry.enabled": false,
   "git.enableSmartCommit": true,
-  "editor.experimental.stickyScroll.enabled": true,
   "merge-conflict.autoNavigateNextConflict.enabled": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "git.confirmSync": false,
   "workbench.colorTheme": "GitHub Dark Default"
+  "editor.stickyScroll.enabled": true,
 }
