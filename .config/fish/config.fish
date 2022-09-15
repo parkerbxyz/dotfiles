@@ -1,6 +1,7 @@
 if status is-interactive
     # Commands to run in interactive sessions
     command -q starship && starship init fish | source
+    command -q nodenv && nodenv init - | source
     command -q rbenv && rbenv init - | source
     command -q pyenv && pyenv init - | source
         # Fix brew doctor's pyenv "config" scripts warning
