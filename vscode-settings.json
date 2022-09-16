@@ -10,13 +10,10 @@
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   "markdownlint.config": {
-    "MD001": true,
     "MD024": false,
     "MD025": { "front_matter_title": "" },
     "MD026": { "punctuation": ".,;:!" },
     "MD033": { "allowed_elements": ["kbd", "details", "summary", "strong", "sup", "sub", "iframe", "br", "img", "pre", "a"] },
-    "MD036": true,
-    "MD041": true
   },
   "markdown.extension.toc.githubCompatibility": true,
   "markdown.extension.toc.updateOnSave": false,
