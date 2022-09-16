@@ -10,6 +10,7 @@
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   "markdownlint.config": {
+    "MD013": false,
     "MD024": false,
     "MD025": { "front_matter_title": "" },
     "MD026": { "punctuation": ".,;:!" },
