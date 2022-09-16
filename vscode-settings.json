@@ -1,11 +1,14 @@
 {
   "telemetry.telemetryLevel": "off",
   "workbench.startupEditor": "newUntitledFile",
+  "workbench.colorTheme": "GitHub Dark Default",
   "editor.codeActionsOnSave": { "source.fixAll.markdownlint": true },
   "editor.fontSize": 14,
   "editor.fontFamily": "'FiraCode Nerd Font Mono', Menlo, Monaco, 'Courier New', monospace",
   "editor.inlineSuggest.enabled": true,
   "editor.scrollBeyondLastLine": false,
+  "editor.stickyScroll.enabled": true,
+  "editor.minimap.renderCharacters": false,
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
@@ -49,7 +52,6 @@
     "editor.rulers": [100]
   },
   "explorer.confirmDelete": false,
-  "editor.minimap.renderCharacters": false,
   "terminal.integrated.defaultProfile.osx": "fish",
   "terminal.integrated.defaultProfile.linux": "fish",
   "github.copilot.enable": {
@@ -62,6 +64,4 @@
   "merge-conflict.autoNavigateNextConflict.enabled": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "git.confirmSync": false,
-  "workbench.colorTheme": "GitHub Dark Default"
-  "editor.stickyScroll.enabled": true,
 }
