@@ -1,7 +1,7 @@
 {
   "telemetry.telemetryLevel": "off",
   "workbench.startupEditor": "newUntitledFile",
-  "editor.codeActionsOnSave": { "source.fixAll.markdownlint": true},
+  "editor.codeActionsOnSave": { "source.fixAll.markdownlint": true },
   "editor.fontSize": 14,
   "editor.fontFamily": "'FiraCode Nerd Font Mono', Menlo, Monaco, 'Courier New', monospace",
   "editor.inlineSuggest.enabled": true,
