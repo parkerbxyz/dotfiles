@@ -14,7 +14,21 @@
     "MD024": false,
     "MD025": { "front_matter_title": "" },
     "MD026": { "punctuation": ".,;:!" },
-    "MD033": { "allowed_elements": ["kbd", "details", "summary", "strong", "sup", "sub", "iframe", "br", "img", "pre", "a"] },
+    "MD033": {
+      "allowed_elements": [
+        "kbd",
+        "details",
+        "summary",
+        "strong",
+        "sup",
+        "sub",
+        "iframe",
+        "br",
+        "img",
+        "pre",
+        "a"
+      ]
+    }
   },
   "markdown.extension.toc.githubCompatibility": true,
   "markdown.extension.toc.updateOnSave": false,
@@ -27,9 +41,7 @@
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": true,
   "diffEditor.renderSideBySide": false,
-  "shellcheck.customArgs": [
-    "-x"
-  ],
+  "shellcheck.customArgs": ["-x"],
   "shellcheck.executablePath": "shellcheck",
   "shellcheck.enableQuickFix": true,
   "git.enableCommitSigning": true,
