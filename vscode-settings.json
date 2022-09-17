@@ -34,13 +34,11 @@
       ]
     }
   },
-  "markdown.extension.toc.githubCompatibility": true,
   "markdown.extension.toc.updateOnSave": false,
   "markdown.extension.toc.levels": "2..3",
   "markdown.extension.orderedList.marker": "one",
   "markdown.experimental.validate.enabled": true,
   "markdown.experimental.updateLinksOnFileMove.enabled": "prompt",
-  "markdown-table-formatter.enableSort": false,
   "github.copilot.enable": {
     "*": true,
     "plaintext": false,
