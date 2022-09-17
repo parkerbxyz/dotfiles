@@ -1,0 +1,5 @@
+# The following overrides are for StandardJS compatibility
+overrides:
+  - files: "*.json"
+    options:
+      trailingComma: 'all'
