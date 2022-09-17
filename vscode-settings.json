@@ -35,7 +35,7 @@
     }
   },
   "markdown.extension.toc.updateOnSave": false,
-  "markdown.extension.toc.levels": "2..3",
+  "markdown.extension.toc.levels": "2..2",
   "markdown.extension.orderedList.marker": "one",
   "markdown.experimental.validate.enabled": true,
   "markdown.experimental.updateLinksOnFileMove.enabled": "prompt",
