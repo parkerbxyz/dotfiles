@@ -70,9 +70,6 @@
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "prettier.singleQuote": true,
-    "prettier.trailingComma": "none",
-    "prettier.semi": false
   },
   "[liquid]": {
     "editor.unicodeHighlight.allowedCharacters": {
