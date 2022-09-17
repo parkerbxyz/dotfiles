@@ -64,6 +64,17 @@
   },
   "diffEditor.renderSideBySide": false,
   "diffEditor.ignoreTrimWhitespace": false,
+  "cSpell.userWords": [
+    "esbenp",
+    "Fira",
+    "Hubber",
+    "Hubbers",
+    "iframe",
+    "Menlo",
+    "mypy",
+    "pylint",
+    "shellcheck"
+  ],
   "[shellscript]": {
     "editor.rulers": [100]
   },
