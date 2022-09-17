@@ -65,18 +65,14 @@
   "merge-conflict.autoNavigateNextConflict.enabled": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "git.confirmSync": false,
-  "[yaml]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
   },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[liquid]": {
     "editor.unicodeHighlight.allowedCharacters": {
       "’": true
     }
   },
-  "[json]": {
+  "[javascript][json][jsonc][yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
