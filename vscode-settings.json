@@ -1,23 +1,63 @@
 {
-  "workbench.startupEditor": "newUntitledFile",
-  "workbench.colorTheme": "GitHub Dark Default",
-  "terminal.integrated.defaultProfile.osx": "fish",
-  "terminal.integrated.defaultProfile.linux": "fish",
-  "telemetry.telemetryLevel": "off",
-  "shellcheck.executablePath": "shellcheck",
-  "shellcheck.enableQuickFix": true,
-  "shellcheck.customArgs": ["-x"],
-  "redhat.telemetry.enabled": false,
-  "python.linting.pylintEnabled": true,
-  "python.linting.mypyEnabled": true,
-  "python.linting.flake8Enabled": true,
-  "python.linting.enabled": true,
-  "merge-conflict.autoNavigateNextConflict.enabled": true,
+  "[javascript][json][jsonc][yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[liquid]": {
+    "editor.unicodeHighlight.allowedCharacters": {
+      "’": true
+    }
+  },
+  "[shellscript]": {
+    "editor.rulers": [100]
+  },
+  "cSpell.userWords": [
+    "esbenp",
+    "Fira",
+    "Hubber",
+    "Hubbers",
+    "iframe",
+    "Menlo",
+    "mypy",
+    "pylint",
+    "shellcheck"
+  ],
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.renderSideBySide": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.markdownlint": true
+  },
+  "editor.fontFamily": "'FiraCode Nerd Font Mono', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 14,
+  "editor.inlineSuggest.enabled": true,
+  "editor.minimap.renderCharacters": false,
+  "editor.scrollBeyondLastLine": false,
+  "editor.stickyScroll.enabled": true,
+  "explorer.confirmDelete": false,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "git.confirmSync": false,
+  "git.enableCommitSigning": true,
+  "git.enableSmartCommit": true,
+  "github.copilot.enable": {
+    "*": true,
+    "markdown": false,
+    "plaintext": false
+  },
+  "markdown.experimental.updateLinksOnFileMove.enabled": "prompt",
+  "markdown.experimental.validate.enabled": true,
+  "markdown.extension.orderedList.marker": "one",
+  "markdown.extension.toc.levels": "2..2",
+  "markdown.extension.toc.updateOnSave": false,
   "markdownlint.config": {
     "MD013": false,
     "MD024": false,
-    "MD025": { "front_matter_title": "" },
-    "MD026": { "punctuation": ".,;:!" },
+    "MD025": {
+      "front_matter_title": ""
+    },
+    "MD026": {
+      "punctuation": ".,;:!"
+    },
     "MD033": {
       "allowed_elements": [
         "kbd",
@@ -34,54 +74,18 @@
       ]
     }
   },
-  "markdown.extension.toc.updateOnSave": false,
-  "markdown.extension.toc.levels": "2..2",
-  "markdown.extension.orderedList.marker": "one",
-  "markdown.experimental.validate.enabled": true,
-  "markdown.experimental.updateLinksOnFileMove.enabled": "prompt",
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": false,
-    "markdown": false
-  },
-  "git.enableSmartCommit": true,
-  "git.enableCommitSigning": true,
-  "git.confirmSync": false,
-  "files.trimTrailingWhitespace": true,
-  "files.trimFinalNewlines": true,
-  "files.insertFinalNewline": true,
-  "explorer.confirmDelete": false,
-  "editor.stickyScroll.enabled": true,
-  "editor.scrollBeyondLastLine": false,
-  "editor.minimap.renderCharacters": false,
-  "editor.inlineSuggest.enabled": true,
-  "editor.fontSize": 14,
-  "editor.fontFamily": "'FiraCode Nerd Font Mono', Menlo, Monaco, 'Courier New', monospace",
-  "editor.codeActionsOnSave": {
-    "source.fixAll.markdownlint": true
-  },
-  "diffEditor.renderSideBySide": false,
-  "diffEditor.ignoreTrimWhitespace": false,
-  "cSpell.userWords": [
-    "esbenp",
-    "Fira",
-    "Hubber",
-    "Hubbers",
-    "iframe",
-    "Menlo",
-    "mypy",
-    "pylint",
-    "shellcheck"
-  ],
-  "[shellscript]": {
-    "editor.rulers": [100]
-  },
-  "[liquid]": {
-    "editor.unicodeHighlight.allowedCharacters": {
-      "’": true
-    }
-  },
-  "[javascript][json][jsonc][yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "merge-conflict.autoNavigateNextConflict.enabled": true,
+  "python.linting.enabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.mypyEnabled": true,
+  "python.linting.pylintEnabled": true,
+  "redhat.telemetry.enabled": false,
+  "shellcheck.customArgs": ["-x"],
+  "shellcheck.enableQuickFix": true,
+  "shellcheck.executablePath": "shellcheck",
+  "telemetry.telemetryLevel": "off",
+  "terminal.integrated.defaultProfile.linux": "fish",
+  "terminal.integrated.defaultProfile.osx": "fish",
+  "workbench.colorTheme": "GitHub Dark Default",
+  "workbench.startupEditor": "newUntitledFile"
 }
