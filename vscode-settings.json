@@ -3,6 +3,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[liquid]": {
+    "editor.wordWrap": "on",
     "editor.unicodeHighlight.allowedCharacters": {
       "’": true
     }
