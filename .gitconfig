@@ -1,9 +1,11 @@
 [user]
 	name = Parker Brown
 	email = 17183625+parkerbxyz@users.noreply.github.com
-	signingKey = F2A7F03DA542BD52
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILYVijVFVGBkUOHuqKGFE8OHJ5gXRguwMMX8KJ6SokR4
 [gpg]
-	program = gpg
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [commit]
 	gpgSign = true
 [push]

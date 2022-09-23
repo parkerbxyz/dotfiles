@@ -15,7 +15,9 @@ disabled = true" >> ~/.config/starship.toml
 
 # Use default commit signing configuration
 git config --global --unset user.signingkey
-git config --global --unset gpg.program
+git config --global --unset gpg.format
+git config --global --unset gpg.ssh.program
+git config --global --unset commit.gpgsign
 
 # Install VSCode extensions
 # script/install-vscode-extensions
