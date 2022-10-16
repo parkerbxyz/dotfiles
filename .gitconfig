@@ -31,8 +31,8 @@
 [alias]
 	# Retrieve the default branch (helper alias)
 	default = !git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
-	# Switch to the default branch, remove remote-tracking branches that no longer exist on the remote, and delete all branches merged into it
-	branch-cleanup = "!f() { DEFAULT=$(git default); git switch $DEFAULT && git fetch --prune && git branch --merged $DEFAULT | grep -v " $DEFAULT$" | xargs git branch -d; }; f"
+	# Prune remote-tracking branches that no longer exist on the remote and delete all branches without stashed changes that have been merged into the default branch
+	prune-branches = "!f() { git fetch --prune; (git branch-list-merged; git branches-without-stash) | sort | uniq -d | grep -v "$(git branch --show-current)" | xargs git branch -d; }; f"
 	# Sync your fork with the upstream repository
 	sync-fork = "!f() { DEFAULT=$(git default); git fetch upstream && git switch ${1-$DEFAULT} && git merge upstream/${1-$DEFAULT} && git push; }; f"
 	# Merge the latest changes from the default branch into the current branch
@@ -43,3 +43,11 @@
 	recent-branches = "!f() { git for-each-ref refs/heads --count=10 --sort=-committerdate --format='%(HEAD) %(if)%(HEAD)%(then)%(color:green)%(else)%(color:default)%(end)%(refname:short)%(color:reset)|%(objectname:short) %(push:track)|%(subject)|%(committerdate:relative)|%(authorname)' --color=always | column -ts'|'; }; f"
 	# Find commit that deleted a given file
 	find-deleted-file = log --full-history --no-merges -1 --
+	# List branches without asterisk (great for use in scripts)
+	branch-list = "!f() { git branch $@ --format='%(refname:short)'; }; f"
+	# List branches that have been merged with the default branch (excluding the default branch)
+	branch-list-merged = "!f() { DEFAULT=$(git default); git branch-list --merged $DEFAULT | grep -v "$DEFAULT"; }; f"
+	# List branches with stashed changes
+	branches-with-stash = "!f() { git stash list | awk -F 'WIP on |!!GitHub_Desktop<' '{print $2}' | awk -F ':|>' '{print $1}'; }; f"
+	# List branches without stashed changes
+	branches-without-stash = "!f() { (git branch-list; git branches-with-stash) | sort | uniq -u; }; f"
