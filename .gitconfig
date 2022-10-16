@@ -47,3 +47,5 @@
 	branch-list = "branch --format='%(refname:short)'"
 	# List merged branches (without the asterisk)
 	branch-list-merged = "!DEFAULT=$(git default); git branch --format='%(refname:short)' --merged $DEFAULT | grep -v "$DEFAULT""
+	# List branches with stashes
+	branches-with-stashes = "!git stash list | awk -F 'WIP on |!!GitHub_Desktop<' '{print $2}' | awk -F ':|>' '{print $1}'"
