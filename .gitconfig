@@ -32,7 +32,7 @@
 	# Retrieve the default branch (helper alias)
 	default = !git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
 	# Prune remote-tracking branches that no longer exist on the remote, and delete all branches merged into the default branch that don't have stashed changes
-	prune-branches = "!git fetch --prune && echo "$(git branch-list-merged) $(git branches-without-stashes)" | sort | uniq -d | grep -v "$(git default)\\|$(git branch --show-current)" | xargs git branch -d"
+	prune-branches = "!f() { git fetch --prune; (git branch-list-merged; git branches-without-stash) | sort | uniq -d | grep -v "$(git default)\\|$(git branch --show-current)" | xargs git branch -d; }; f"
 	# Sync your fork with the upstream repository
 	sync-fork = "!f() { DEFAULT=$(git default); git fetch upstream && git switch ${1-$DEFAULT} && git merge upstream/${1-$DEFAULT} && git push; }; f"
 	# Merge the latest changes from the default branch into the current branch
@@ -44,10 +44,10 @@
 	# Find commit that deleted a given file
 	find-deleted-file = log --full-history --no-merges -1 --
 	# List branches without asterisk (great for use in scripts)
-	branch-list = "branch --format='%(refname:short)'"
-	# List merged branches (without the asterisk)
-	branch-list-merged = "!DEFAULT=$(git default); git branch --format='%(refname:short)' --merged $DEFAULT | grep -v "$DEFAULT""
-	# List branches with stashes
-	branches-with-stashes = "!git stash list | awk -F 'WIP on |!!GitHub_Desktop<' '{print $2}' | awk -F ':|>' '{print $1}'"
-	# List branches without stashes
-	branches-without-stashes = "!echo "$(git branch-list) $(git branches-with-stashes)" | sort | uniq -u | tr ' ' '\n'"
+	branch-list = "!f() { git branch $@ --format='%(refname:short)'; }; f"
+	# List branches that have been merged with the default branch (excluding the default branch)
+	branch-list-merged = "!f() { DEFAULT=$(git default); git branch-list --merged $DEFAULT | grep -v "$DEFAULT"; }; f"
+	# List branches with stashed changes
+	branches-with-stash = "!f() { git stash list | awk -F 'WIP on |!!GitHub_Desktop<' '{print $2}' | awk -F ':|>' '{print $1}'; }; f"
+	# List branches without stashed changes
+	branches-without-stash = "!f() { (git branch-list; git branches-with-stash) | sort | uniq -u; }; f"
