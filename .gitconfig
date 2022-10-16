@@ -31,8 +31,8 @@
 [alias]
 	# Retrieve the default branch (helper alias)
 	default = !git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
-	# Switch to the default branch, remove remote-tracking branches that no longer exist on the remote, and delete all branches merged into it
-	branch-cleanup = "!f() { DEFAULT=$(git default); git switch $DEFAULT && git fetch --prune && git branch --merged $DEFAULT | grep -v " $DEFAULT$" | xargs git branch -d; }; f"
+	# Prune remote-tracking branches that no longer exist on the remote, and delete all branches merged into the default branch that don't have stashed changes
+	prune-branches = "!git fetch --prune && echo "$(git branch-list-merged) $(git branches-without-stashes)" | sort | uniq -d | grep -v "$(git default)\\|$(git branch --show-current)" | xargs git branch -d"
 	# Sync your fork with the upstream repository
 	sync-fork = "!f() { DEFAULT=$(git default); git fetch upstream && git switch ${1-$DEFAULT} && git merge upstream/${1-$DEFAULT} && git push; }; f"
 	# Merge the latest changes from the default branch into the current branch
