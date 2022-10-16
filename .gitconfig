@@ -43,3 +43,5 @@
 	recent-branches = "!f() { git for-each-ref refs/heads --count=10 --sort=-committerdate --format='%(HEAD) %(if)%(HEAD)%(then)%(color:green)%(else)%(color:default)%(end)%(refname:short)%(color:reset)|%(objectname:short) %(push:track)|%(subject)|%(committerdate:relative)|%(authorname)' --color=always | column -ts'|'; }; f"
 	# Find commit that deleted a given file
 	find-deleted-file = log --full-history --no-merges -1 --
+	# List branches without asterisk (great for use in scripts)
+	branch-list = "branch --format='%(refname:short)'"
