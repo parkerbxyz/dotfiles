@@ -45,3 +45,5 @@
 	find-deleted-file = log --full-history --no-merges -1 --
 	# List branches without asterisk (great for use in scripts)
 	branch-list = "branch --format='%(refname:short)'"
+	# List merged branches (without the asterisk)
+	branch-list-merged = "!DEFAULT=$(git default); git branch --format='%(refname:short)' --merged $DEFAULT | grep -v "$DEFAULT""
