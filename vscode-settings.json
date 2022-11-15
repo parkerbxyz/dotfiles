@@ -3,10 +3,11 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[liquid]": {
-    "editor.wordWrap": "on",
     "editor.unicodeHighlight.allowedCharacters": {
-      "’": true
-    }
+      "’": true,
+      "editor.foldingStrategy": "indentation"
+    },
+    "editor.wordWrap": "on"
   },
   "[shellscript]": {
     "editor.rulers": [100]
@@ -24,9 +25,10 @@
     "shellcheck"
   ],
   "diffEditor.ignoreTrimWhitespace": false,
-  "diffEditor.renderSideBySide": false,
+  "diffEditor.diffAlgorithm": "experimental",
   "editor.codeActionsOnSave": {
-    "source.fixAll.markdownlint": true
+    "source.fixAll.markdownlint": true,
+    "source.organizeLinkDefinitions": true
   },
   "editor.fontFamily": "'FiraCode Nerd Font Mono', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 14,
@@ -35,6 +37,9 @@
   "editor.scrollBeyondLastLine": false,
   "editor.stickyScroll.enabled": true,
   "explorer.confirmDelete": false,
+  "files.associations": {
+    "ignore": "bat"
+  },
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
@@ -43,14 +48,22 @@
   "git.enableSmartCommit": true,
   "github.copilot.enable": {
     "*": true,
-    "markdown": false,
-    "plaintext": false
+    "yaml": true,
+    "plaintext": true,
+    "markdown": true
   },
-  "markdown.experimental.updateLinksOnFileMove.enabled": "prompt",
-  "markdown.experimental.validate.enabled": true,
+  "githubPullRequests.pullBranch": "never",
+  "markdown.updateLinksOnFileMove.enabled": "prompt",
+  "markdown.updateLinksOnFileMove.include": [
+    "**/*.{md,mkd,mdwn,mdown,markdown,markdn,mdtxt,mdtext,workbook}",
+    "**/*.{jpg,jpe,jpeg,png,bmp,gif,ico,webp,avif,tiff,svg,mp4}",
+    "**/*.liquid"
+  ],
   "markdown.extension.orderedList.marker": "one",
   "markdown.extension.toc.levels": "2..2",
   "markdown.extension.toc.updateOnSave": false,
+  "markdown.validate.enabled": true,
+  "markdown.occurrencesHighlight.enabled": true,
   "markdownlint.config": {
     "MD013": false,
     "MD024": false,
@@ -78,7 +91,7 @@
   },
   "merge-conflict.autoNavigateNextConflict.enabled": true,
   "python.linting.enabled": true,
-  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Enabled": false,
   "python.linting.mypyEnabled": true,
   "python.linting.pylintEnabled": true,
   "redhat.telemetry.enabled": false,
@@ -89,5 +102,14 @@
   "terminal.integrated.defaultProfile.linux": "fish",
   "terminal.integrated.defaultProfile.osx": "fish",
   "workbench.colorTheme": "GitHub Dark Default",
-  "workbench.startupEditor": "newUntitledFile"
+  "workbench.settings.useSplitJSON": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "hadolint.hadolintPath": "/usr/local/bin/hadolint",
+  "window.commandCenter": true,
+  "terminal.integrated.scrollback": 2000,
+  "editor.renderWhitespace": "all",
+  "editor.accessibilitySupport": "off"
 }
