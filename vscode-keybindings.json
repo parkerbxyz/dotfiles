@@ -1,21 +1,8 @@
-// Place your key bindings in this file to override the defaults
-
-// Workaround to improve "Markdown All in One" compatibility with "Copilot" as documented here:https://github.com/yzhang-gh/vscode-markdown/issues/1011#issue-996151712
 [
-    {
-        "key": "tab",
-        "command": "markdown.extension.onTabKey",
-        "when": "editorTextFocus && !inlineSuggestionVisible && !editorReadonly && !editorTabMovesFocus && !hasOtherSuggestions && !hasSnippetCompletions && !inSnippetMode && !suggestWidgetVisible && editorLangId == 'markdown'"
-    },
-    {
-        "key": "tab",
-        "command": "-markdown.extension.onTabKey",
-        "when": "editorTextFocus && !editorReadonly && !editorTabMovesFocus && !hasOtherSuggestions && !hasSnippetCompletions && !inSnippetMode && !suggestWidgetVisible && editorLangId == 'markdown'"
-    },
-    {
-        "key": "ctrl+shift+t",
-        "command": "workbench.action.terminal.sendSequence",
-        "args": { "text": "${relativeFile}" },
-        "when": "terminalFocus"
-    }
+  {
+    "key": "ctrl+shift+t",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "${relativeFile}" },
+    "when": "terminalFocus"
+  }
 ]
