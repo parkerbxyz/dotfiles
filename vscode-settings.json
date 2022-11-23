@@ -104,9 +104,6 @@
   "workbench.colorTheme": "GitHub Dark Default",
   "workbench.settings.useSplitJSON": true,
   "workbench.startupEditor": "newUntitledFile",
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.python"
-  },
   "hadolint.hadolintPath": "/usr/local/bin/hadolint",
   "window.commandCenter": true,
   "terminal.integrated.scrollback": 2000,
