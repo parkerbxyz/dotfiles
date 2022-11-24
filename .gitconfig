@@ -51,3 +51,11 @@
 	stash-list-branches = "!f() { git stash list | awk -F 'WIP on |!!GitHub_Desktop<' '{print $2}' | awk -F ':|>' '{print $1}'; }; f"
 	# List local branches without stashed changes
 	branch-list-no-stash = "!f() { (git branch-list; git stash-list-branches) | sort | uniq -u; }; f"
+	# Check the status of all local branches
+	branch-list-status = "!f() { git for-each-ref refs/heads --sort=-committerdate --format='%(HEAD) %(refname:short)|%(objectname:short) %(upstream:track)|%(upstream:remotename)' | column -ts'|'; }; f"
+	# List local branches that have been deleted from the remote
+	branch-list-gone = "!f() { git branch-list-status | grep 'gone]' | grep -v '*' | awk '{print $1}'; }; f"
+	# List unmerged commits for a given branch (defaults to current branch if no branch is specified)
+	unmerged-commits = "!f() { DEFAULT=$(git default); CURRENT=$(git branch --show-current) git log --oneline --no-merges  ${1-$CURRENT} ^$DEFAULT; }; f"
+	# Prune local branches that have been deleted from the remote (including branches with unmerged commits)
+	prune-gone-branches = "!f() { DEFAULT=$(git default); git branch-list-gone | grep -v "$DEFAULT" | xargs git branch -D; }; f"
