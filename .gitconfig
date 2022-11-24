@@ -40,7 +40,7 @@
 	# Add a file/directory to .gitignore
 	ignore = "!f() { echo \"$1\" >> .gitignore; }; f"
 	# Display 10 most recently updated local branches (most recent first)
-	recent-branches = "!f() { git for-each-ref refs/heads --count=10 --sort=-committerdate --format='%(HEAD) %(if)%(HEAD)%(then)%(color:green)%(else)%(color:default)%(end)%(refname:short)%(color:reset)|%(objectname:short) %(push:track)|%(subject)|%(committerdate:relative)|%(authorname)' --color=always | column -ts'|'; }; f"
+	recent-branches = "!f() { git for-each-ref refs/heads --count=10 --sort=-committerdate --format='%(HEAD) %(if)%(HEAD)%(then)%(color:green)%(else)%(color:default)%(end)%(refname:short)%(color:reset)|%(objectname:short) %(upstream:track)|%(subject)|%(committerdate:relative)|%(authorname)' --color=always | column -ts'|'; }; f"
 	# Find commit that deleted a given file
 	find-deleted-file = log --full-history --no-merges -1 --
 	# List local branches without asterisk (great for use in scripts)
