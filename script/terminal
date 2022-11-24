@@ -2,7 +2,7 @@
 #
 # Setup Terminal profile
 
-TERM_PROFILE=Code;
+TERM_PROFILE=xyz;
 CURRENT_PROFILE="$(defaults read com.apple.terminal 'Default Window Settings')";
 
 if [ "${CURRENT_PROFILE}" != "${TERM_PROFILE}" ]; then
