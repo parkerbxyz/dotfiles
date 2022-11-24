@@ -13,7 +13,7 @@ cd "$(dirname "$0")"/.. || exit
 script/symlinks
 script/install-vscode-extensions
 
-# use zsh as the default shell
-if [ "$SHELL" != "/bin/zsh" ]; then
-  chsh -s /bin/zsh
+# Use fish as the default shell
+if [ "$SHELL" != "/usr/local/bin/fish" ]; then
+  chsh -s /usr/local/bin/fish
 fi
