@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Switch to directory of this script so that relative paths will work
+cd "$(dirname "$0")" || exit
+
+# Run the script and redirect output to Brewfile in the parent directory
+code --list-extensions > ../vscode-extensions.txt
