@@ -8,7 +8,7 @@ if ! command -v code >/dev/null; then
 fi
 
 # Set vscode-extensions path
-extensions="$(dirname "$0")/../vscode-extensions"
+extensions="$(dirname "$0")/../vscode-extensions.txt"
 
 # Get list of installed VS Code extensions
 installed_extensions="$(code --list-extensions)"
