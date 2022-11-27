@@ -61,4 +61,4 @@ ${mas.join("\n")}
 `.trimStart(); // Trim leading newline
 
 // Write the Brewfile with comments
-writeFileSync("Brewfile", formattedBrewfile);
+writeFileSync("../Brewfile", formattedBrewfile);

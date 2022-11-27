@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#
+# Generate a Brewfile and make it pretty
+
+# Switch to directory of this script so that relative paths will work
+cd "$(dirname "$0")" || exit
+
+# Run the script
+node js/generate-brewfile.mjs
