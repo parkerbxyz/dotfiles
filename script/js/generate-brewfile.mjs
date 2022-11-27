@@ -1,7 +1,7 @@
 #!/usr/bin/env zx
 // Generate a Brewfile and add comments to it that describe what each package is
 
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import tmp from "tmp";
 import { spinner } from "zx/experimental";
 import "zx/globals";
@@ -58,7 +58,6 @@ ${casks.join("\n")}
 
 # Mac App Store
 ${mas.join("\n")}
-`.trimStart(); // Trim leading newline
+`.trim();
 
-// Write the Brewfile with comments
-writeFileSync("../Brewfile", formattedBrewfile);
+console.log(formattedBrewfile);
