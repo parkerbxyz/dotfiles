@@ -18,5 +18,5 @@ if [ "$SHELL" != "*/bin/fish" ]; then
   if ! command -v fish &>/dev/null; then
     brew install fish
   fi
-  chsh -s /opt/homebrew/bin/fish
+  chsh -s $(brew --prefix)/bin/fish
 fi
