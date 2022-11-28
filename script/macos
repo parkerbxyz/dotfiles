@@ -6,61 +6,62 @@ echo ""
 echo -e "\033[34mConfiguring macOS...\033[0m"
 
 # Prevent settings from being overwritten
-osascript -e 'tell application "System Preferences" to quit'
+osascript -e 'tell application "System Settings" to quit'
 
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
 
 # Show battery percentage in menu bar
-defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+defaults -currentHost write com.apple.controlcenter BatteryShowPercentage -bool true
 
-# Disable character substitution
-defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
-
-# Automatically quit printer app once the print jobs complete
-defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+# Disable smart quotes and dashes
+defaults write -globalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
 
 # Enable tap to click for this user and for the login screen
+defaults -currentHost write -globalDomain com.apple.mouse.tapBehavior -bool true
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # Enable three finger drag
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -int 1
+defaults -currentHost write -globalDomain com.apple.trackpad.threeFingerDragGesture -bool true
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
+defaults write com.apple.AppleMultitouchTrackpad Dragging -bool false
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Dragging -bool false
 
-# Enable full keyboard access for all controls
-# (i.e. enable Tab in modal dialogs)
-defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+# Enable keyboard navigation (i.e., Tab in modal dialogs)
+defaults write -globalDomain AppleKeyboardUIMode -int 2
 
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
 
-# Keep folders on top when sorting by name
+# Keep folders on top in windows when sorting by name
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
 
-# Do not write .DS_Store files on networks or USB drives
+# Disable creation of metadata files on networks and USB drives
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
-# Enable snap-to-grid for icons on the desktop and in other icon views
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+# Enable snap-to-grid for icons
 /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+
+# Use Stacks on the Desktop
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:GroupBy Kind" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy dateAdded" ~/Library/Preferences/com.apple.finder.plist
 
 ###############################################################################
 # Safari & WebKit                                                             #
 ###############################################################################
 
 # Enable the Develop menu and the Web Inspector in Safari
-defaults write com.apple.Safari IncludeDevelopMenu -bool true
-defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
+defaults write com.apple.Safari.SandboxBroker ShowDevelopMenu -bool true
 
 ###############################################################################
 # Restart affected applications                                               #
