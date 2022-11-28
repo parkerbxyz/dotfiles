@@ -1,6 +1,5 @@
 # Taps
 tap "github/bootstrap"
-tap "github/gh"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-drivers"
@@ -8,7 +7,6 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
-tap "octo-cli/octo"
 
 # Formulae
 brew "archey4"                       # Simple system information tool written in Python
@@ -108,25 +106,12 @@ cask "zoom"                          # Video communication and virtual meeting p
 mas "1Password for Safari", id: 1569813296
 mas "Bear", id: 1091189122
 mas "Drafts", id: 1435957248
-mas "GarageBand", id: 682658836
 mas "Gifski", id: 1351639930
-mas "Home Assistant", id: 1099568401
 mas "Hush", id: 1544743900
-mas "iMovie", id: 408981434
-mas "Keynote", id: 409183694
 mas "LG Screen Manager", id: 1142051783
 mas "Marked 2", id: 890031187
-mas "Microsoft Excel", id: 462058435
-mas "Microsoft PowerPoint", id: 462062816
-mas "Microsoft Word", id: 462054704
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
 mas "Pixelmator", id: 407963104
 mas "Redacted", id: 984968384
-mas "Shazam", id: 897118787
 mas "Speedtest", id: 1153157709
 mas "StopTheMadness", id: 1376402589
-mas "The Jackbox Party Pack", id: 957862217
-mas "The Jackbox Party Pack 2", id: 1034034328
 mas "Things", id: 904280696
-mas "Transmit", id: 1436522307
