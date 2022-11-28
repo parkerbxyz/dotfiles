@@ -41,6 +41,10 @@ defaults write -globalDomain AppleKeyboardUIMode -int 2
 # Finder                                                                      #
 ###############################################################################
 
+# Add Desktop and Documents files to iCloud Drive
+defaults write com.apple.finder FXICloudDriveDesktop -bool true
+defaults write com.apple.finder FXICloudDriveDocuments -bool true
+
 # Keep folders on top in windows when sorting by name
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
 
