@@ -6,7 +6,6 @@ bierner.markdown-footnotes
 bierner.markdown-mermaid
 bierner.markdown-preview-github-styles
 cschleiden.vscode-github-actions
-darkriszty.markdown-table-prettify
 DavidAnson.vscode-markdownlint
 dbaeumer.vscode-eslint
 dnicolson.binary-plist
@@ -39,7 +38,6 @@ PascalReitermann93.vscode-yaml-sort
 rebornix.ruby
 redhat.vscode-yaml
 richie5um2.vscode-sort-json
-Shopify.ruby-lsp
 Shopify.theme-check-vscode
 sissel.shopify-liquid
 sleistner.vscode-fileutils
