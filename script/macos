@@ -73,9 +73,7 @@ defaults write com.apple.Safari.SandboxBroker ShowDevelopMenu -bool true
 
 for app in \
 	"Finder" \
-	"Safari" \
-	"SystemUIServer" \
-	"Terminal"; do
+	"SystemUIServer"; do
 	killall "${app}" &> /dev/null
 done
 
