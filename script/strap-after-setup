@@ -14,6 +14,9 @@ script/symlinks
 script/install-vscode-extensions
 
 # Use fish as the default shell
-if [ "$SHELL" != "/usr/local/bin/fish" ]; then
-  chsh -s /usr/local/bin/fish
+if [ "$SHELL" != "*/bin/fish" ]; then
+  if ! command -v fish &>/dev/null; then
+    brew install fish
+  fi
+  chsh -s /opt/homebrew/bin/fish
 fi
