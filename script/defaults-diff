@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#
+# Discover domain names, keys, and values used by the user defaults system
+
+defaults read > defaults-system-before.txt
+defaults -currentHost read > defaults-user-before.txt
+
+# Wait for input to continue
+read -rp "Change a setting and then press any key to see changes to user defaults..." -n1 -s
+
+defaults read > defaults-system-after.txt
+defaults -currentHost read > defaults-user-after.txt
+
+code --diff defaults-system-before.txt defaults-system-after.txt
+code --diff defaults-user-before.txt defaults-user-after.txt
