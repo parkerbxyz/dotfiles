@@ -42,8 +42,10 @@ defaults write -globalDomain AppleKeyboardUIMode -int 2
 ###############################################################################
 
 # Add Desktop and Documents files to iCloud Drive
+defaults write com.apple.finder FXICloudDriveEnabled -bool true
 defaults write com.apple.finder FXICloudDriveDesktop -bool true
 defaults write com.apple.finder FXICloudDriveDocuments -bool true
+defaults write com.apple.finder SidebarShowingiCloudDesktop -bool true
 
 # Keep folders on top in windows when sorting by name
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
@@ -66,6 +68,9 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 # Enable the Develop menu and the Web Inspector in Safari
 defaults write com.apple.Safari.SandboxBroker ShowDevelopMenu -bool true
+
+# Disable AutoFill for user names and passwords
+defaults write com.apple.Safari AutoFillPasswords -bool true ?????
 
 ###############################################################################
 # Restart affected applications                                               #
