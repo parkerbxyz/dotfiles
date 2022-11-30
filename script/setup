@@ -32,7 +32,7 @@ esac
 # Include filenames beginning with a ‘.’ in the results of filename expansion
 shopt -s dotglob
 
-# Iterate over dotfiles in the root directory
+# Iterate over dotfiles in the working directory
 for DOTFILE in *; do
   # Set linked dotfile path
   HOMEFILE="$HOME/$DOTFILE"
@@ -42,7 +42,7 @@ for DOTFILE in *; do
   DIRFILE="$DOTFILESDIR/$DOTFILE"
 
   # Skip script/, terminal/, .git/, .gitignore, LICENSE, and any .txt or .md files
-  if [[ "$DOTFILE" =~ ^(script|terminal|\.git|\.gitignore|LICENSE|.*\.(txt|md))$ ]]; then
+  if [[ "$DOTFILE" =~ ^(script\/|terminal\/|\.git\/|\.gitignore|LICENSE|.*\.(txt|md))$ ]]; then
     continue
   fi
 
