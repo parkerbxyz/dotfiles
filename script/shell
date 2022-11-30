@@ -12,17 +12,15 @@ echo ""
 echo -e "\033[34mConfiguring Terminal...\033[0m"
 
 # Add preferred shell to /etc/shells if it's not already there
-if grep --invert-match --quiet "/bin/$PREFERRED_SHELL_NAME" "/etc/shells"; then
-  echo -n "Adding $PREFERRED_SHELL_NAME to /etc/shells... "
-  echo "$PREFERRED_SHELL_PATH" | sudo tee -a /etc/shells &&
-  echo "Done."
+if ! grep --quiet "/bin/$PREFERRED_SHELL_NAME" "/etc/shells"; then
+  echo "Adding $PREFERRED_SHELL_NAME to /etc/shells... "
+  echo "$PREFERRED_SHELL_PATH" | sudo tee -a /etc/shells
 fi
 
 # Set login (default) shell to preferred shell
 LOGIN_SHELL_PATH="$(dscl . -read "/Users/$USER" UserShell | awk '{print $2}')"
 LOGIN_SHELL_NAME="$(basename "$LOGIN_SHELL_PATH")"
 if [[ "$LOGIN_SHELL_PATH" != *"/bin/$PREFERRED_SHELL_NAME" ]]; then
-  echo -n "Changing the default shell from $LOGIN_SHELL_NAME to $PREFERRED_SHELL_NAME... "
-  chsh -s "$PREFERRED_SHELL_PATH" &&
-  echo "Done."
+  echo "Changing the default shell from $LOGIN_SHELL_NAME to $PREFERRED_SHELL_NAME... "
+  chsh -s "$PREFERRED_SHELL_PATH"
 fi
