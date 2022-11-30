@@ -2,18 +2,51 @@
 #
 # Create symbolic links
 
+echo ""
+echo -e "\033[34mConfiguring symlinks...\033[0m"
+
 GITHUB_USERNAME=$(git config github.user)
 GITHUB_DIRECTORY="$HOME/github.com"
 
+symlink_directory() {
+  local source_directory="$1"
+  local target_directory="$2"
+
+  # If there is already a file or directory at the target path that is not a symbolic link
+  if [[ -e "$target_directory" ]] && [[ ! -L "$target_directory" ]]; then
+    # Move the file or directory to the trash for posterity (rather than overwriting or deleting it)
+    echo "Moving $target_directory to the trash so we can create a symlink in its place..."
+    trash "$target_directory"
+  fi
+
+  # If there is already a symbolic link at the target path pointing to a directory
+  if [[ -L "$target_directory" ]] && [[ -d "$target_directory" ]]; then
+    # If the symlink points to the source directory
+    if readlink "$target_directory" | grep -q "$source_directory"; then
+      # Exit the function because the symlink has already been properly configured
+      return
+    fi
+    # Remove the symbolic link because it points to the wrong directory
+    rm "$target_directory"
+  fi
+
+  # Create the parent directory of the target directory if it doesn't already exist
+  mkdir -p "$(dirname "$target_directory")"
+
+  # Create symlink (overwrites existing target file if one exists)
+  ln -sfv "$source_directory" "$target_directory"
+}
+
 # Dotfiles
-# Create the parent directory of the symlink if it does not exist
-mkdir -p "$GITHUB_DIRECTORY/$GITHUB_USERNAME"
-ln -sv "$HOME/.dotfiles" "$GITHUB_DIRECTORY/$GITHUB_USERNAME/dotfiles"
+DOTFILES_DIRECTORY="$HOME/.dotfiles"
+DOTFILES_REPO_PATH="$GITHUB_DIRECTORY/$GITHUB_USERNAME/dotfiles"
+symlink_directory "$DOTFILES_DIRECTORY" "$DOTFILES_REPO_PATH"
 
 # Exercism
-EXERCISM_PATH="$HOME/github.com/$GITHUB_USERNAME/exercism"
+EXERCISM_DIRECTORY="$HOME/Exercism"
+EXERCISM_REPO_PATH="$HOME/github.com/$GITHUB_USERNAME/exercism"
 # Clone the exercism repository if it does not exist
-if ! git -C "$EXERCISM_PATH" rev-parse 2>/dev/null; then
-  git clone "https://github.com/$GITHUB_USERNAME/exercism.git" "$EXERCISM_PATH"
+if ! git -C "$EXERCISM_DIRECTORY" rev-parse 2>/dev/null; then
+  git clone "https://github.com/$GITHUB_USERNAME/exercism.git" "$EXERCISM_DIRECTORY"
 fi
-ln -sv ~/github.com/"$GITHUB_USERNAME"/exercism ~/Exercism
+symlink_directory "$EXERCISM_DIRECTORY" "$EXERCISM_REPO_PATH"
