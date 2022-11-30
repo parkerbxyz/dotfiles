@@ -9,7 +9,7 @@ else
   SCRIPT_SETUP="$0"
 fi
 
-# Go up to the parent of the script directory
+# Change the working directory to the parent directory of this script
 cd "$(dirname "$SCRIPT_SETUP")/.." || exit
 
 # Set $DOTFILESDIR to the "physical" path of the working directory
@@ -19,7 +19,6 @@ DOTFILESDIR=$(pwd -P)
 case "$OSTYPE" in
 "darwin"*) # macOS
   VSCODE="$HOME/Library/Application Support/Code/User"
-  ZOOM="/Library/Preferences"
   ;;
 "linux"*) # Linux
   VSCODE="$HOME/.config/Code/User"
@@ -48,12 +47,9 @@ for DOTFILE in *; do
 
   # Configure dotfile-specific paths
   case "$DOTFILE" in
-  *vscode-*.json) mkdir -p "$VSCODE" &&
-    SYMLINK_BASENAME=$(echo $DOTFILE | cut -d '-' -f 2) && HOMEFILE="$VSCODE/$SYMLINK_BASENAME" ;;
-  *zoom*) # Skip if $ZOOM is empty or unset
-    [[ -z "${ZOOM+x}" ]] && continue
-    HOMEFILE="$ZOOM/$DOTFILE" && mkdir -p "$ZOOM"
-    ;;
+  vscode-*.json) mkdir -p "$VSCODE" &&
+    SYMLINK_BASENAME=$(echo $DOTFILE | cut -d '-' -f 2) &&
+    HOMEFILE="$VSCODE/$SYMLINK_BASENAME" ;;
   esac
 
   # If $HOMEFILE is a symbolic link and $DOTFILE is not a directory
