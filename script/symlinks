@@ -50,3 +50,5 @@ if ! git -C "$EXERCISM_DIRECTORY" rev-parse 2>/dev/null; then
   git clone "https://github.com/$GITHUB_USERNAME/exercism.git" "$EXERCISM_DIRECTORY"
 fi
 symlink_directory "$EXERCISM_DIRECTORY" "$EXERCISM_REPO_PATH"
+
+echo "OK"
