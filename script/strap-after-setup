@@ -2,21 +2,15 @@
 #
 # Run by Strap after installing Brewfile dependencies
 
+# Change the working directory to the parent directory of this script
 cd "$(dirname "$0")"/.. || exit
 
-# Only run on macOS
-[[ "$OSTYPE" == darwin* ]] && {
-  script/macos
+# Only run on macOS (if $OSTYPE begins with 'darwin' or uname command outputs 'Darwin')
+if [[ $OSTYPE == darwin* ]] || [[ $(uname) == Darwin ]]; then
+  script/defaults
   script/terminal
-}
+  script/shell
+fi
 
 script/symlinks
 script/install-vscode-extensions
-
-# Use fish as the default shell
-if [ "$SHELL" != "*/bin/fish" ]; then
-  if ! command -v fish &>/dev/null; then
-    brew install fish
-  fi
-  chsh -s "$(brew --prefix)/bin/fish"
-fi
