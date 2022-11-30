@@ -42,7 +42,7 @@ for DOTFILE in *; do
   DIRFILE="$DOTFILESDIR/$DOTFILE"
 
   # Skip script/, terminal/, .git/, .gitignore, LICENSE, and any .txt or .md files
-  if [[ "$DOTFILE" =~ ^(script\/|terminal\/|\.git\/|\.gitignore|LICENSE|.*\.(txt|md))$ ]]; then
+  if [[ "$DOTFILE" =~ ^(\.dotfiles\/|script\/|terminal\/|\.git\/|\.gitignore|LICENSE|.*\.(txt|md))$ ]]; then
     continue
   fi
 
