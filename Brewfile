@@ -79,7 +79,6 @@ cask "imageoptim"                # Tool to optimize images to a smaller size
 cask "insomnia"                  # HTTP and GraphQL Client
 cask "krisp"                     # Sound clear in online meetings
 cask "latest"                    # Utility that shows the latest app updates
-cask "logitech-camera-settings"  # Provides access to camera controls
 cask "macfuse"                   # File system integration
 cask "mark-text"                 # Simple and elegant markdown editor
 cask "messenger"                 # Native desktop app for Messenger (formerly Facebook Messenger)
