@@ -47,9 +47,11 @@ for DOTFILE in *; do
 
   # Configure dotfile-specific paths
   case "$DOTFILE" in
-  vscode-*.json) mkdir -p "$VSCODE" &&
-    SYMLINK_BASENAME=$(echo $DOTFILE | cut -d '-' -f 2) &&
-    HOMEFILE="$VSCODE/$SYMLINK_BASENAME" ;;
+  vscode-*.json)
+    mkdir -p "$VSCODE" &&
+      SYMLINK_BASENAME=$(echo $DOTFILE | cut -d '-' -f 2) &&
+      HOMEFILE="$VSCODE/$SYMLINK_BASENAME"
+    ;;
   esac
 
   # If $HOMEFILE is a symbolic link and $DOTFILE is not a directory
