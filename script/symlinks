@@ -3,11 +3,12 @@
 # Create symbolic links
 
 GITHUB_USERNAME=$(git config github.user)
+GITHUB_DIRECTORY="$HOME/github.com"
 
 # Dotfiles
 # Create the parent directory of the symlink if it does not exist
-mkdir -p ~/github.com/"$GITHUB_USERNAME"
-ln -s ~/.dotfiles ~/github.com/"$GITHUB_USERNAME"/dotfiles
+mkdir -p "$GITHUB_DIRECTORY/$GITHUB_USERNAME"
+ln -s "$HOME/.dotfiles" "$GITHUB_DIRECTORY/$GITHUB_USERNAME/dotfiles"
 
 # Exercism
 EXERCISM_PATH="$HOME/github.com/$GITHUB_USERNAME/exercism"
