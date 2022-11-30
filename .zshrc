@@ -2,7 +2,9 @@
 # Executes commands at the start of an interactive session.
 #
 
-# Operating system-specific variables
+export PATH="/opt/homebrew/bin:$PATH"
+
+## Operating system-specific variables
 case "$OSTYPE" in
 "darwin"*) : $(brew --prefix) ;; # macOS
 "linux"*) : "/usr" ;;            # Linux
@@ -37,10 +39,10 @@ alias ls="ls -G"
 # Set default editor
 export EDITOR="code --wait"
 
-# Homebrew formulae with executables in /usr/local/sbin
-if type brew &>/dev/null; then
-  export PATH="/usr/local/sbin:$PATH"
-fi
+# Homebrew formulae with executables in $(brew --prefix)/sbin
+#if type brew &>/dev/null; then
+  export PATH="$(brew --prefix)/sbin:$PATH"
+#fi
 
 # Homebrew completions (https://docs.brew.sh/Shell-Completion)
 if type brew &>/dev/null; then
