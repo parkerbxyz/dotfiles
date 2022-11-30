@@ -50,6 +50,7 @@ brew "starship"                  # Cross-shell prompt for astronauts
 brew "textql"                    # Executes SQL across text files
 brew "tldr"                      # Simplified and community-driven man pages
 brew "tmux"                      # Terminal multiplexer
+brew "trash"                     # CLI tool that moves files or folder to the trash
 brew "tree"                      # Display directories as trees (with optional color/HTML output)
 brew "wget"                      # Internet file retriever
 brew "yarn"                      # JavaScript package manager
