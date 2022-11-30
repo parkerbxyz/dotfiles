@@ -2,14 +2,25 @@
 #
 # Setup Terminal profile
 
-TERM_PROFILE=xyz;
-CURRENT_PROFILE="$(defaults read com.apple.terminal 'Default Window Settings')";
+# Change the working directory to the parent directory of this script
+cd "$(dirname "$0")"/.. || exit
 
-if [ "${CURRENT_PROFILE}" != "${TERM_PROFILE}" ]; then
-  # open new windows with TERM_PROFILE
-  open "${HOME}/.${TERM_PROFILE}.terminal";
-  sleep 1;
-  # Set as default profile
-  defaults write com.apple.terminal "Default Window Settings" -string "${TERM_PROFILE}";
-  defaults write com.apple.terminal "Startup Window Settings" -string "${TERM_PROFILE}";
-fi;
+echo ""
+echo -e "\033[34mConfiguring Terminal profile...\033[0m"
+
+TERM_PROFILE_NAME="xyz"
+TERM_PROFILE_PATH="terminal/$TERM_PROFILE_NAME.terminal"
+echo "Preferred profile name: $TERM_PROFILE_NAME"
+
+CURRENT_PROFILE_NAME="$(defaults read com.apple.terminal 'Default Window Settings')"
+echo "Current profile name: $CURRENT_PROFILE_NAME"
+
+if [ "${CURRENT_PROFILE_NAME}" != "${TERM_PROFILE_NAME}" ]; then
+  echo "Importing preferred profile: $TERM_PROFILE_NAME..."
+  open "$TERM_PROFILE_PATH"
+  sleep 1
+
+  echo "Setting $TERM_PROFILE_NAME as the default profile..."
+  defaults write com.apple.terminal "Default Window Settings" -string "${TERM_PROFILE_NAME}"
+  defaults write com.apple.terminal "Startup Window Settings" -string "${TERM_PROFILE_NAME}"
+fi
