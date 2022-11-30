@@ -60,4 +60,9 @@ ${casks.join("\n")}
 ${mas.join("\n")}
 `.trim();
 
-console.log(formattedBrewfile);
+// Remove Mac App Store apps that come pre-installed
+const defaultApps = ["GarageBand", "iMovie", "Keynote", "Numbers", "Pages"];
+const masRegex = new RegExp(`^mas "(${defaultApps.join("|")})".*\n`, "gm");
+const formattedBrewfileWithoutDefaultApps = formattedBrewfile.replace(masRegex, "");
+
+console.log(formattedBrewfileWithoutDefaultApps);
