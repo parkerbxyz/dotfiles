@@ -8,7 +8,7 @@ GITHUB_DIRECTORY="$HOME/github.com"
 # Dotfiles
 # Create the parent directory of the symlink if it does not exist
 mkdir -p "$GITHUB_DIRECTORY/$GITHUB_USERNAME"
-ln -s "$HOME/.dotfiles" "$GITHUB_DIRECTORY/$GITHUB_USERNAME/dotfiles"
+ln -sv "$HOME/.dotfiles" "$GITHUB_DIRECTORY/$GITHUB_USERNAME/dotfiles"
 
 # Exercism
 EXERCISM_PATH="$HOME/github.com/$GITHUB_USERNAME/exercism"
@@ -16,4 +16,4 @@ EXERCISM_PATH="$HOME/github.com/$GITHUB_USERNAME/exercism"
 if ! git -C "$EXERCISM_PATH" rev-parse 2>/dev/null; then
   git clone "https://github.com/$GITHUB_USERNAME/exercism.git" "$EXERCISM_PATH"
 fi
-ln -s ~/github.com/"$GITHUB_USERNAME"/exercism ~/Exercism
+ln -sv ~/github.com/"$GITHUB_USERNAME"/exercism ~/Exercism

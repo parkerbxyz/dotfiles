@@ -70,7 +70,7 @@ done
 # Setup ~/.dotfiles symlink if missing
 HOMEDOTFILES="$HOME/.dotfiles"
 if [ "$DOTFILESDIR" != "$HOMEDOTFILES" ]; then
-  ln -sf "$DOTFILESDIR" "$HOMEDOTFILES"
+  ln -sfv "$DOTFILESDIR" "$HOMEDOTFILES"
 fi
 
 # If running in Codespaces
