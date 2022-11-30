@@ -103,15 +103,10 @@ cask "zoom"                      # Video communication and virtual meeting platf
 mas "1Password for Safari", id: 1569813296
 mas "Bear", id: 1091189122
 mas "Drafts", id: 1435957248
-mas "GarageBand", id: 682658836
 mas "Gifski", id: 1351639930
 mas "Hush", id: 1544743900
-mas "iMovie", id: 408981434
-mas "Keynote", id: 409183694
 mas "LG Screen Manager", id: 1142051783
 mas "Marked 2", id: 890031187
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
 mas "Pixelmator", id: 407963104
 mas "Redacted", id: 984968384
 mas "Speedtest", id: 1153157709
