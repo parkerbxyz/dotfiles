@@ -2,14 +2,14 @@
 #
 # Setup shell
 
+echo ""
+echo -e "\033[34mConfiguring shell...\033[0m"
+
 PREFERRED_SHELL_NAME="fish"
 PREFERRED_SHELL_PATH="$(brew --prefix)/bin/$PREFERRED_SHELL_NAME"
 
 # Change the working directory to the parent directory of this script
 cd "$(dirname "$0")"/.. || exit
-
-echo ""
-echo -e "\033[34mConfiguring shell...\033[0m"
 
 # Add preferred shell to /etc/shells if it's not already there
 if ! grep --quiet "/bin/$PREFERRED_SHELL_NAME" "/etc/shells"; then
@@ -24,3 +24,5 @@ if [[ "$LOGIN_SHELL_PATH" != *"/bin/$PREFERRED_SHELL_NAME" ]]; then
   echo "Changing the default shell from $LOGIN_SHELL_NAME to $PREFERRED_SHELL_NAME... "
   chsh -s "$PREFERRED_SHELL_PATH"
 fi
+
+echo "OK"
