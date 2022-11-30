@@ -9,7 +9,7 @@ PREFERRED_SHELL_PATH="$(brew --prefix)/bin/$PREFERRED_SHELL_NAME"
 cd "$(dirname "$0")"/.. || exit
 
 echo ""
-echo -e "\033[34mConfiguring Terminal...\033[0m"
+echo -e "\033[34mConfiguring shell...\033[0m"
 
 # Add preferred shell to /etc/shells if it's not already there
 if ! grep --quiet "/bin/$PREFERRED_SHELL_NAME" "/etc/shells"; then
