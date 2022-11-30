@@ -62,6 +62,9 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:GroupBy Kind" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy dateAdded" ~/Library/Preferences/com.apple.finder.plist
 
+# Empty Trash automatically (erases items that have been in the Trash for more than 30 days)
+defaults write com.apple.finder FXRemoveOldTrashItems -bool true
+
 ###############################################################################
 # Safari & WebKit                                                             #
 ###############################################################################
