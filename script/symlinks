@@ -4,5 +4,15 @@
 
 GITHUB_USERNAME=$(git config github.user)
 
-ln -s ~/github.com/"$GITHUB_USERNAME"/exercism ~/Exercism
+# Dotfiles
+# Create the parent directory of the symlink if it does not exist
+mkdir -p ~/github.com/"$GITHUB_USERNAME"
 ln -s ~/.dotfiles ~/github.com/"$GITHUB_USERNAME"/dotfiles
+
+# Exercism
+EXERCISM_PATH="$HOME/github.com/$GITHUB_USERNAME/exercism"
+# Clone the exercism repository if it does not exist
+if ! git -C "$EXERCISM_PATH" rev-parse 2>/dev/null; then
+  git clone "https://github.com/$GITHUB_USERNAME/exercism.git" "$EXERCISM_PATH"
+fi
+ln -s ~/github.com/"$GITHUB_USERNAME"/exercism ~/Exercism
