@@ -6,6 +6,7 @@
 cd "$(dirname "$0")"/.. || exit
 
 # Only run on macOS (if $OSTYPE begins with 'darwin' or uname command outputs 'Darwin')
+# Using uname as a fallback because $OSTYPE is not set in some shells (i.e., fish)
 if [[ $OSTYPE == darwin* ]] || [[ $(uname) == Darwin ]]; then
   script/defaults
   script/terminal
