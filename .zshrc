@@ -63,8 +63,6 @@ fi
 if command -v pyenv &>/dev/null; then
   # enable shims and autocompletion
   eval "$(pyenv init -)"
-  # silence pyenv brew doctor warnings
-  source "$HOME/.pyenv/brew.sh"
 fi
 
 # nodenv (https://github.com/nodenv/nodenv)
