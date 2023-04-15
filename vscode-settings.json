@@ -26,9 +26,11 @@
   ],
   "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.diffAlgorithm": "experimental",
-  "editor.codeActionsOnSave": {
-    "source.fixAll.markdownlint": true,
-    "source.organizeLinkDefinitions": true
+  "[markdown]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.markdownlint": true,
+      "source.organizeLinkDefinitions": true
+    }
   },
   "editor.fontFamily": "'FiraCode Nerd Font Mono', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 14,
