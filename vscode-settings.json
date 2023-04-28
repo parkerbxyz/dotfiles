@@ -1,5 +1,5 @@
 {
-  "[javascript][json][jsonc][yaml]": {
+  "[javascript][typescript][json][jsonc][yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[liquid]": {
@@ -24,13 +24,14 @@
     "pylint",
     "shellcheck"
   ],
-  "diffEditor.ignoreTrimWhitespace": false,
+  "cSpell.blockCheckingWhenTextChunkSizeGreaterThan": 1000,
   "diffEditor.diffAlgorithm": "experimental",
   "[markdown]": {
     "editor.codeActionsOnSave": {
       "source.fixAll.markdownlint": true,
-      "source.organizeLinkDefinitions": true
-    }
+      "source.organizeLinkDefinitions": true,
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.fontFamily": "'FiraCode Nerd Font Mono', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 14,
@@ -91,6 +92,11 @@
       ]
     }
   },
+  "linter.linters": {
+    "markdownlint": {
+      "enabled": false
+    }
+  },
   "merge-conflict.autoNavigateNextConflict.enabled": true,
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": false,
@@ -109,5 +115,8 @@
   "window.commandCenter": true,
   "terminal.integrated.scrollback": 2000,
   "editor.renderWhitespace": "all",
-  "editor.accessibilitySupport": "off"
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.renderSideBySide": false,
+  "markdown.suggest.paths.includeWorkspaceHeaderCompletions": "onSingleOrDoubleHash"
 }
