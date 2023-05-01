@@ -10,4 +10,4 @@ updates:
   - package-ecosystem: "npm"
     directory: "/script/js"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
