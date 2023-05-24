@@ -23,7 +23,7 @@ if ! command -v brew >/dev/null; then
 
   NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-  (echo; echo 'eval "\$(${HOMEBREW_PREFIX}/bin/brew shellenv)"') >> "${shell_profile}"
+  (echo; echo "eval \$(${HOMEBREW_PREFIX}/bin/brew shellenv)") >> "${shell_profile}"
   eval "\$(${HOMEBREW_PREFIX}/bin/brew shellenv)"
 fi
 
