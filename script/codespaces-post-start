@@ -6,7 +6,7 @@
 if ! command -v fish >/dev/null; then
   apt-get update \
     && apt-get install -yq software-properties-common \
-    && add-apt-repository universe || add-apt-repository contrib \
+    && add-apt-repository universe --update || add-apt-repository contrib --update \
     && apt-get install -yq fish \
     && FISH_PROMPT="function fish_prompt\n    set_color green\n    echo -n (whoami)\n    set_color normal\n    echo -n \":\"\n    set_color blue\n    echo -n (pwd)\n    set_color normal\n    echo -n \"> \"\nend\n" \
     && printf "%s" "$FISH_PROMPT" >> /etc/fish/functions/fish_prompt.fish \
