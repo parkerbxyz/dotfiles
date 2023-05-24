@@ -2,15 +2,17 @@
 #
 # Run by Codespaces after starting
 
-# Install fish
-brew install fish
+# Install fish if not installed
+if ! command -v fish >/dev/null; then
+  brew install fish
+fi
 
 # Install font-fira-code-nerd-font (Starship dependency)
 brew tap homebrew/cask-fonts
 brew install font-fira-code-nerd-font
 
 # Install Starship
-curl -sS https://starship.rs/install.sh | sh -s -- -y
+brew install starship
 
 # Disable Starship container configuration
 echo "
