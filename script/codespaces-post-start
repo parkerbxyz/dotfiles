@@ -2,30 +2,11 @@
 #
 # Run by Codespaces after starting
 
-# Install Homebrew if not installed
-if ! command -v brew >/dev/null; then
-  # shellcheck source=/dev/null
-  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-  add_brew_config_to_file() {
-    path="$1"
-    line="eval \"\$($(brew --prefix)/bin/brew shellenv)\""
-    if ! grep -qxF "$line" "$path"; then
-      (echo; echo "$line") >> "$path"
-    fi
-  }
-
-  # Add Homebrew to PATH
-  test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
-  test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  test -r ~/.bashrc &&  add_brew_config_to_file ~/.bash_profile
-  test -r ~/.bash_profile &&  add_brew_config_to_file ~/.bash_profile
-  add_brew_config_to_file ~/.profile
-fi
-
 # Install fish if not installed
 if ! command -v fish >/dev/null; then
-  brew install fish && \
+  sudo apt-add-repository ppa:fish-shell/release-3
+  sudo apt update
+  sudo apt install fish
 
   # Set fish as the default shell
   echo /usr/local/bin/fish | sudo tee -a /etc/shells
@@ -33,11 +14,11 @@ if ! command -v fish >/dev/null; then
 fi
 
 # Install font-fira-code-nerd-font (Starship dependency)
-brew tap homebrew/cask-fonts
-brew install font-fira-code-nerd-font
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts && curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/FiraCode/Regular/FiraCodeNerdFont-Regular.ttf
 
 # Install Starship
-brew install starship
+curl -sS https://starship.rs/install.sh | sh -s -- -y
 
 # Disable Starship container configuration
 echo "
