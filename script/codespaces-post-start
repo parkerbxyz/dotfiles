@@ -4,10 +4,38 @@
 
 # Install Homebrew if not installed
 if ! command -v brew >/dev/null; then
-  # shellcheck source=/dev/null
-  source <(NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)")
 
-  (echo; echo "eval \$(${HOMEBREW_PREFIX}/bin/brew shellenv)") >> "${shell_profile:?}"
+  # Set $HOMEBREW_PREFIX
+  OS="$(uname)"
+  if [[ "${OS}" == "Linux" ]]; then
+    HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
+  elif [[ "${OS}" == "Darwin" ]]; then
+    HOMEBREW_PREFIX="/opt/homebrew"
+  else
+    abort "Homebrew is only supported on macOS and Linux."
+  fi
+
+  # Set $SHELL_PROFILE
+  case "${SHELL}" in
+  */bash*)
+    if [[ -r "${HOME}/.bash_profile" ]]; then
+      SHELL_PROFILE="${HOME}/.bash_profile"
+    else
+      SHELL_PROFILE="${HOME}/.profile"
+    fi
+    ;;
+  */zsh*)
+    SHELL_PROFILE="${HOME}/.zprofile"
+    ;;
+  *)
+    SHELL_PROFILE="${HOME}/.profile"
+    ;;
+  esac
+
+  # shellcheck source=/dev/null
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  (echo; echo "eval \$(${HOMEBREW_PREFIX}/bin/brew shellenv)") >>"${SHELL_PROFILE}"
   eval "\$(${HOMEBREW_PREFIX}/bin/brew shellenv)"
 fi
 
