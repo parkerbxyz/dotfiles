@@ -7,11 +7,20 @@ if ! command -v brew >/dev/null; then
   # shellcheck source=/dev/null
   NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+  add_brew_config_to_file() {
+    path="$1"
+    line="eval \"\$($(brew --prefix)/bin/brew shellenv)\""
+    if ! grep -qxF "$line" "$path"; then
+      (echo; echo "$line") >> "$path"
+    fi
+  }
+
   # Add Homebrew to PATH
   test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
   test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  test -r ~/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bash_profile
-  (echo; echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"") >> ~/.profile
+  test -r ~/.bashrc &&  add_brew_config_to_file ~/.bash_profile
+  test -r ~/.bash_profile &&  add_brew_config_to_file ~/.bash_profile
+  add_brew_config_to_file ~/.profile
 fi
 
 # Install fish if not installed
