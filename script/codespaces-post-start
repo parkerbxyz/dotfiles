@@ -4,41 +4,14 @@
 
 # Install Homebrew if not installed
 if ! command -v brew >/dev/null; then
-  # Set $HOMEBREW_PREFIX
-  OS="$(uname)"
-  if [[ "${OS}" == "Linux" ]]; then
-    HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
-  elif [[ "${OS}" == "Darwin" ]]; then
-    HOMEBREW_PREFIX="/opt/homebrew"
-  else
-    abort "Homebrew is only supported on macOS and Linux."
-  fi
-
-  # Set $SHELL_PROFILE
-  case "${SHELL}" in
-  */bash*)
-    if [[ -r "${HOME}/.bash_profile" ]]; then
-      SHELL_PROFILE="${HOME}/.bash_profile"
-    else
-      SHELL_PROFILE="${HOME}/.profile"
-    fi
-    ;;
-  */zsh*)
-    SHELL_PROFILE="${HOME}/.zprofile"
-    ;;
-  *)
-    SHELL_PROFILE="${HOME}/.profile"
-    ;;
-  esac
-
-  # Add Homebrew configuration to shell profile
-  (echo; echo "eval \$(${HOMEBREW_PREFIX}/bin/brew shellenv)") >>"${SHELL_PROFILE}"
-
   # shellcheck source=/dev/null
   NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
   # Add Homebrew to PATH
-  eval "\$(${HOMEBREW_PREFIX}/bin/brew shellenv)"
+  test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+  test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  test -r ~/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bash_profile
+  echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.profile
 fi
 
 # Install fish if not installed
