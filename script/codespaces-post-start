@@ -2,7 +2,11 @@
 #
 # Run by Codespaces after starting
 
+# Install fish
+brew install fish
+
 # Install font-fira-code-nerd-font (Starship dependency)
+brew tap homebrew/cask-fonts
 brew install font-fira-code-nerd-font
 
 # Install Starship
