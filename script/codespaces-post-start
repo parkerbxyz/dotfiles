@@ -16,7 +16,11 @@ fi
 
 # Install fish if not installed
 if ! command -v fish >/dev/null; then
-  brew install fish
+  brew install fish && \
+
+  # Set fish as the default shell
+  echo /usr/local/bin/fish | sudo tee -a /etc/shells
+  chsh -s /usr/local/bin/fish
 fi
 
 # Install font-fira-code-nerd-font (Starship dependency)
