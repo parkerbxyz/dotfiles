@@ -31,13 +31,14 @@ if ! command -v brew >/dev/null; then
     ;;
   esac
 
-  # Add Homebrew to PATH
+  # Add Homebrew configuration to shell profile
   (echo; echo "eval \$(${HOMEBREW_PREFIX}/bin/brew shellenv)") >>"${SHELL_PROFILE}"
-  echo "\$(${HOMEBREW_PREFIX}/bin/brew shellenv)"
-  eval "\$(${HOMEBREW_PREFIX}/bin/brew shellenv)"
 
   # shellcheck source=/dev/null
   NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  # Add Homebrew to PATH
+  eval "\$(${HOMEBREW_PREFIX}/bin/brew shellenv)"
 fi
 
 # Install fish if not installed
