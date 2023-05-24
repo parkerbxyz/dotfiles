@@ -4,13 +4,8 @@
 
 # Install fish if not installed
 if ! command -v fish >/dev/null; then
-  sudo apt-add-repository ppa:fish-shell/release-3
-  sudo apt update
+  sudo apt-add-repository ppa:fish-shell/release-3 --update --yes
   sudo apt install fish
-
-  # Set fish as the default shell
-  echo /usr/local/bin/fish | sudo tee -a /etc/shells
-  chsh -s /usr/local/bin/fish
 fi
 
 # Install font-fira-code-nerd-font (Starship dependency)
