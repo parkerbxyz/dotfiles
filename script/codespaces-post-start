@@ -5,10 +5,10 @@
 # Install fish if not installed
 if ! command -v fish >/dev/null; then
   # https://software.opensuse.org/download.html?project=shells%3Afish&package=fish
-  echo 'deb http://download.opensuse.org/repositories/shells:/fish/Debian_11/ /' | tee /etc/apt/sources.list.d/shells:fish.list
-  curl -fsSL https://download.opensuse.org/repositories/shells:fish/Debian_11/Release.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/shells_fish.gpg > /dev/null
-  apt-get update
-  apt-get install -yq fish
+  echo 'deb http://download.opensuse.org/repositories/shells:/fish/Debian_11/ /' | sudo tee /etc/apt/sources.list.d/shells:fish.list
+  curl -fsSL https://download.opensuse.org/repositories/shells:fish/Debian_11/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/shells_fish.gpg > /dev/null
+  sudo apt-get update
+  sudo apt-get install -yq fish
 fi
 
 # Install font-fira-code-nerd-font (Starship dependency)
