@@ -4,14 +4,11 @@
 
 # Install fish if not installed
 if ! command -v fish >/dev/null; then
-  # Download the latest release of fish, extract, install, and configure
-  gh release download --repo fish-shell/fish-shell --pattern '*.tar.xz' \
-    && apt-get update \
-    && apt-get install -yq xz-utils build-essential cmake ncurses-dev libncurses5-dev libpcre2-dev gettext \
-    && tar -xf fish-*.tar.xz \
-    && cd fish-*/ || return \
-    && cmake .; make; sudo make install \
-    && printf "if type code-insiders > /dev/null 2>&1; and not type code > /dev/null 2>&1\n alias code=code-insiders\nend" >>/etc/fish/conf.d/code_alias.fish
+  # https://software.opensuse.org/download.html?project=shells%3Afish&package=fish
+  echo 'deb http://download.opensuse.org/repositories/shells:/fish/Debian_11/ /' | sudo tee /etc/apt/sources.list.d/shells:fish.list
+  curl -fsSL https://download.opensuse.org/repositories/shells:fish/Debian_11/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/shells_fish.gpg > /dev/null
+  sudo apt-get update
+  sudo apt-get install fish
 fi
 
 # Install font-fira-code-nerd-font (Starship dependency)
