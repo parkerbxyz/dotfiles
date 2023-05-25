@@ -6,6 +6,7 @@
 if ! command -v fish >/dev/null; then
   # Download the latest release of fish, extract, install, and configure
   gh release download --repo fish-shell/fish-shell --pattern '*.tar.xz' \
+    && apt-get install -yq xz-utils \
     && tar -xf fish-*.tar.xz \
     && cd fish-*/ || return \
     && cmake .; make; sudo make install \
