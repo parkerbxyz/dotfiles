@@ -3,7 +3,9 @@
 .config/exercism/user.json
 
 # Non-configuration files
-.config/gh/state.yml
 .config/raycast/
-.config/configstore/update-notifier-npm-check-updates.json
 .config/op/config
+
+# Default configuration files
+.config/neofetch/config.conf
+.config/thefuck/
