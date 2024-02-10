@@ -6,7 +6,7 @@ if status is-interactive
     command -q pyenv && pyenv init - | source
     command -q thefuck && thefuck --alias oops | source
 
-    # VS Code shell integration (experimental)
+    # VS Code shell integration
     # https://code.visualstudio.com/docs/terminal/shell-integration
     string match -q "$TERM_PROGRAM" "vscode"
         and . (code --locate-shell-integration-path fish)
