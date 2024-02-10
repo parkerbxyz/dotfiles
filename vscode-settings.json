@@ -16,6 +16,7 @@
     "esbenp",
     "Fira",
     "Hubber",
+    "hubbers",
     "Hubbers",
     "Hubot",
     "iframe",
@@ -29,7 +30,7 @@
   "[markdown]": {
     "editor.codeActionsOnSave": {
       "source.fixAll.markdownlint": true,
-      "source.organizeLinkDefinitions": true,
+      "source.organizeLinkDefinitions": true
     },
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -68,6 +69,7 @@
   "markdown.validate.enabled": true,
   "markdown.occurrencesHighlight.enabled": true,
   "markdownlint.config": {
+    "default": true,
     "MD013": false,
     "MD024": false,
     "MD025": {
@@ -95,13 +97,15 @@
   "linter.linters": {
     "markdownlint": {
       "enabled": false
+    },
+    "shellcheck": {
+      "enabled": false
     }
   },
   "merge-conflict.autoNavigateNextConflict.enabled": true,
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": false,
   "python.linting.mypyEnabled": true,
-  "python.linting.pylintEnabled": true,
   "redhat.telemetry.enabled": false,
   "shellcheck.customArgs": ["-x"],
   "shellcheck.enableQuickFix": true,
@@ -118,5 +122,15 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.renderSideBySide": false,
-  "markdown.suggest.paths.includeWorkspaceHeaderCompletions": "onSingleOrDoubleHash"
+  "markdown.suggest.paths.includeWorkspaceHeaderCompletions": "onSingleOrDoubleHash",
+  "git.openRepositoryInParentFolders": "always",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "codeQL.telemetry.enableTelemetry": false,
+  "python.formatting.provider": "black",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "workbench.editor.splitInGroupLayout": "vertical"
 }
