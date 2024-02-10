@@ -15,20 +15,6 @@ cd "$(dirname "$SCRIPT_SETUP")/.." || exit
 # Set $DOTFILESDIR to the "physical" path of the working directory
 DOTFILESDIR=$(pwd -P)
 
-# Set paths for dotfiles outside of $HOME based on operating system
-case "$OSTYPE" in
-"darwin"*) # macOS
-  VSCODE="$HOME/Library/Application Support/Code/User"
-  ;;
-"linux"*) # Linux
-  VSCODE="$HOME/.config/Code/User"
-  ;;
-*) # Anything else
-  printf '%s\n' "Unsupported OS detected, aborting..." >&2
-  exit 1
-  ;;
-esac
-
 # Include filenames beginning with a ‘.’ in the results of filename expansion
 shopt -s dotglob
 
@@ -45,15 +31,6 @@ for DOTFILE in *; do
   if [[ "$DOTFILE" =~ ^(\.dotfiles\/|script\/|terminal\/|\.git\/|\.gitignore|LICENSE|.*\.(txt|md))$ ]]; then
     continue
   fi
-
-  # Configure dotfile-specific paths
-  case "$DOTFILE" in
-  vscode-*.json)
-    mkdir -p "$VSCODE" &&
-      SYMLINK_BASENAME=$(echo $DOTFILE | cut -d '-' -f 2) &&
-      HOMEFILE="$VSCODE/$SYMLINK_BASENAME"
-    ;;
-  esac
 
   # If $HOMEFILE is a symbolic link and $DOTFILE is not a directory
   if [[ -L "$HOMEFILE" ]] && ! [[ -d "$DOTFILE" ]]; then
