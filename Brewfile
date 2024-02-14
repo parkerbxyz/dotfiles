@@ -10,6 +10,7 @@ tap "macos-fuse-t/cask"
 # Formulae
 brew "actionlint"                  # Static checker for GitHub Actions workflow files
 brew "archey4"                     # Simple system information tool written in Python
+brew "libyaml"                     # YAML Parser
 brew "bandit"                      # Security-oriented static analyser for Python code
 brew "bash"                        # Bourne-Again SHell, a UNIX command interpreter
 brew "bats-core"                   # Bash Automated Testing System
@@ -32,7 +33,7 @@ brew "grex"                        # Command-line tool for generating regular ex
 brew "hadolint"                    # Smarter Dockerfile linter to validate best practices
 brew "httpie"                      # User-friendly cURL replacement (command-line HTTP client)
 brew "jq"                          # Lightweight and flexible command-line JSON processor
-brew "libyaml"                     # YAML Parser
+brew "libfaketime"                 # Report faked system time to programs
 brew "lychee"                      # Fast, async, resource-friendly link checker
 brew "node"                        # Platform built on V8 to build network applications
 brew "markdownlint-cli2"           # Fast, flexible, config-based cli for linting Markdown/CommonMark files
@@ -113,8 +114,11 @@ mas "Gifski", id: 1351639930
 mas "Hush", id: 1544743900
 mas "LG Screen Manager", id: 1142051783
 mas "Marked 2", id: 890031187
+mas "PDFZone", id: 1215383084
 mas "Pixelmator Pro", id: 1289583905
 mas "Redacted", id: 984968384
+mas "Soulver 3", id: 1508732804
 mas "Speedtest", id: 1153157709
 mas "StopTheMadness", id: 1376402589
+mas "TestFlight", id: 899247664
 mas "Things", id: 904280696
