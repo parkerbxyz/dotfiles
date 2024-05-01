@@ -3,3 +3,6 @@ overrides:
   - files: "*.json"
     options:
       trailingComma: 'all'
+  - files: "*.y{a,}ml"
+    options:
+      singleQuote: true
