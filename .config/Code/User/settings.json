@@ -34,8 +34,11 @@
     },
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.fontFamily": "'FiraCode Nerd Font Mono', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "'Monaspace Neon', monospace",
+  "editor.inlineSuggest.fontFamily": "'Monaspace Krypton', monospace",
+  "editor.fontLigatures": "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08'",
   "editor.fontSize": 14,
+  "editor.tabSize": 2,
   "editor.inlineSuggest.enabled": true,
   "editor.minimap.renderCharacters": false,
   "editor.scrollBeyondLastLine": false,
@@ -52,9 +55,10 @@
   "git.enableSmartCommit": true,
   "github.copilot.enable": {
     "*": true,
-    "yaml": true,
     "plaintext": true,
-    "markdown": true
+    "markdown": true,
+    "scminput": false,
+    "yaml": true
   },
   "githubPullRequests.pullBranch": "never",
   "markdown.updateLinksOnFileMove.enabled": "prompt",
@@ -94,18 +98,7 @@
       ]
     }
   },
-  "linter.linters": {
-    "markdownlint": {
-      "enabled": false
-    },
-    "shellcheck": {
-      "enabled": false
-    }
-  },
   "merge-conflict.autoNavigateNextConflict.enabled": true,
-  "python.linting.enabled": true,
-  "python.linting.flake8Enabled": false,
-  "python.linting.mypyEnabled": true,
   "redhat.telemetry.enabled": false,
   "shellcheck.customArgs": ["-x"],
   "shellcheck.enableQuickFix": true,
