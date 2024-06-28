@@ -39,11 +39,12 @@ tmpBrewfile = tmpBrewfile.replace(
   }
 );
 
-// Separate sections in the Brewfile with comment headers (Taps, Formulae, Casks, and Mac App Store)
+// Separate sections in the Brewfile with comment headers (Taps, Formulae, Casks, Mac App Store, and VS Code Extensions)
 const taps = tmpBrewfile.match(/tap ".*".*/g);
 const formulae = tmpBrewfile.match(/brew ".*".*/g);
 const casks = tmpBrewfile.match(/cask ".*".*/g);
 const mas = tmpBrewfile.match(/mas ".*".*/g);
+const vscode = tmpBrewfile.match(/vscode ".*".*/g);
 
 // Add comment headers to the Brewfile
 const formattedBrewfile = `
@@ -58,6 +59,9 @@ ${casks.join("\n")}
 
 # Mac App Store
 ${mas.join("\n")}
+
+# VS Code Extensions
+${vscode.join("\n")}
 `.trim();
 
 // Remove Mac App Store apps that come pre-installed

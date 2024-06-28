@@ -14,4 +14,3 @@ if [[ $OSTYPE == darwin* ]] || [[ $(uname) == Darwin ]]; then
 fi
 
 script/symlinks
-script/install-vscode-extensions

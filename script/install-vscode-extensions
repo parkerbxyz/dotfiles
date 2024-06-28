@@ -10,14 +10,14 @@ if ! command -v code >/dev/null; then
   exit 1
 fi
 
-# Set vscode-extensions path
-extensions="$(dirname "$0")/../vscode-extensions.txt"
+# Get extensions to install from Brewfile
+extensions="$(brew bundle list --vscode)"
 
 # Get list of installed VS Code extensions
 installed_extensions="$(code --list-extensions)"
 
-# Iterate through each line of vscode-extensions
-while IFS= read -r extension; do
+# Iterate through each extension in the list
+for extension in $extensions; do
   # Check if extension is already installed
   if [[ "$installed_extensions" == *"$extension"* ]]; then
     echo "Extension '$extension' is already installed."
@@ -25,4 +25,4 @@ while IFS= read -r extension; do
     # Install the extension
     code --install-extension "$extension"
   fi
-done <"$extensions"
+done

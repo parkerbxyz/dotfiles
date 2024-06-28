@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-# Change the working directory to the parent directory of this script
-cd "$(dirname "$0")"/.. || exit
-
-# Run the script and redirect output to Brewfile in the parent directory
-code --list-extensions > vscode-extensions.txt
