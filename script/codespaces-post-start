@@ -11,12 +11,6 @@ if ! command -v fish >/dev/null; then
   sudo apt-get install -yq fish
 fi
 
-# Install font-fira-code-nerd-font (Starship dependency)
-git clone --filter=blob:none --sparse https://github.com/ryanoasis/nerd-fonts.git
-cd nerd-fonts || return
-git sparse-checkout add patched-fonts/FiraCode
-./install.sh FiraCode
-
 # Install Starship
 curl -sS https://starship.rs/install.sh | sh -s -- -y
 
