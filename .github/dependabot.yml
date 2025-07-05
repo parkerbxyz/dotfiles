@@ -11,11 +11,17 @@ multi-ecosystem-groups:
 updates:
   - package-ecosystem: "github-actions"
     directory: "/"
-    patterns: ["*"]
-    update-types: ["minor", "patch"]
     multi-ecosystem-group: "minor-and-patch"
+    groups:
+      github-actions:
+        update-types:
+          - "minor"
+          - "patch"
   - package-ecosystem: "npm"
     directory: "/script/js"
-    patterns: ["*"]
-    update-types: ["minor", "patch"]
     multi-ecosystem-group: "minor-and-patch"
+    groups:
+      npm:
+        update-types:
+          - "minor"
+          - "patch"
