@@ -42,11 +42,11 @@ tmpBrewfile = tmpBrewfile.replace(
 );
 
 // Separate sections in the Brewfile with comment headers (Taps, Formulae, Casks, Mac App Store, and VS Code Extensions)
-const taps = tmpBrewfile.match(/tap ".*".*/g);
-const formulae = tmpBrewfile.match(/brew ".*".*/g);
-const casks = tmpBrewfile.match(/cask ".*".*/g);
-const mas = tmpBrewfile.match(/mas ".*".*/g);
-const vscode = tmpBrewfile.match(/vscode ".*".*/g);
+const taps = tmpBrewfile.match(/tap ".*".*/g) || [];
+const formulae = tmpBrewfile.match(/brew ".*".*/g) || [];
+const casks = tmpBrewfile.match(/cask ".*".*/g) || [];
+const mas = tmpBrewfile.match(/mas ".*".*/g) || [];
+const vscode = tmpBrewfile.match(/vscode ".*".*/g) || [];
 
 // Add comment headers to the Brewfile
 const formattedBrewfile = `
