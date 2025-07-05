@@ -53,32 +53,6 @@ fi
 # Enable the default zsh completions
 autoload -Uz compinit && compinit
 
-# rbenv (https://github.com/rbenv/rbenv)
-if command -v rbenv &>/dev/null; then
-  # load rbenv automatically
-  eval "$(rbenv init -)"
-fi
-
-# pyenv (https://github.com/pyenv/pyenv)
-if command -v pyenv &>/dev/null; then
-  # enable shims and autocompletion
-  eval "$(pyenv init -)"
-fi
-
-# nodenv (https://github.com/nodenv/nodenv)
-if command -v nodenv &>/dev/null; then
-  # load nodenv automatically
-  eval "$(nodenv init -)"
-fi
-
-# Pipenv (https://github.com/pypa/pipenv)
-if command -v pipenv &>/dev/null; then
-  # respect pyenv’s global and local Python versions
-  export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
-  # enable shell completion
-  eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
-fi
-
 # Starship (https://github.com/starship/starship)
 if command -v starship &>/dev/null; then
   eval "$(starship init zsh)"
@@ -89,3 +63,8 @@ if command -v op &>/dev/null; then
   # enable shell completion
   eval "$(op completion zsh)"; compdef _op op
 fi
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/tofu tofu
+
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
