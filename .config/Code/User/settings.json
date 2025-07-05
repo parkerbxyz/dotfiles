@@ -1,20 +1,41 @@
 {
+  "[javascript][typescript]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
   "[javascript][typescript][json][jsonc][yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[liquid]": {
+    "editor.foldingStrategy": "indentation",
     "editor.unicodeHighlight.allowedCharacters": {
-      "’": true,
-      "editor.foldingStrategy": "indentation"
+      "’": true
     },
     "editor.wordWrap": "on"
+  },
+  "[markdown]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.markdownlint": "explicit",
+      "source.organizeLinkDefinitions": "never"
+    },
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "prettier.proseWrap": "never"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
   },
   "[shellscript]": {
     "editor.rulers": [100]
   },
+  "cSpell.blockCheckingWhenTextChunkSizeGreaterThan": 1000,
   "cSpell.userWords": [
     "esbenp",
     "Fira",
+    "GHEC",
     "Hubber",
     "hubbers",
     "Hubbers",
@@ -23,26 +44,26 @@
     "Menlo",
     "mypy",
     "pylint",
+    "SFDC",
     "shellcheck"
   ],
-  "cSpell.blockCheckingWhenTextChunkSizeGreaterThan": 1000,
-  "diffEditor.diffAlgorithm": "experimental",
-  "[markdown]": {
-    "editor.codeActionsOnSave": {
-      "source.fixAll.markdownlint": "explicit",
-      "source.organizeLinkDefinitions": "explicit"
-    },
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  "chat.agent.maxRequests": 50,
+  "deno.codeLens.test": true,
+  "diffEditor.diffAlgorithm": "advanced",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.renderSideBySide": false,
   "editor.fontFamily": "'Monaspace Neon', monospace",
-  "editor.inlineSuggest.fontFamily": "'Monaspace Krypton', monospace",
-  "editor.fontLigatures": "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08'",
+  "editor.fontLigatures": "'calt', 'ss02', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09', 'liga'",
   "editor.fontSize": 14,
-  "editor.tabSize": 2,
+  "editor.guides.bracketPairs": "active",
   "editor.inlineSuggest.enabled": true,
+  "editor.inlineSuggest.fontFamily": "'Monaspace Krypton', monospace",
+  "editor.inlineSuggest.syntaxHighlightingEnabled": true,
   "editor.minimap.renderCharacters": false,
+  "editor.renderWhitespace": "trailing",
   "editor.scrollBeyondLastLine": false,
   "editor.stickyScroll.enabled": true,
+  "editor.tabSize": 2,
   "explorer.confirmDelete": false,
   "files.associations": {
     "ignore": "bat"
@@ -50,30 +71,47 @@
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
+  "git.blame.editorDecoration.enabled": true,
   "git.confirmSync": false,
   "git.enableCommitSigning": true,
   "git.enableSmartCommit": true,
+  "git.openRepositoryInParentFolders": "always",
+  "github.copilot.chat.codesearch.enabled": true,
+  "github.copilot.chat.generateTests.codeLens": true,
+  "github.copilot.chat.newWorkspaceCreation.enabled": true,
   "github.copilot.enable": {
     "*": true,
-    "plaintext": true,
     "markdown": true,
+    "plaintext": true,
     "scminput": false,
     "yaml": true
   },
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "github.copilot.selectedCompletionModel": "",
+  "githubPullRequests.experimental.chat": true,
+  "githubPullRequests.notifications": "pullRequests",
   "githubPullRequests.pullBranch": "never",
+  "go.toolsManagement.autoUpdate": true,
+  "indentRainbow.indicatorStyle": "light",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "ltex.additionalRules.enablePickyRules": true,
+  "ltex.hiddenFalsePositives": {
+    "en": ["COMMA_PARENTHESIS_WHITESPACE"]
+  },
+  "ltex.languageToolHttpServerUri": "http://localhost:8081",
+  "markdown.extension.orderedList.marker": "one",
+  "markdown.extension.toc.levels": "2..3",
+  "markdown.extension.toc.updateOnSave": false,
+  "markdown.occurrencesHighlight.enabled": true,
+  "markdown.suggest.paths.includeWorkspaceHeaderCompletions": "onSingleOrDoubleHash",
   "markdown.updateLinksOnFileMove.enabled": "prompt",
   "markdown.updateLinksOnFileMove.include": [
     "**/*.{md,mkd,mdwn,mdown,markdown,markdn,mdtxt,mdtext,workbook}",
     "**/*.{jpg,jpe,jpeg,png,bmp,gif,ico,webp,avif,tiff,svg,mp4}",
     "**/*.liquid"
   ],
-  "markdown.extension.orderedList.marker": "one",
-  "markdown.extension.toc.levels": "2..2",
-  "markdown.extension.toc.updateOnSave": false,
   "markdown.validate.enabled": true,
-  "markdown.occurrencesHighlight.enabled": true,
   "markdownlint.config": {
-    "default": true,
     "MD013": false,
     "MD024": false,
     "MD025": {
@@ -96,34 +134,34 @@
         "pre",
         "a"
       ]
+    },
+    "default": true
+  },
+  "mcp": {
+    "servers": {
+      "github": {
+        "type": "http",
+        "url": "https://api.githubcopilot.com/mcp/"
+      }
     }
   },
   "merge-conflict.autoNavigateNextConflict.enabled": true,
+  "python.analysis.typeCheckingMode": "standard",
+  "python.terminal.activateEnvironment": false,
   "redhat.telemetry.enabled": false,
+  "remote.autoForwardPortsSource": "hybrid",
   "shellcheck.customArgs": ["-x"],
   "shellcheck.enableQuickFix": true,
   "shellcheck.executablePath": "shellcheck",
   "telemetry.telemetryLevel": "off",
   "terminal.integrated.defaultProfile.linux": "fish",
   "terminal.integrated.defaultProfile.osx": "fish",
-  "workbench.colorTheme": "GitHub Dark Default",
-  "workbench.settings.useSplitJSON": true,
-  "workbench.startupEditor": "newUntitledFile",
-  "window.commandCenter": true,
   "terminal.integrated.scrollback": 2000,
-  "editor.renderWhitespace": "all",
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "diffEditor.ignoreTrimWhitespace": false,
-  "diffEditor.renderSideBySide": false,
-  "markdown.suggest.paths.includeWorkspaceHeaderCompletions": "onSingleOrDoubleHash",
-  "git.openRepositoryInParentFolders": "always",
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "codeQL.telemetry.enableTelemetry": false,
-  "python.formatting.provider": "black",
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter"
-  },
-  "workbench.editor.splitInGroupLayout": "vertical"
+  "terminal.integrated.suggest.enabled": true,
+  "window.commandCenter": true,
+  "workbench.colorTheme": "GitHub Dark Default",
+  "workbench.editor.splitInGroupLayout": "vertical",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.settings.useSplitJSON": true,
+  "workbench.startupEditor": "newUntitledFile"
 }
