@@ -6,6 +6,22 @@ import tmp from "tmp";
 import { spinner } from "zx";
 import "zx/globals";
 
+// Configuration
+const CONFIG = {
+  // Apps to exclude from the final Brewfile
+  excludedApps: ["GarageBand", "iMovie", "Keynote", "Numbers", "Pages"],
+  // Section headers
+  sectionHeaders: {
+    taps: "Taps",
+    formulae: "Formulae",
+    casks: "Casks",
+    mas: "Mac App Store",
+    vscode: "VS Code Extensions"
+  },
+  // Minimum padding between package and comment
+  minPadding: 1
+};
+
 // Remove all controlled temporary objects on process exit
 tmp.setGracefulCleanup();
 
@@ -13,63 +29,95 @@ tmp.setGracefulCleanup();
 const tmpDir = tmp.dirSync();
 const tmpBrewfilePath = `${tmpDir.name}/Brewfile`;
 
-// Create initial Brewfile
-await spinner(
-  "Running brew bundle dump...",
-  () => $`brew bundle --describe --no-restart dump --file ${tmpBrewfilePath}`
-);
+try {
+  // Create initial Brewfile
+  await spinner(
+    "Running brew bundle dump...",
+    () => $`brew bundle --describe --no-restart dump --file ${tmpBrewfilePath}`
+  );
 
-let tmpBrewfile = readFileSync(tmpBrewfilePath, "utf8");
+  let tmpBrewfile = readFileSync(tmpBrewfilePath, "utf8");
 
-// Move comments (lines starting with #) to the right of the line below
-// Capture everything before the comment, regardless of package complexity
-const packageRegex = /^(#.*)\n([^#]*)/gm;
-const packages = [...tmpBrewfile.matchAll(packageRegex)];
+  // Move comments (lines starting with #) to the right of the line below
+  const packageRegex = /^(#.*)\n(\w+ "[^"]*".*)/gm;
+  const packages = [...tmpBrewfile.matchAll(packageRegex)];
 
-// Count the length of the longest package line
-const longestPackageLineLength = packages.length > 0
-  ? packages.reduce((a, b) => {
-      return a[2].length > b[2].length ? a : b;
-    })[2].length
-  : 0;
+  if (packages.length > 0) {
+    // Count the length of the longest package line
+    const longestPackageLineLength = Math.max(...packages.map(pkg => pkg[2].length));
 
-// Add padding (spaces) to the end of each package line to align the comments
-tmpBrewfile = tmpBrewfile.replace(
-  packageRegex,
-  (match, pkgDescription, pkg) => {
-    const padding = " ".repeat(longestPackageLineLength - pkg.length + 1);
-    return `${pkg}${padding}${pkgDescription}`;
+    // Add padding (spaces) to the end of each package line to align the comments
+    tmpBrewfile = tmpBrewfile.replace(
+      packageRegex,
+      (match, pkgDescription, pkg) => {
+        const padding = " ".repeat(longestPackageLineLength - pkg.length + CONFIG.minPadding);
+        return `${pkg}${padding}${pkgDescription}`;
+      }
+    );
   }
-);
 
-// Separate sections in the Brewfile with comment headers (Taps, Formulae, Casks, Mac App Store, and VS Code Extensions)
-const taps = tmpBrewfile.match(/tap ".*".*/g) || [];
-const formulae = tmpBrewfile.match(/brew ".*".*/g) || [];
-const casks = tmpBrewfile.match(/cask ".*".*/g) || [];
-const mas = tmpBrewfile.match(/mas ".*".*/g) || [];
-const vscode = tmpBrewfile.match(/vscode ".*".*/g) || [];
+  // Extract and organize sections
+  const sections = extractSections(tmpBrewfile);
 
-// Add comment headers to the Brewfile
-const formattedBrewfile = `
-# Taps
-${taps.join("\n")}
+  // Format the final Brewfile
+  const formattedBrewfile = formatBrewfile(sections);
 
-# Formulae
-${formulae.join("\n")}
+  // Remove excluded apps
+  const finalBrewfile = removeExcludedApps(formattedBrewfile, CONFIG.excludedApps);
 
-# Casks
-${casks.join("\n")}
+  console.log(finalBrewfile);
 
-# Mac App Store
-${mas.join("\n")}
+} catch (error) {
+  console.error("Error generating Brewfile:", error.message);
+  process.exit(1);
+}
 
-# VS Code Extensions
-${vscode.join("\n")}
-`.trim();
+/**
+ * Extract different sections from the Brewfile content
+ */
+function extractSections(brewfileContent) {
+  const sections = {
+    taps: [],
+    formulae: [],
+    casks: [],
+    mas: [],
+    vscode: []
+  };
 
-// Remove Mac App Store apps that come pre-installed
-const defaultApps = ["GarageBand", "iMovie", "Keynote", "Numbers", "Pages"];
-const masRegex = new RegExp(`^mas "(${defaultApps.join("|")})".*\n`, "gm");
-const formattedBrewfileWithoutDefaultApps = formattedBrewfile.replace(masRegex, "");
+  brewfileContent.split('\n').forEach(line => {
+    if (line.startsWith('tap ')) sections.taps.push(line);
+    else if (line.startsWith('brew ')) sections.formulae.push(line);
+    else if (line.startsWith('cask ')) sections.casks.push(line);
+    else if (line.startsWith('mas ')) sections.mas.push(line);
+    else if (line.startsWith('vscode ')) sections.vscode.push(line);
+  });
 
-console.log(formattedBrewfileWithoutDefaultApps);
+  return sections;
+}
+
+/**
+ * Format the Brewfile with section headers
+ */
+function formatBrewfile(sections) {
+  const formattedSections = [];
+
+  // Process each section if it has content
+  Object.entries(sections).forEach(([sectionName, sectionContent]) => {
+    if (sectionContent.length > 0) {
+      const header = `# ${CONFIG.sectionHeaders[sectionName]}`;
+      formattedSections.push(`${header}\n${sectionContent.join("\n")}`);
+    }
+  });
+
+  return formattedSections.join("\n\n");
+}
+
+/**
+ * Remove excluded apps from the Brewfile
+ */
+function removeExcludedApps(brewfileContent, excludedApps) {
+  if (excludedApps.length === 0) return brewfileContent;
+
+  const masRegex = new RegExp(`^mas "(${excludedApps.join("|")})".*\n`, "gm");
+  return brewfileContent.replace(masRegex, "");
+}
