@@ -1,12 +1,15 @@
-# Files with secrets
+# Local configuration/settings
+.config/fish/completions/
+.config/fish/fish_variables
 .config/gh/hosts.yml
+.config/github-copilot/settings.json
+.config/op/config
+
+# Files with secrets
 .config/exercism/user.json
+.config/raycast/config.json
 
 # Non-configuration files
-.config/raycast/
-.config/op/config
 .config/configstore/update-notifier-npm-check*.json
+.config/raycast/extensions/
 
-# Default configuration files
-.config/neofetch/config.conf
-.config/fish/completions
