@@ -3,16 +3,11 @@
 
 version: 2
 
-multi-ecosystem-groups:
-  minor-and-patch:
-    schedule:
-      interval: "quarterly"
-
 updates:
   - package-ecosystem: "npm"
     directory: "/script/js"
-    patterns: ["*"]
-    multi-ecosystem-group: "minor-and-patch"
+    schedule:
+      interval: "quarterly"
     groups:
       npm:
         update-types:
