@@ -1,13 +1,21 @@
 # Please see the documentation for all configuration options:
-# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+# https://docs.github.com/code-security/dependabot/working-with-dependabot/dependabot-options-reference
 
 version: 2
+
+multi-ecosystem-groups:
+  minor-and-patch:
+    schedule:
+      interval: "quarterly"
+
 updates:
   - package-ecosystem: "github-actions"
     directory: "/"
-    schedule:
-      interval: "monthly"
+    patterns: ["*"]
+    update-types: ["minor", "patch"]
+    multi-ecosystem-group: "minor-and-patch"
   - package-ecosystem: "npm"
     directory: "/script/js"
-    schedule:
-      interval: "monthly"
+    patterns: ["*"]
+    update-types: ["minor", "patch"]
+    multi-ecosystem-group: "minor-and-patch"
