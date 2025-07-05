@@ -22,7 +22,7 @@ await spinner(
 let tmpBrewfile = readFileSync(tmpBrewfilePath, "utf8");
 
 // Move comments (lines starting with #) to the right of the line below
-const packageRegex = /^(#.*)\n(\w+ ".*")/gm;
+const packageRegex = /^(#.*)\n(\w+ "[^"]*")/gm;
 const packages = [...tmpBrewfile.matchAll(packageRegex)];
 
 // Count the length of the longest package line
