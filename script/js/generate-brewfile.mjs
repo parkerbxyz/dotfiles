@@ -16,7 +16,7 @@ const tmpBrewfilePath = `${tmpDir.name}/Brewfile`;
 // Create initial Brewfile
 await spinner(
   "Running brew bundle dump...",
-  () => $`brew bundle --describe dump --file ${tmpBrewfilePath}`
+  () => $`brew bundle --describe --no-restart dump --file ${tmpBrewfilePath}`
 );
 
 let tmpBrewfile = readFileSync(tmpBrewfilePath, "utf8");
