@@ -23,12 +23,14 @@ let tmpBrewfile = readFileSync(tmpBrewfilePath, "utf8");
 
 // Move comments (lines starting with #) to the right of the line below
 const packageRegex = /^(#.*)\n(\w+ ".*")/gm;
-const packages = tmpBrewfile.matchAll(packageRegex);
+const packages = [...tmpBrewfile.matchAll(packageRegex)];
 
 // Count the length of the longest package line
-const longestPackageLineLength = [...packages].reduce((a, b) => {
-  return a[2].length > b[2].length ? a : b;
-})[2].length;
+const longestPackageLineLength = packages.length > 0
+  ? packages.reduce((a, b) => {
+      return a[2].length > b[2].length ? a : b;
+    })[2].length
+  : 0;
 
 // Add padding (spaces) to the end of each package line to align the comments
 tmpBrewfile = tmpBrewfile.replace(
