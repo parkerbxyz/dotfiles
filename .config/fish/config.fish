@@ -10,3 +10,6 @@ if status is-interactive
     # 1Password CLI shell completion (https://developer.1password.com/docs/cli)
     command -q op && op completion fish | source
 end
+
+# Configure Homebrew shell environment
+eval "$(/opt/homebrew/bin/brew shellenv)"
