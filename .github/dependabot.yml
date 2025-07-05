@@ -11,6 +11,7 @@ multi-ecosystem-groups:
 updates:
   - package-ecosystem: "github-actions"
     directory: "/"
+    patterns: ["*"]
     multi-ecosystem-group: "minor-and-patch"
     groups:
       github-actions:
@@ -19,6 +20,7 @@ updates:
           - "patch"
   - package-ecosystem: "npm"
     directory: "/script/js"
+    patterns: ["*"]
     multi-ecosystem-group: "minor-and-patch"
     groups:
       npm:
