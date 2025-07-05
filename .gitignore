@@ -5,7 +5,8 @@
 # Non-configuration files
 .config/raycast/
 .config/op/config
+.config/configstore/update-notifier-npm-check*.json
 
 # Default configuration files
 .config/neofetch/config.conf
-.config/thefuck/
+.config/fish/completions
