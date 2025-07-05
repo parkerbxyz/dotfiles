@@ -15,9 +15,11 @@ fi
 curl -sS https://starship.rs/install.sh | sh -s -- -y
 
 # Disable Starship container configuration
-echo "
+if ! grep -q "\[container\]" ~/.config/starship.toml 2>/dev/null; then
+  echo "
 [container]
 disabled = true" >> ~/.config/starship.toml
+fi
 
 # Use default commit signing configuration
 git config --global --unset user.signingkey
