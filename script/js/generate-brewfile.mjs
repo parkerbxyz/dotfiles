@@ -3,7 +3,7 @@
 
 import { readFileSync } from "node:fs";
 import tmp from "tmp";
-import { spinner } from "zx/experimental";
+import { spinner } from "zx";
 import "zx/globals";
 
 // Remove all controlled temporary objects on process exit
