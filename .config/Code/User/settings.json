@@ -134,14 +134,6 @@
     },
     "default": true
   },
-  "mcp": {
-    "servers": {
-      "github": {
-        "type": "http",
-        "url": "https://api.githubcopilot.com/mcp/"
-      }
-    }
-  },
   "merge-conflict.autoNavigateNextConflict.enabled": true,
   "python.analysis.typeCheckingMode": "standard",
   "python.terminal.activateEnvironment": false,
