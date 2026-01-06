@@ -37,10 +37,22 @@ symlink_directory() {
   ln -sfv "$source_directory" "$target_directory"
 }
 
+symlink_file() {
+  local source_file="$1"
+  local target_file="$2"
+
+  ln -s "$source_file" "$target_file"
+}
+
 # Dotfiles
 DOTFILES_DIRECTORY="$HOME/.dotfiles"
 DOTFILES_REPO_PATH="$GITHUB_DIRECTORY/$GITHUB_USERNAME/dotfiles"
 symlink_directory "$DOTFILES_DIRECTORY" "$DOTFILES_REPO_PATH"
+
+# Linter configs
+GO_LINTER_CONFIG_SOURCE="$GITHUB_DIRECTORY/github/go-linter/.golangci.toml"
+GO_LINTER_CONFIG_TARGET="$GITHUB_DIRECTORY/github"
+symlink_file "$GO_LINTER_CONFIG_SOURCE" "$GO_LINTER_CONFIG_TARGET"
 
 # Exercism
 EXERCISM_DIRECTORY="$HOME/Exercism"
