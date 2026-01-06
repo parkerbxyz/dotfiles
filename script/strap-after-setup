@@ -11,6 +11,7 @@ if [[ $OSTYPE == darwin* ]] || [[ $(uname) == Darwin ]]; then
   script/defaults
   script/terminal
   script/shell
+  sudo-touchid --yes
 fi
 
 script/symlinks
