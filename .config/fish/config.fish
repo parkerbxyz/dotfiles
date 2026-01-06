@@ -1,6 +1,7 @@
 if status is-interactive
     # Commands to run in interactive sessions
     command -q starship && starship init fish | source
+    command -q rbenv && rbenv init - | source
 
     # VS Code shell integration
     # https://code.visualstudio.com/docs/terminal/shell-integration

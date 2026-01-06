@@ -53,6 +53,12 @@ fi
 # Enable the default zsh completions
 autoload -Uz compinit && compinit
 
+# rbenv (https://github.com/rbenv/rbenv)
+if command -v rbenv &>/dev/null; then
+  # load rbenv automatically
+  eval "$(rbenv init -)"
+fi
+
 # Starship (https://github.com/starship/starship)
 if command -v starship &>/dev/null; then
   eval "$(starship init zsh)"
