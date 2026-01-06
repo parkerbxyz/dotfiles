@@ -22,7 +22,7 @@
       "source.fixAll.markdownlint": "explicit",
       "source.organizeLinkDefinitions": "never"
     },
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
     "prettier.proseWrap": "never"
   },
   "[python]": {
