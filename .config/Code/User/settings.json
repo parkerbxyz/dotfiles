@@ -44,7 +44,7 @@
     "SFDC",
     "shellcheck"
   ],
-  "chat.agent.maxRequests": 50,
+  "chat.agent.maxRequests": 200,
   "deno.codeLens.test": true,
   "diffEditor.diffAlgorithm": "advanced",
   "diffEditor.ignoreTrimWhitespace": false,
