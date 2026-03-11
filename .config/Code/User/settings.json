@@ -132,6 +132,7 @@
         "a"
       ]
     },
+    "MD034": false,
     "default": true
   },
   "merge-conflict.autoNavigateNextConflict.enabled": true,
