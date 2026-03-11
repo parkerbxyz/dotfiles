@@ -12,4 +12,3 @@
 # Non-configuration files
 .config/configstore/update-notifier-npm-check*.json
 .config/raycast/extensions/
-
