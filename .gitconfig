@@ -49,9 +49,9 @@
 	# List local branches that have been merged with the default branch (excluding the default branch)
 	branch-list-merged = "!f() { DEFAULT=$(git default); git branch-list --merged $DEFAULT | grep -v \"$DEFAULT\"; }; f"
 	# List branches with stashed changes
-	stash-list-branches = "!f() { git stash list | awk -F 'WIP on |!!GitHub_Desktop<' '{print $2}' | awk -F ':|>' '{print $1}'; }; f"
+	branch-list-stash = "!f() { git stash list | awk -F 'WIP on |!!GitHub_Desktop<' '{print $2}' | awk -F ':|>' '{print $1}'; }; f"
 	# List local branches without stashed changes
-	branch-list-no-stash = "!f() { (git branch-list; git stash-list-branches) | sort | uniq -u; }; f"
+	branch-list-no-stash = "!f() { (git branch-list; git branch-list-stash) | sort | uniq -u; }; f"
 	# Check the status of all local branches
 	branch-list-status = "!f() { git for-each-ref refs/heads --sort=-committerdate --format='%(HEAD) %(refname:short)|%(objectname:short) %(upstream:track)|%(upstream:remotename)' | column -ts'|'; }; f"
 	# List local branches that have been deleted from the remote
