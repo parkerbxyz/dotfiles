@@ -63,6 +63,12 @@
     "gofmt": true,
     "golangci-lint": true,
   },
+  "chat.tools.urls.autoApprove": {
+    "https://api.slack.com": true,
+    "https://docs.slack.dev": true,
+    "https://learn.microsoft.com": true,
+    "https://modelcontextprotocol.io": true
+  },
   "deno.codeLens.test": true,
   "diffEditor.diffAlgorithm": "advanced",
   "diffEditor.ignoreTrimWhitespace": false,
