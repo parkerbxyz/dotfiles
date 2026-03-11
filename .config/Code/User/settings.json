@@ -52,6 +52,7 @@
     "shellcheck"
   ],
   "chat.agent.maxRequests": 200,
+  "chat.mcp.gallery.enabled": true,
   "deno.codeLens.test": true,
   "diffEditor.diffAlgorithm": "advanced",
   "diffEditor.ignoreTrimWhitespace": false,
