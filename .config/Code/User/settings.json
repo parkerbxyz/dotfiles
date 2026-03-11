@@ -146,6 +146,7 @@
   "telemetry.telemetryLevel": "off",
   "terminal.integrated.defaultProfile.linux": "fish",
   "terminal.integrated.defaultProfile.osx": "fish",
+  "terminal.integrated.initialHint": false,
   "terminal.integrated.scrollback": 2000,
   "terminal.integrated.suggest.enabled": true,
   "window.commandCenter": true,
