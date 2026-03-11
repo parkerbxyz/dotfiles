@@ -33,7 +33,7 @@
 	# Retrieve the default branch (helper alias)
 	default = "!f() { if ORIGIN_HEAD=$(git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null); then echo $ORIGIN_HEAD | sed 's@^refs/remotes/origin/@@'; else git remote set-head origin --auto &>/dev/null && git default; fi; }; f"
 	# Prune remote-tracking branches that no longer exist on the remote and delete all branches without stashed changes that have been merged into the default branch
-	prune-branches = "!f() { git fetch --prune; (git branch-list-merged; git branch-list-no-stash) | sort | uniq -d | grep -v "$(git branch --show-current)" | xargs git branch -d; }; f"
+	prune-branches = "!f() { git fetch --prune; (git branch-list-merged; git branch-list-no-stash) | sort | uniq -d | grep -v \"$(git branch --show-current)\" | xargs git branch -d; }; f"
 	# Sync your fork with the upstream repository
 	sync-fork = "!f() { DEFAULT=$(git default); git fetch upstream && git switch ${1-$DEFAULT} && git merge upstream/${1-$DEFAULT} && git push; }; f"
 	# Merge the latest changes from the default branch into the current branch
@@ -47,7 +47,7 @@
 	# List local branches without asterisk (great for use in scripts)
 	branch-list = "!f() { git branch $@ --format='%(refname:short)'; }; f"
 	# List local branches that have been merged with the default branch (excluding the default branch)
-	branch-list-merged = "!f() { DEFAULT=$(git default); git branch-list --merged $DEFAULT | grep -v "$DEFAULT"; }; f"
+	branch-list-merged = "!f() { DEFAULT=$(git default); git branch-list --merged $DEFAULT | grep -v \"$DEFAULT\"; }; f"
 	# List branches with stashed changes
 	stash-list-branches = "!f() { git stash list | awk -F 'WIP on |!!GitHub_Desktop<' '{print $2}' | awk -F ':|>' '{print $1}'; }; f"
 	# List local branches without stashed changes
@@ -57,6 +57,6 @@
 	# List local branches that have been deleted from the remote
 	branch-list-gone = "!f() { git branch-list-status | grep 'gone]' | grep -v '*' | awk '{print $1}'; }; f"
 	# List unmerged commits for a given branch (defaults to current branch if no branch is specified)
-	unmerged-commits = "!f() { DEFAULT=$(git default); CURRENT=$(git branch --show-current) git log --oneline --no-merges  ${1-$CURRENT} ^$DEFAULT; }; f"
+	unmerged-commits = "!f() { DEFAULT=$(git default); CURRENT=$(git branch --show-current); git log --oneline --no-merges  ${1-$CURRENT} ^$DEFAULT; }; f"
 	# Prune local branches that have been deleted from the remote (including branches with unmerged commits)
-	prune-gone-branches = "!f() { DEFAULT=$(git default); git branch-list-gone | grep -v "$DEFAULT" | xargs git branch -D; }; f"
+	prune-gone-branches = "!f() { DEFAULT=$(git default); git branch-list-gone | grep -v \"$DEFAULT\" | xargs git branch -D; }; f"
