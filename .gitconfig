@@ -57,6 +57,6 @@
 	# List local branches that have been deleted from the remote
 	branch-list-gone = "!f() { git branch-list-status | grep 'gone]' | grep -Fv '*' | awk '{print $1}'; }; f"
 	# List unmerged commits for a given branch (defaults to current branch if no branch is specified)
-	unmerged-commits = "!f() { DEFAULT=$(git default); CURRENT=$(git branch --show-current); git log --oneline --no-merges  ${1-$CURRENT} ^$DEFAULT; }; f"
+	unmerged-commits = "!f() { DEFAULT=$(git default); CURRENT=$(git branch --show-current); git log --oneline --no-merges ${1-$CURRENT} ^$DEFAULT; }; f"
 	# Prune local branches that have been deleted from the remote (including branches with unmerged commits)
 	prune-gone-branches = "!f() { DEFAULT=$(git default); git branch-list-gone | grep -v \"$DEFAULT\" | xargs git branch -D; }; f"
