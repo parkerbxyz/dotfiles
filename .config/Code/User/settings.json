@@ -154,5 +154,5 @@
   "workbench.editor.splitInGroupLayout": "vertical",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.settings.useSplitJSON": true,
-  "workbench.startupEditor": "newUntitledFile"
+  "workbench.startupEditor": "agentSessionsWelcomePage"
 }
