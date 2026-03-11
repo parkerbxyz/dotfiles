@@ -50,6 +50,9 @@ if [ "$DOTFILESDIR" != "$HOMEDOTFILES" ]; then
   ln -sfv "$DOTFILESDIR" "$HOMEDOTFILES"
 fi
 
+# Configure git clean filter to strip [maintenance] section from .gitconfig
+git -C "$DOTFILESDIR" config --local filter.strip-maintenance.clean "sed '/^\[maintenance\]/,/^\[/{ /^\[maintenance\]/d; /^\[/!d; }'"
+
 # If running in Codespaces
 if [ -n "$CODESPACES" ]; then
   # If the codespaces-post-start script isn't already configured to be run
