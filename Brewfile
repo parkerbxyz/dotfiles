@@ -51,7 +51,6 @@ brew "ncc"                          # Compile a Node.js project into a single fi
 brew "nyancat"                      # Renders an animated, color, ANSI-text loop of the Poptart Cat
 brew "onefetch"                     # Command-line Git information tool
 brew "pandoc"                       # Swiss-army knife of markup format conversion
-brew "rbenv"                        # Ruby version manager
 brew "ruff"                         # Extremely fast Python linter, written in Rust
 brew "scorecard"                    # Security health metrics for Open Source
 brew "sf"                           # Command-line toolkit for Salesforce development
