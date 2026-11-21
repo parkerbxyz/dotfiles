@@ -65,7 +65,4 @@ if command -v op &>/dev/null; then
   eval "$(op completion zsh)"; compdef _op op
 fi
 
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /opt/homebrew/bin/tofu tofu
 
-complete -o nospace -C /opt/homebrew/bin/terraform terraform
