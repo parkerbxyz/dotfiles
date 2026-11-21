@@ -125,33 +125,15 @@ cask "zoom"                         # Video communication and virtual meeting pl
 
 # Mac App Store
 mas "1Password for Safari", id: 1569813296
-mas "Actions", id: 1586435171
-mas "Amphetamine", id: 937984704
 mas "Bear", id: 1091189122
-mas "DaVinci Resolve", id: 571213070
-mas "Discovery", id: 1381004916
 mas "Drafts", id: 1435957248
 mas "Flighty", id: 1358823008
-mas "Gifski", id: 1351639930
 mas "Home Assistant", id: 1099568401
 mas "Hush", id: 1544743900
-mas "HyperList", id: 0
 mas "Intermission", id: 1439431081
-mas "LG Screen Manager", id: 1142051783
-mas "Marked 2", id: 890031187
-mas "Microsoft Remote Desktop", id: 1295203466
-mas "Microsoft Word", id: 462054704
-mas "PDFZone", id: 1215383084
-mas "Pixelmator Pro", id: 1289583905
-mas "Redacted", id: 984968384
-mas "Shareful", id: 1522267256
 mas "Soulver 3", id: 1508732804
-mas "Speedtest", id: 1153157709
 mas "StopTheMadness Pro", id: 6471380298
 mas "TestFlight", id: 899247664
-mas "Textify", id: 1522041836
-mas "Things", id: 904280696
-mas "Tripsy", id: 1429967544
 mas "Wipr", id: 1662217862
 mas "WireGuard", id: 1451685025
 
