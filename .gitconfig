@@ -29,6 +29,9 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[filter "strip-maintenance"]
+	# Keep the machine-specific [maintenance] section out of commits (see .gitattributes)
+	clean = "sed '/^\\[maintenance\\]/,/^\\[/{ /^\\[maintenance\\]/d; /^\\[/!d; }'"
 [alias]
 	# Retrieve the default branch (helper alias)
 	default = "!f() { git symbolic-ref --short refs/remotes/origin/HEAD 2>/dev/null || { git remote set-head origin --auto &>/dev/null && git symbolic-ref --short refs/remotes/origin/HEAD; }; }; f | sed 's@^origin/@@'"
