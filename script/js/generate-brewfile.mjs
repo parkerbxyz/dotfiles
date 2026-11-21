@@ -1,10 +1,12 @@
-#!/usr/bin/env zx
-// Generate a Brewfile and add comments to it that describe what each package is
+#!/usr/bin/env node
+// Generate a Brewfile with descriptions aligned to the right of each package.
+// brew bundle dump includes descriptions by default (the --describe switch is now disabled).
+// Uses only Node built-ins, so it runs without installing anything from npm.
 
-import { readFileSync } from "node:fs";
-import tmp from "tmp";
-import { spinner } from "zx";
-import "zx/globals";
+import { execFileSync } from "node:child_process";
+import { mkdtempSync, readFileSync, rmSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 
 // Configuration
 const CONFIG = {
@@ -22,18 +24,16 @@ const CONFIG = {
   minPadding: 1
 };
 
-// Remove all controlled temporary objects on process exit
-tmp.setGracefulCleanup();
-
-// Create a temporary directory to store the Brewfile
-const tmpDir = tmp.dirSync();
-const tmpBrewfilePath = `${tmpDir.name}/Brewfile`;
+const tmpDir = mkdtempSync(join(tmpdir(), "brewfile-"));
+const tmpBrewfilePath = join(tmpDir, "Brewfile");
 
 try {
   // Create initial Brewfile
-  await spinner(
-    "Running brew bundle dump...",
-    () => $`brew bundle --describe --no-restart dump --file ${tmpBrewfilePath}`
+  console.error("Running brew bundle dump...");
+  execFileSync(
+    "brew",
+    ["bundle", "dump", "--no-restart", "--file", tmpBrewfilePath],
+    { stdio: ["ignore", "ignore", "inherit"] }
   );
 
   let tmpBrewfile = readFileSync(tmpBrewfilePath, "utf8");
@@ -66,10 +66,11 @@ try {
   const finalBrewfile = removeExcludedApps(formattedBrewfile, CONFIG.excludedApps);
 
   console.log(finalBrewfile);
-
 } catch (error) {
   console.error("Error generating Brewfile:", error.message);
-  process.exit(1);
+  process.exitCode = 1;
+} finally {
+  rmSync(tmpDir, { recursive: true, force: true });
 }
 
 /**
@@ -118,6 +119,6 @@ function formatBrewfile(sections) {
 function removeExcludedApps(brewfileContent, excludedApps) {
   if (excludedApps.length === 0) return brewfileContent;
 
-  const masRegex = new RegExp(`^mas "(${excludedApps.join("|")})".*\n`, "gm");
+  const masRegex = new RegExp(`^mas "(${excludedApps.join("|")})".*(\n|$)`, "gm");
   return brewfileContent.replace(masRegex, "");
 }

@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 # Change the working directory to the script/js directory
-cd "$(dirname "$0")"/js || exit
+cd "$(dirname "$0")"/js
 
-# Run the script and redirect output to Brewfile in the parent directory
-npx zx generate-brewfile.mjs > ../../Brewfile
+# Generate into a temp file first, so a failed run can't wipe out the Brewfile
+tmp="$(mktemp)"
+trap 'rm -f "$tmp"' EXIT
+
+node generate-brewfile.mjs > "$tmp"
+mv "$tmp" ../../Brewfile
