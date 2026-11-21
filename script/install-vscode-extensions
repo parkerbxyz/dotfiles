@@ -2,8 +2,10 @@
 #
 # Install VS Code extensions
 
-echo ""
-echo -e "\033[34mInstalling VS Code extensions...\033[0m"
+# shellcheck source-path=SCRIPTDIR source=lib.sh
+source "$(dirname "$0")/lib.sh"
+
+step "VS Code extensions"
 
 if ! command -v code >/dev/null; then
   echo "Install VS Code first!" >&2

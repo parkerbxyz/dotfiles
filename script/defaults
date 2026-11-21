@@ -2,8 +2,10 @@
 #
 # Set preferences with the macOS user defaults system
 
-echo ""
-echo -e "\033[34mConfiguring macOS...\033[0m"
+# shellcheck source-path=SCRIPTDIR source=lib.sh
+source "$(dirname "$0")/lib.sh"
+
+step "macOS settings"
 
 # Prevent settings from being overwritten
 osascript -e 'tell application "System Settings" to quit'
@@ -85,4 +87,5 @@ for app in \
 	killall "${app}" &> /dev/null
 done
 
-echo "Done. Note that some of these changes require a logout/restart to take effect."
+ok "Applied"
+note "Some of these changes need a logout or restart to take effect"

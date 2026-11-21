@@ -2,8 +2,10 @@
 #
 # Create symbolic links
 
-echo ""
-echo -e "\033[34mConfiguring symlinks...\033[0m"
+# shellcheck source-path=SCRIPTDIR source=lib.sh
+source "$(dirname "$0")/lib.sh"
+
+step "Symlinks"
 
 GITHUB_USERNAME=$(git config github.user)
 GITHUB_DIRECTORY="$HOME/github.com"
@@ -63,4 +65,4 @@ if ! git -C "$EXERCISM_DIRECTORY" rev-parse 2>/dev/null; then
 fi
 symlink_directory "$EXERCISM_DIRECTORY" "$EXERCISM_REPO_PATH"
 
-echo "OK"
+ok "Done"

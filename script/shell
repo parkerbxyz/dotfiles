@@ -2,8 +2,10 @@
 #
 # Setup shell
 
-echo ""
-echo -e "\033[34mConfiguring shell...\033[0m"
+# shellcheck source-path=SCRIPTDIR source=lib.sh
+source "$(dirname "$0")/lib.sh"
+
+step "Login shell"
 
 PREFERRED_SHELL_NAME="fish"
 PREFERRED_SHELL_PATH="$(brew --prefix)/bin/$PREFERRED_SHELL_NAME"
@@ -22,7 +24,10 @@ LOGIN_SHELL_PATH="$(dscl . -read "/Users/$USER" UserShell | awk '{print $2}')"
 LOGIN_SHELL_NAME="$(basename "$LOGIN_SHELL_PATH")"
 if [[ "$LOGIN_SHELL_PATH" != *"/bin/$PREFERRED_SHELL_NAME" ]]; then
   echo "Changing the default shell from $LOGIN_SHELL_NAME to $PREFERRED_SHELL_NAME... "
-  chsh -s "$PREFERRED_SHELL_PATH"
+  if ! chsh -s "$PREFERRED_SHELL_PATH"; then
+    note "Couldn't change the login shell. Run: chsh -s $PREFERRED_SHELL_PATH"
+    exit 0
+  fi
 fi
 
-echo "OK"
+ok "$PREFERRED_SHELL_NAME"

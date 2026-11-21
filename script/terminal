@@ -2,11 +2,13 @@
 #
 # Setup Terminal profile
 
+# shellcheck source-path=SCRIPTDIR source=lib.sh
+source "$(dirname "$0")/lib.sh"
+
 # Change the working directory to the parent directory of this script
 cd "$(dirname "$0")"/.. || exit
 
-echo ""
-echo -e "\033[34mConfiguring Terminal profile...\033[0m"
+step "Terminal profile"
 
 TERM_PROFILE_NAME="xyz"
 TERM_PROFILE_PATH="terminal/$TERM_PROFILE_NAME.terminal"
