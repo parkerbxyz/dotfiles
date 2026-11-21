@@ -28,3 +28,4 @@ _darcs
 .ssh
 script
 terminal
+^/docs
